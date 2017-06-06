@@ -89,7 +89,7 @@ include_directories(${NETFLEX_INCLUDES} ${DEPS_INCLUDES})
 ###
 # sources
 ###
-set(SRC_DIRS "sources" "includes/netflex")
+set(SRC_DIRS "sources" "sources/http" "sources/routing" "includes/netflex" "includes/netflex/http" "includes/netflex/routing")
 foreach(dir ${SRC_DIRS})
   # get directory sources and headers
   file(GLOB s_${dir} "${dir}/*.cpp")
