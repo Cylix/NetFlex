@@ -2,7 +2,7 @@
  <img src="https://raw.githubusercontent.com/Cylix/netflex/master/assets/images/netflex_logo.jpg"/>
 </p>
 
-# NetFlex [![Build Status](https://travis-ci.org/Cylix/netflex.svg?branch=master)](https://travis-ci.org/Cylix/netflex)
+# NetFlex [![Build Status](https://travis-ci.org/Cylix/NetFlex.svg?branch=master)](https://travis-ci.org/Cylix/NetFlex)
 `NetFlex` is a modern C++11 HTTP Server.
 
 ## Requirement
@@ -14,7 +14,7 @@
 Serving HTTP requests from a C++ software might seem unconventional, but some projects do require it (and I personally already encounter such need).
 
 However, even though C++ is getting older with a more and more complete standard library and a huge active community, tools for this kind of tasks are very limited.
-A few solutions exist hopefully, including `cpp-netlib` which is the main and maybe only usable C++ library providing HTTP server & client features.
+A few solutions exist down the road, hopefully, including `cpp-netlib` which is the main and maybe only usable C++ library providing HTTP server & client features.
 
 However, `cpp-netlib` could be lot better. Its design is pretty old, the documentation is a real mess and the resulting library is not stable enough.
 
