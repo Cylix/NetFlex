@@ -47,13 +47,13 @@ server::set_route(const std::vector<routing::route>& routes) {
   return *this;
 }
 
+
 //!
 //! start & stop the server
 //!
-
 void
 server::start(const std::string& host, unsigned int port) {
-  m_tcp_server.start(host, port);
+  m_tcp_server.start(host, port, std::bind(&server::on_connection_received, this, std::placeholders::_1));
 }
 
 void
@@ -61,10 +61,35 @@ server::stop(void) {
   m_tcp_server.stop();
 }
 
+
+//!
+//! tacopie::tcp_server callback
+//!
+bool
+server::on_connection_received(const std::shared_ptr<tacopie::tcp_client>& client) {
+  //! store client
+  m_clients.emplace_back(client);
+
+  //! start listening for incoming requests
+  http::client& http_client = m_clients.back();
+  http_client.listen_for_incoming_requests(std::bind(&server::on_http_request_received, this, std::ref(http_client), std::placeholders::_1));
+
+  //! mark connection as accepted
+  return true;
+}
+
+
+//!
+//! client callback
+//!
+void
+server::on_http_request_received(client&, request&) {
+}
+
+
 //!
 //! returns whether the server is currently running or not
 //!
-
 bool
 server::is_running(void) const {
   return m_tcp_server.is_running();

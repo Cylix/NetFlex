@@ -22,57 +22,42 @@
 
 #pragma once
 
-#include <list>
-#include <string>
-#include <vector>
+#include <memory>
 
 #include <tacopie/tacopie>
 
-#include <netflex/http/client.hpp>
-#include <netflex/routing/route.hpp>
+#include <netflex/http/request.hpp>
 
 namespace netflex {
 
 namespace http {
 
-class server {
+class client {
 public:
   //! ctor & dtor
-  server(void)  = default;
-  ~server(void) = default;
+  client(const std::shared_ptr<tacopie::tcp_client>& tcp_client);
+  ~client(void) = default;
 
   //! copy ctor & assignment operator
-  server(const server&) = delete;
-  server& operator=(const server&) = delete;
+  client(const client&) = delete;
+  client& operator=(const client&) = delete;
 
 public:
-  //! add routes to the server
-  server& add_route(const routing::route& route);
-  server& add_routes(const std::vector<routing::route>& routes);
-  server& set_route(const std::vector<routing::route>& routes);
+  //! on request received callback
+  typedef std::function<void(request&)> request_received_callback_t;
+
+  //! listen for incoming requests
+  void listen_for_incoming_requests(const request_received_callback_t& callback);
 
 public:
-  //! start & stop the server
-  void start(const std::string& host = "0.0.0.0", unsigned int port = 3000);
-  void stop(void);
-
-  //! returns whether the server is currently running or not
-  bool is_running(void) const;
+  //! tcp_client callback
+  void on_async_read_result(tacopie::tcp_client::read_result&);
 
 private:
-  //! tacopie::tcp_server callback
-  bool on_connection_received(const std::shared_ptr<tacopie::tcp_client>& client);
-
-  //! client callback
-  void on_http_request_received(client&, request&);
-
-private:
-  //! underlying tcp server
-  tacopie::tcp_server m_tcp_server;
-  //! server routes
-  std::vector<routing::route> m_routes;
-  //! clients
-  std::list<client> m_clients;
+  //! tcp_client
+  std::shared_ptr<tacopie::tcp_client> m_tcp_client;
+  //! on request received callback
+  request_received_callback_t m_request_received_callback;
 };
 
 } // namespace http

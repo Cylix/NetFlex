@@ -20,60 +20,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include <list>
-#include <string>
-#include <vector>
-
-#include <tacopie/tacopie>
-
 #include <netflex/http/client.hpp>
-#include <netflex/routing/route.hpp>
 
 namespace netflex {
 
 namespace http {
 
-class server {
-public:
-  //! ctor & dtor
-  server(void)  = default;
-  ~server(void) = default;
+//!
+//! ctor & dtor
+//!
+client::client(const std::shared_ptr<tacopie::tcp_client>& tcp_client)
+: m_tcp_client(tcp_client) {}
 
-  //! copy ctor & assignment operator
-  server(const server&) = delete;
-  server& operator=(const server&) = delete;
 
-public:
-  //! add routes to the server
-  server& add_route(const routing::route& route);
-  server& add_routes(const std::vector<routing::route>& routes);
-  server& set_route(const std::vector<routing::route>& routes);
+//!
+//! listen for incoming requests
+//!
+void
+client::listen_for_incoming_requests(const request_received_callback_t& callback) {
+  m_request_received_callback = callback;
 
-public:
-  //! start & stop the server
-  void start(const std::string& host = "0.0.0.0", unsigned int port = 3000);
-  void stop(void);
+  m_tcp_client->async_read({1024, std::bind(&client::on_async_read_result, this, std::placeholders::_1)});
+}
 
-  //! returns whether the server is currently running or not
-  bool is_running(void) const;
 
-private:
-  //! tacopie::tcp_server callback
-  bool on_connection_received(const std::shared_ptr<tacopie::tcp_client>& client);
-
-  //! client callback
-  void on_http_request_received(client&, request&);
-
-private:
-  //! underlying tcp server
-  tacopie::tcp_server m_tcp_server;
-  //! server routes
-  std::vector<routing::route> m_routes;
-  //! clients
-  std::list<client> m_clients;
-};
+//!
+//! tcp_client callback
+//!
+void
+client::on_async_read_result(tacopie::tcp_client::read_result&) {
+  //!do something
+}
 
 } // namespace http
 
