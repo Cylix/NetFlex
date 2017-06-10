@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 #include <netflex/http/server.hpp>
+#include <netflex/misc/logger.hpp>
 
 namespace netflex {
 
@@ -53,12 +54,19 @@ server::set_route(const std::vector<routing::route>& routes) {
 //!
 void
 server::start(const std::string& host, unsigned int port) {
+  __NETFLEX_LOG(info, "starting server on " + __NETFLEX_HOST_PORT_LOG(host, port));
+  //! TODO: debug log of loaded routes.
+
   m_tcp_server.start(host, port, std::bind(&server::on_connection_received, this, std::placeholders::_1));
+
+  __NETFLEX_LOG(info, "server running on " + __NETFLEX_HOST_PORT_LOG(host, port));
 }
 
 void
 server::stop(void) {
+  __NETFLEX_LOG(info, "stoping server");
   m_tcp_server.stop();
+  __NETFLEX_LOG(info, "server stopped");
 }
 
 
@@ -67,12 +75,16 @@ server::stop(void) {
 //!
 bool
 server::on_connection_received(const std::shared_ptr<tacopie::tcp_client>& client) {
+  __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "receiving connection");
+
   //! store client
   m_clients.emplace_back(client);
 
   //! start listening for incoming requests
   http::client& http_client = m_clients.back();
   http_client.listen_for_incoming_requests(std::bind(&server::on_http_request_received, this, std::ref(http_client), std::placeholders::_1));
+
+  __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "connection accepted");
 
   //! mark connection as accepted
   return true;

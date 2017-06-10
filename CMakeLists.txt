@@ -89,7 +89,7 @@ include_directories(${NETFLEX_INCLUDES} ${DEPS_INCLUDES})
 ###
 # sources
 ###
-set(SRC_DIRS "sources" "sources/http" "sources/routing" "includes/netflex" "includes/netflex/http" "includes/netflex/routing")
+set(SRC_DIRS "sources" "sources/http" "sources/routing" "sources/misc" "includes/netflex" "includes/netflex/http" "includes/netflex/routing" "includes/netflex/misc")
 foreach(dir ${SRC_DIRS})
   # get directory sources and headers
   file(GLOB s_${dir} "${dir}/*.cpp")
@@ -126,6 +126,11 @@ IF (WIN32)
 ELSE ()
   target_link_libraries(${PROJECT} pthread tacopie)
 ENDIF (WIN32)
+
+# __NETFLEX_LOGGING_ENABLED
+IF (LOGGING_ENABLED)
+  set_target_properties(${PROJECT} PROPERTIES COMPILE_DEFINITIONS "__NETFLEX_LOGGING_ENABLED=${LOGGING_ENABLED}")
+ENDIF (LOGGING_ENABLED)
 
 
 ###

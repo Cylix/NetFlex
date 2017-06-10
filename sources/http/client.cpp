@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 #include <netflex/http/client.hpp>
+#include <netflex/misc/logger.hpp>
 
 namespace netflex {
 
@@ -49,6 +50,8 @@ client::listen_for_incoming_requests(const request_received_callback_t& callback
 //!
 void
 client::on_async_read_result(tacopie::tcp_client::read_result&) {
+  __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "async_read result");
+
   //!do something
 }
 
