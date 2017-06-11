@@ -22,7 +22,6 @@
 
 #include <netflex/http/client.hpp>
 #include <netflex/misc/logger.hpp>
-
 namespace netflex {
 
 namespace http {
@@ -31,17 +30,40 @@ namespace http {
 //! ctor & dtor
 //!
 client::client(const std::shared_ptr<tacopie::tcp_client>& tcp_client)
-: m_tcp_client(tcp_client) {}
+: m_tcp_client(tcp_client)
+, m_request_received_callback(nullptr) {}
 
 
 //!
-//! listen for incoming requests
+//! host & port
+//!
+const std::string&
+client::get_host(void) const {
+  return m_tcp_client->get_host();
+}
+
+std::uint32_t
+client::get_port(void) const {
+  return m_tcp_client->get_port();
+}
+
+
+//!
+//! callbacks
+//!  > notify on new http request received
+//!  > notify on invalid http request received (err while parsing)
+//!  > notify on client disconnection
 //!
 void
-client::listen_for_incoming_requests(const request_received_callback_t& callback) {
-  m_request_received_callback = callback;
+client::set_request_handler(const request_handler_t& recv_callback) {
+  m_request_received_callback = recv_callback;
 
   m_tcp_client->async_read({1024, std::bind(&client::on_async_read_result, this, std::placeholders::_1)});
+}
+
+void
+client::set_disconnection_handler(const disconnection_handler_t& disco_callback) {
+  m_tcp_client->set_on_disconnection_handler(disco_callback);
 }
 
 
@@ -49,8 +71,13 @@ client::listen_for_incoming_requests(const request_received_callback_t& callback
 //! tcp_client callback
 //!
 void
-client::on_async_read_result(tacopie::tcp_client::read_result&) {
+client::on_async_read_result(tacopie::tcp_client::read_result& result) {
   __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "async_read result");
+
+  if (!result.success) {
+    __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "async_read failure");
+    return;
+  }
 
   //!do something
 }

@@ -64,7 +64,9 @@ private:
   bool on_connection_received(const std::shared_ptr<tacopie::tcp_client>& client);
 
   //! client callback
-  void on_http_request_received(client&, request&);
+  typedef std::list<client>::iterator client_iterator_t;
+  void on_http_request_received(bool, request&, client_iterator_t);
+  void on_client_disconnected(client_iterator_t);
 
 private:
   //! underlying tcp server

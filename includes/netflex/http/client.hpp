@@ -43,11 +43,20 @@ public:
   client& operator=(const client&) = delete;
 
 public:
-  //! on request received callback
-  typedef std::function<void(request&)> request_received_callback_t;
+  //! host & port
+  const std::string& get_host(void) const;
+  std::uint32_t get_port(void) const;
 
-  //! listen for incoming requests
-  void listen_for_incoming_requests(const request_received_callback_t& callback);
+public:
+  //! callbacks
+  //!  > notify on new http request received
+  //!  > notify on invalid http request received (err while parsing)
+  //!  > notify on client disconnection
+  typedef std::function<void(bool, request&)> request_handler_t;
+  typedef tacopie::tcp_client::disconnection_handler_t disconnection_handler_t;
+
+  void set_request_handler(const request_handler_t&);
+  void set_disconnection_handler(const disconnection_handler_t&);
 
 public:
   //! tcp_client callback
@@ -56,8 +65,8 @@ public:
 private:
   //! tcp_client
   std::shared_ptr<tacopie::tcp_client> m_tcp_client;
-  //! on request received callback
-  request_received_callback_t m_request_received_callback;
+  //! callback
+  request_handler_t m_request_received_callback;
 };
 
 } // namespace http
