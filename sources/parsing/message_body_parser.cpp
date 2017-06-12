@@ -20,33 +20,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include <string>
-
-#include <netflex/http/request.hpp>
+#include <netflex/parsing/message_body_parser.hpp>
 
 namespace netflex {
 
 namespace parsing {
 
-class parser_iface {
-public:
-  //! virtual dtor
-  virtual ~parser_iface(void) = default;
+//!
+//! parser_iface impl
+//!
+parser_iface&
+message_body_parser::operator<<(std::string&) {
+  return *this;
+}
 
-  //! take data as parameter which is consumed to build the reply
-  //! every bytes used to build the reply must be removed from the buffer passed as parameter
-  //! in case of invalid format, an netflex_error exception will be raised
-  virtual parser_iface& operator<<(std::string&) = 0;
+bool
+message_body_parser::is_done(void) const {
+  return false;
+}
 
-  //! returns whether the given http packet section has been fully parsed
-  virtual bool is_done(void) const = 0;
-
-  //! apply the parsed data onto the given request
-  //! only applied if the parsing has been fully done (is_done=true)
-  virtual void apply(http::request&) const = 0;
-};
+void
+message_body_parser::apply(http::request&) const {
+}
 
 } // namespace parsing
 

@@ -22,30 +22,27 @@
 
 #pragma once
 
-#include <string>
-
-#include <netflex/http/request.hpp>
+#include <netflex/parsing/parser_iface.hpp>
 
 namespace netflex {
 
 namespace parsing {
 
-class parser_iface {
+class header_fields_parser : public parser_iface {
 public:
-  //! virtual dtor
-  virtual ~parser_iface(void) = default;
+  //! ctor & dtor
+  header_fields_parser(void)  = default;
+  ~header_fields_parser(void) = default;
 
-  //! take data as parameter which is consumed to build the reply
-  //! every bytes used to build the reply must be removed from the buffer passed as parameter
-  //! in case of invalid format, an netflex_error exception will be raised
-  virtual parser_iface& operator<<(std::string&) = 0;
+  //! copy ctor & assignment operator
+  header_fields_parser(const header_fields_parser&) = delete;
+  header_fields_parser& operator=(const header_fields_parser&) = delete;
 
-  //! returns whether the given http packet section has been fully parsed
-  virtual bool is_done(void) const = 0;
-
-  //! apply the parsed data onto the given request
-  //! only applied if the parsing has been fully done (is_done=true)
-  virtual void apply(http::request&) const = 0;
+public:
+  //! parser_iface impl
+  parser_iface& operator<<(std::string&);
+  bool is_done(void) const;
+  void apply(http::request&) const;
 };
 
 } // namespace parsing

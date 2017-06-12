@@ -28,6 +28,14 @@ namespace netflex {
 namespace parsing {
 
 //!
+//! ctor & dtor
+//!
+request_parser::request_parser(void)
+: m_current_stage(parsing_stage::start_line)
+, m_current_parser(create_parser(m_current_stage)) {}
+
+
+//!
 //! add data to the parser
 //!
 request_parser&
@@ -48,6 +56,27 @@ bool
 request_parser::build_request(void) {
   if (!m_buffer.size())
     return false;
+
+  //! feed current parser
+  *m_current_parser << m_buffer;
+
+  if (m_current_parser->is_done()) {
+    //! apply parser result to current request
+    m_current_parser->apply(m_current_request);
+
+    //! request fully built
+    if (m_current_stage == parsing_stage::message_body) {
+      //! store request as available
+      m_available_requests.push_back(m_current_request);
+      //! reset current request
+      m_current_request = {};
+    }
+
+    //! switch to next stage
+    m_current_parser = switch_to_next_stage(m_current_stage);
+
+    return true;
+  }
 
   return false;
 }
