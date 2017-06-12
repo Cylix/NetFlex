@@ -22,19 +22,32 @@
 
 #pragma once
 
-//! http
-#include <netflex/http/client.hpp>
-#include <netflex/http/request.hpp>
-#include <netflex/http/response.hpp>
-#include <netflex/http/server.hpp>
+#include <stdexcept>
+#include <string>
 
-//! misc
-#include <netflex/misc/error.hpp>
 #include <netflex/misc/logger.hpp>
 
-//! parsing
-#include <netflex/parsing/parser_iface.hpp>
-#include <netflex/parsing/request_parser.hpp>
+namespace netflex {
 
-//! routing
-#include <netflex/routing/route.hpp>
+class netflex_error : public std::runtime_error {
+public:
+  using std::runtime_error::runtime_error;
+  using std::runtime_error::what;
+
+  explicit netflex_error(const std::string& msg)
+  : std::runtime_error(msg.c_str()) { // construct from message string
+  }
+
+  explicit netflex_error(const char* msg)
+  : std::runtime_error(msg) { // construct from message string
+  }
+};
+
+//! macro for convenience
+#define __NETFLEX_THROW(level, what)      \
+  {                                       \
+    __NETFLEX_LOG(level, (what));         \
+    throw netflex::netflex_error((what)); \
+  }
+
+} // namespace netflex

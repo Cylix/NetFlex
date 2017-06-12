@@ -22,61 +22,57 @@
 
 #pragma once
 
-#include <list>
+#include <deque>
+#include <memory>
 #include <string>
-#include <vector>
 
-#include <tacopie/tacopie>
-
-#include <netflex/http/client.hpp>
-#include <netflex/routing/route.hpp>
+#include <netflex/http/request.hpp>
+#include <netflex/parsing/parser_iface.hpp>
 
 namespace netflex {
 
-namespace http {
+namespace parsing {
 
-class server {
+class request_parser {
 public:
   //! ctor & dtor
-  server(void)  = default;
-  ~server(void) = default;
+  request_parser(void)  = default;
+  ~request_parser(void) = default;
 
   //! copy ctor & assignment operator
-  server(const server&) = delete;
-  server& operator=(const server&) = delete;
+  request_parser(const request_parser&) = delete;
+  request_parser& operator=(const request_parser&) = delete;
 
 public:
-  //! add routes to the server
-  server& add_route(const routing::route& route);
-  server& add_routes(const std::vector<routing::route>& routes);
-  server& set_route(const std::vector<routing::route>& routes);
+  //! add data to the parser
+  request_parser& operator<<(const std::string& data);
 
-public:
-  //! start & stop the server
-  void start(const std::string& host = "0.0.0.0", unsigned int port = 3000);
-  void stop(void);
+  //! get request
+  void operator>>(http::request& request);
+  const http::request& get_front(void) const;
+  void pop_front(void);
 
-  //! returns whether the server is currently running or not
-  bool is_running(void) const;
+  //! get incomplete request currently being parsed
+  const http::request& get_currently_parsed_request(void) const;
 
-private:
-  //! tacopie::tcp_server callback
-  bool on_connection_received(const std::shared_ptr<tacopie::tcp_client>& client);
-
-  //! client callback
-  typedef std::list<client>::iterator client_iterator_t;
-  void on_http_request_received(bool, const request&, client_iterator_t);
-  void on_client_disconnected(client_iterator_t);
+  //! returns whether a request is available
+  bool
+  request_available(void) const;
 
 private:
-  //! underlying tcp server
-  tacopie::tcp_server m_tcp_server;
-  //! server routes
-  std::vector<routing::route> m_routes;
-  //! clients
-  std::list<client> m_clients;
+  //! build request
+  bool build_request(void);
+
+private:
+  //! buffer
+  std::string m_buffer;
+  //! current parsing state (request & parser)
+  std::unique_ptr<parser_iface> m_current_parser;
+  http::request m_current_request;
+  //! parsed requests, ready for dequeing
+  std::deque<http::request> m_available_requests;
 };
 
-} // namespace http
+} // namespace parsing
 
 } // namespace netflex

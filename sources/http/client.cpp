@@ -21,7 +21,9 @@
 // SOFTWARE.
 
 #include <netflex/http/client.hpp>
+#include <netflex/misc/error.hpp>
 #include <netflex/misc/logger.hpp>
+
 namespace netflex {
 
 namespace http {
@@ -57,13 +59,23 @@ client::get_port(void) const {
 void
 client::set_request_handler(const request_handler_t& recv_callback) {
   m_request_received_callback = recv_callback;
-
-  m_tcp_client->async_read({1024, std::bind(&client::on_async_read_result, this, std::placeholders::_1)});
+  async_read();
 }
 
 void
 client::set_disconnection_handler(const disconnection_handler_t& disco_callback) {
   m_tcp_client->set_on_disconnection_handler(disco_callback);
+}
+
+
+//!
+//! call callbacks
+//!
+void
+client::call_request_received_callback(bool success, const request& request) {
+  if (m_request_received_callback) {
+    m_request_received_callback(success, request);
+  }
 }
 
 
@@ -74,12 +86,51 @@ void
 client::on_async_read_result(tacopie::tcp_client::read_result& result) {
   __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "async_read result");
 
+  //! if request has failed, simply return
+  //! disconnection callback will be called by the tcp_client right after
   if (!result.success) {
-    __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "async_read failure");
+    __NETFLEX_LOG(warn, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "async_read failure");
     return;
   }
 
-  //!do something
+  //! try to parse request
+  //! in case of failure, notify that the request could not be parsed and stop reading bytes from socket
+  try {
+    __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "attempts to parse request");
+    m_parser << std::string(result.buffer.begin(), result.buffer.end());
+  }
+  catch (const netflex_error&) {
+    __NETFLEX_LOG(error, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "could not parse request (invalid format), disconnecting");
+
+    call_request_received_callback(false, m_parser.get_currently_parsed_request());
+
+    return;
+  }
+
+  //! retrieve available requests and forward them
+  while (m_parser.request_available()) {
+    __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "request fully parsed");
+
+    call_request_received_callback(true, m_parser.get_front());
+    m_parser.pop_front();
+  }
+
+  //! Keep reading
+  async_read();
+} // namespace http
+
+
+//!
+//! async read from socket
+//!
+void
+client::async_read(void) {
+  try {
+    m_tcp_client->async_read({1024, std::bind(&client::on_async_read_result, this, std::placeholders::_1)});
+  }
+  catch (const std::exception&) {
+    //! Client disconnected in the meantime
+  }
 }
 
 } // namespace http

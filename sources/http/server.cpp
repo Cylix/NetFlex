@@ -85,7 +85,7 @@ server::on_connection_received(const std::shared_ptr<tacopie::tcp_client>& clien
   http_client->set_disconnection_handler(std::bind(&server::on_client_disconnected, this, http_client));
   http_client->set_request_handler(std::bind(&server::on_http_request_received, this, std::placeholders::_1, std::placeholders::_2, http_client));
 
-  __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "connection accepted");
+  __NETFLEX_LOG(info, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "connection accepted");
 
   //! mark connection as handled by ourselves
   return true;
@@ -96,12 +96,12 @@ server::on_connection_received(const std::shared_ptr<tacopie::tcp_client>& clien
 //! client callback
 //!
 void
-server::on_http_request_received(bool, request&, client_iterator_t) {
+server::on_http_request_received(bool, const request&, client_iterator_t) {
 }
 
 void
 server::on_client_disconnected(client_iterator_t client) {
-  __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "client disconnected");
+  __NETFLEX_LOG(info, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "client disconnected");
 
   m_clients.erase(client);
 }

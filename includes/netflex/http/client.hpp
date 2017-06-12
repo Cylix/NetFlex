@@ -27,6 +27,7 @@
 #include <tacopie/tacopie>
 
 #include <netflex/http/request.hpp>
+#include <netflex/parsing/request_parser.hpp>
 
 namespace netflex {
 
@@ -52,21 +53,31 @@ public:
   //!  > notify on new http request received
   //!  > notify on invalid http request received (err while parsing)
   //!  > notify on client disconnection
-  typedef std::function<void(bool, request&)> request_handler_t;
+  typedef std::function<void(bool, const request&)> request_handler_t;
   typedef tacopie::tcp_client::disconnection_handler_t disconnection_handler_t;
 
   void set_request_handler(const request_handler_t&);
   void set_disconnection_handler(const disconnection_handler_t&);
+
+private:
+  //! call callbacks
+  void call_request_received_callback(bool success, const request& request);
 
 public:
   //! tcp_client callback
   void on_async_read_result(tacopie::tcp_client::read_result&);
 
 private:
+  //! async read from socket
+  void async_read(void);
+
+private:
   //! tcp_client
   std::shared_ptr<tacopie::tcp_client> m_tcp_client;
   //! callback
   request_handler_t m_request_received_callback;
+  //! request parser
+  parsing::request_parser m_parser;
 };
 
 } // namespace http
