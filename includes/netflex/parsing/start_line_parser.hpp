@@ -28,10 +28,17 @@ namespace netflex {
 
 namespace parsing {
 
+//! HTTP Start Line
+//! https://tools.ietf.org/html/rfc7230#section-3.1
+//!
+//! start-line     = request-line / status-line
+//! request-line   = method SP request-target SP HTTP-version CRLF
+//! method         = token
+
 class start_line_parser : public parser_iface {
 public:
   //! ctor & dtor
-  start_line_parser(void)  = default;
+  start_line_parser(void);
   ~start_line_parser(void) = default;
 
   //! copy ctor & assignment operator
@@ -43,6 +50,33 @@ public:
   parser_iface& operator<<(std::string&);
   bool is_done(void) const;
   void apply(http::request&) const;
+
+private:
+  //! parsing state
+  enum class state {
+    method,
+    target,
+    http_version,
+    trailing,
+    done
+  };
+
+private:
+  //! retrieve start line information
+  bool fetch_method(std::string& buffer);
+  bool fetch_target(std::string& buffer);
+  bool fetch_http_version(std::string& buffer);
+  bool fetch_trailing(std::string& buffer);
+
+private:
+  //! information retrieved
+  std::string m_method;
+  std::string m_target;
+  std::string m_http_version;
+  //! keep track of last whitespace character erased in fetch trailing
+  char m_last_consumed_whitespace;
+  //! current state
+  state m_state;
 };
 
 } // namespace parsing

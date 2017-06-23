@@ -25,6 +25,25 @@
 namespace netflex {
 
 namespace http {
+
+//!
+//! start line information
+//!
+void
+request::set_method(const std::string& method) {
+  m_method = method;
 }
+
+void
+request::set_target(const std::string& target) {
+  m_target = target;
+}
+
+void
+request::set_http_version(const std::string& http_version) {
+  m_http_version = http_version;
+}
+
+} // namespace http
 
 } // namespace netflex

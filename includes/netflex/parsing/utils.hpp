@@ -26,31 +26,30 @@
 
 namespace netflex {
 
-namespace http {
+namespace parsing {
 
-class request {
-public:
-  //! ctor & dtor
-  request(void)  = default;
-  ~request(void) = default;
+namespace utils {
 
-  //! copy ctor & assignment operator
-  request(const request&) = default;
-  request& operator=(const request&) = default;
+//! whitespace tokens
+extern const char SP;
+extern const char HTAB;
+extern const char VT;
+extern const char FF;
+extern const char CR;
+extern const char LF;
 
-public:
-  //! start line information
-  void set_method(const std::string& method);
-  void set_target(const std::string& target);
-  void set_http_version(const std::string& http_version);
+//! parsing helper
+bool is_whitespace_delimiter(char c);
 
-private:
-  //! start line information
-  std::string m_method;
-  std::string m_target;
-  std::string m_http_version;
-};
+//! consumers
+char consume_whitespaces(std::string& buffer);
+std::string consume_word(std::string& buffer);
 
-} // namespace http
+//! parsing wrapper
+bool parse_next_word(std::string& buffer, std::string& out);
+
+} // namespace utils
+
+} // namespace parsing
 
 } // namespace netflex
