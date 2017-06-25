@@ -44,6 +44,20 @@ request::set_http_version(const std::string& http_version) {
   m_http_version = http_version;
 }
 
+
+//!
+//! headers information
+//!
+void
+request::set_headers(const header_list_t& headers) {
+  m_headers = headers;
+}
+
+void
+request::add_header(const header& header) {
+  m_headers[header.field_name] = header.field_value;
+}
+
 } // namespace http
 
 } // namespace netflex

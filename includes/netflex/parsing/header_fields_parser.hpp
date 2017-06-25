@@ -22,6 +22,9 @@
 
 #pragma once
 
+#include <unordered_map>
+
+#include <netflex/parsing/header_field_parser.hpp>
 #include <netflex/parsing/parser_iface.hpp>
 
 namespace netflex {
@@ -31,18 +34,39 @@ namespace parsing {
 class header_fields_parser : public parser_iface {
 public:
   //! ctor & dtor
-  header_fields_parser(void)  = default;
+  header_fields_parser(void);
   ~header_fields_parser(void) = default;
 
   //! copy ctor & assignment operator
   header_fields_parser(const header_fields_parser&) = delete;
   header_fields_parser& operator=(const header_fields_parser&) = delete;
 
+private:
+  //! parsing state
+  enum class state {
+    empty_line,
+    header_field,
+    done
+  };
+
 public:
   //! parser_iface impl
   parser_iface& operator<<(std::string&);
   bool is_done(void) const;
   void apply(http::request&) const;
+
+private:
+  //! parse headers list
+  bool fetch_empty_line(std::string& buffer);
+  bool fetch_header(std::string& buffer);
+
+private:
+  //! current state
+  state m_state;
+  //! parser
+  header_field_parser m_parser;
+  //! headers parsers
+  http::header_list_t m_headers;
 };
 
 } // namespace parsing

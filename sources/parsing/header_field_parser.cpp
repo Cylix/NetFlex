@@ -20,46 +20,50 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include <list>
-#include <string>
-
-#include <netflex/http/header.hpp>
+#include <netflex/parsing/header_field_parser.hpp>
 
 namespace netflex {
 
-namespace http {
+namespace parsing {
 
-class request {
-public:
-  //! ctor & dtor
-  request(void)  = default;
-  ~request(void) = default;
+//!
+//! parser_iface impl
+//!
+parser_iface&
+header_field_parser::operator<<(std::string&) {
+  return *this;
+}
 
-  //! copy ctor & assignment operator
-  request(const request&) = default;
-  request& operator=(const request&) = default;
+bool
+header_field_parser::is_done(void) const {
+  return false;
+}
 
-public:
-  //! start line information
-  void set_method(const std::string& method);
-  void set_target(const std::string& target);
-  void set_http_version(const std::string& http_version);
+void
+header_field_parser::apply(http::request& request) const {
+  request.add_header(m_header);
+}
 
-  //! headers information
-  void set_headers(const header_list_t& headers);
-  void add_header(const header& header);
 
-private:
-  //! start line information
-  std::string m_method;
-  std::string m_target;
-  std::string m_http_version;
-  //! headers
-  header_list_t m_headers;
-};
+//!
+//! retrieve informations
+//!
+const http::header&
+header_field_parser::get_header(void) const {
+  return m_header;
+}
 
-} // namespace http
+
+//!
+//! reset state
+//!
+void
+header_field_parser::reset(void) {
+  //! reset parsed data
+  m_header = http::header();
+}
+
+
+} // namespace parsing
 
 } // namespace netflex

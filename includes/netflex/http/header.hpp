@@ -22,43 +22,24 @@
 
 #pragma once
 
-#include <list>
 #include <string>
-
-#include <netflex/http/header.hpp>
+#include <unordered_map>
+#include <utility>
 
 namespace netflex {
 
 namespace http {
 
-class request {
-public:
-  //! ctor & dtor
-  request(void)  = default;
-  ~request(void) = default;
+struct header {
+  //! header information
+  std::string field_name;
+  std::string field_value;
 
-  //! copy ctor & assignment operator
-  request(const request&) = default;
-  request& operator=(const request&) = default;
-
-public:
-  //! start line information
-  void set_method(const std::string& method);
-  void set_target(const std::string& target);
-  void set_http_version(const std::string& http_version);
-
-  //! headers information
-  void set_headers(const header_list_t& headers);
-  void add_header(const header& header);
-
-private:
-  //! start line information
-  std::string m_method;
-  std::string m_target;
-  std::string m_http_version;
-  //! headers
-  header_list_t m_headers;
+  //! printable string
+  std::string to_s(void) const;
 };
+
+typedef std::unordered_map<std::string, std::string> header_list_t;
 
 } // namespace http
 

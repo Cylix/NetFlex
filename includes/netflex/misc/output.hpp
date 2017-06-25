@@ -9,8 +9,8 @@
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
 //
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -22,44 +22,13 @@
 
 #pragma once
 
-#include <list>
-#include <string>
-
 #include <netflex/http/header.hpp>
 
 namespace netflex {
 
-namespace http {
+namespace misc {
 
-class request {
-public:
-  //! ctor & dtor
-  request(void)  = default;
-  ~request(void) = default;
-
-  //! copy ctor & assignment operator
-  request(const request&) = default;
-  request& operator=(const request&) = default;
-
-public:
-  //! start line information
-  void set_method(const std::string& method);
-  void set_target(const std::string& target);
-  void set_http_version(const std::string& http_version);
-
-  //! headers information
-  void set_headers(const header_list_t& headers);
-  void add_header(const header& header);
-
-private:
-  //! start line information
-  std::string m_method;
-  std::string m_target;
-  std::string m_http_version;
-  //! headers
-  header_list_t m_headers;
-};
-
-} // namespace http
+std::string printable_header_list(const http::header_list_t& headers);
+}
 
 } // namespace netflex

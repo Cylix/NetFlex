@@ -40,10 +40,12 @@ extern const char LF;
 
 //! parsing helper
 bool is_whitespace_delimiter(char c);
+bool is_crlf(const std::string& buffer);
 
 //! consumers
 char consume_whitespaces(std::string& buffer);
 std::string consume_word(std::string& buffer);
+bool consume_crlf(std::string& buffer);
 
 //! parsing wrapper
 bool parse_next_word(std::string& buffer, std::string& out);

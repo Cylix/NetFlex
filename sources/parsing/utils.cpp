@@ -51,12 +51,25 @@ is_whitespace_delimiter(char c) {
          || c == CR;
 }
 
+bool
+is_crlf(const std::string& buffer) {
+  //! crlf is 2 bytes, CR & LF
+  if (buffer.size() < 2)
+    return false;
+
+  return buffer[0] == CR && buffer[1] == LF;
+}
+
+
 //!
 //! consumers
 //!
 char
 consume_whitespaces(std::string& buffer) {
   size_t i = 0;
+
+  if (buffer.empty())
+    return 0;
 
   while (i < buffer.size() && utils::is_whitespace_delimiter(buffer[i])) {
     ++i;
@@ -85,6 +98,15 @@ consume_word(std::string& buffer) {
 
     return word;
   }
+}
+
+bool
+consume_crlf(std::string& buffer) {
+  if (!is_crlf(buffer))
+    return false;
+
+  buffer.erase(0, 2);
+  return true;
 }
 
 

@@ -22,44 +22,42 @@
 
 #pragma once
 
-#include <list>
-#include <string>
-
 #include <netflex/http/header.hpp>
+#include <netflex/parsing/parser_iface.hpp>
 
 namespace netflex {
 
-namespace http {
+namespace parsing {
 
-class request {
+class header_field_parser : public parser_iface {
 public:
   //! ctor & dtor
-  request(void)  = default;
-  ~request(void) = default;
+  header_field_parser(void)  = default;
+  ~header_field_parser(void) = default;
 
   //! copy ctor & assignment operator
-  request(const request&) = default;
-  request& operator=(const request&) = default;
+  header_field_parser(const header_field_parser&) = delete;
+  header_field_parser& operator=(const header_field_parser&) = delete;
 
 public:
-  //! start line information
-  void set_method(const std::string& method);
-  void set_target(const std::string& target);
-  void set_http_version(const std::string& http_version);
+  //! retrieve informations
+  const http::header& get_header(void) const;
 
-  //! headers information
-  void set_headers(const header_list_t& headers);
-  void add_header(const header& header);
+  //! reset state
+  void reset(void);
+
+public:
+  //! parser_iface impl
+  parser_iface&
+  operator<<(std::string&);
+  bool is_done(void) const;
+  void apply(http::request&) const;
 
 private:
-  //! start line information
-  std::string m_method;
-  std::string m_target;
-  std::string m_http_version;
-  //! headers
-  header_list_t m_headers;
+  //! parser header
+  http::header m_header;
 };
 
-} // namespace http
+} // namespace parsing
 
 } // namespace netflex
