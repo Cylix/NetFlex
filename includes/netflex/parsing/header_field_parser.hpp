@@ -32,7 +32,7 @@ namespace parsing {
 class header_field_parser : public parser_iface {
 public:
   //! ctor & dtor
-  header_field_parser(void)  = default;
+  header_field_parser(void);
   ~header_field_parser(void) = default;
 
   //! copy ctor & assignment operator
@@ -54,8 +54,27 @@ public:
   void apply(http::request&) const;
 
 private:
+  //! parsing state
+  enum class state {
+    field_name,
+    field_value,
+    trailing,
+    done
+  };
+
+private:
+  //! parse header
+  bool fetch_field_name(std::string& buffer);
+  bool fetch_field_value(std::string& buffer);
+  bool fetch_trailing(std::string& buffer);
+
+private:
   //! parser header
   http::header m_header;
+  //! keep track of last whitespace character erased in fetch trailing
+  char m_last_consumed_whitespace;
+  //! current state
+  state m_state;
 };
 
 } // namespace parsing

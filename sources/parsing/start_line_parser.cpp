@@ -122,7 +122,7 @@ start_line_parser::fetch_trailing(std::string& buffer) {
     return true;
 
   //! dismiss preceding whitespaces
-  if (m_last_consumed_whitespace == 0)
+  if (!buffer.empty() && utils::is_whitespace_delimiter(buffer[0]))
     m_last_consumed_whitespace = utils::consume_whitespaces(buffer);
 
   //! if buffer has no character, then it can't have the trailing LF character
@@ -132,7 +132,7 @@ start_line_parser::fetch_trailing(std::string& buffer) {
   //! if we are here, it is because we consumed all whitespaces (including CR)
   //! and that there are still bytes in the buffer
   //! so, if the first remaining byte is not LF, then the start-line is not ending correctly
-  if (buffer[0] != utils::LF)
+  if (m_last_consumed_whitespace == utils::CR && buffer[0] != utils::LF)
     __NETFLEX_THROW(error, "Invalid start-line");
 
   //! consume LF

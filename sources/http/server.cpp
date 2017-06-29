@@ -64,7 +64,7 @@ server::start(const std::string& host, unsigned int port) {
 
 void
 server::stop(void) {
-  __NETFLEX_LOG(info, "stoping server");
+  __NETFLEX_LOG(info, "stopping server");
   m_tcp_server.stop();
   __NETFLEX_LOG(info, "server stopped");
 }

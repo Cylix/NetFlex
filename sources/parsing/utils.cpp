@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#include <netflex/misc/error.hpp>
 #include <netflex/parsing/utils.hpp>
 
 namespace netflex {
@@ -42,6 +43,12 @@ const char LF   = '\n';
 //!
 //! parsing helper
 //!
+bool
+is_space_delimiter(char c) {
+  return c == SP
+         || c == HTAB;
+}
+
 bool
 is_whitespace_delimiter(char c) {
   return c == SP
@@ -82,10 +89,10 @@ consume_whitespaces(std::string& buffer) {
 }
 
 std::string
-consume_word(std::string& buffer) {
+consume_word(std::string& buffer, char ending) {
   size_t i = 0;
 
-  while (i < buffer.size() && !utils::is_whitespace_delimiter(buffer[i])) {
+  while (i < buffer.size() && !utils::is_whitespace_delimiter(buffer[i]) && buffer[i] != ending) {
     ++i;
   }
 
@@ -98,6 +105,35 @@ consume_word(std::string& buffer) {
 
     return word;
   }
+}
+
+std::string
+consume_words(std::string& buffer) {
+  size_t i = 0;
+
+  while (i < buffer.size() && !(utils::is_whitespace_delimiter(buffer[i]) && !utils::is_space_delimiter(buffer[i]))) {
+    ++i;
+  }
+
+  if (i == buffer.size()) {
+    return std::move(buffer);
+  }
+  else {
+    std::string word = buffer.substr(0, i);
+    buffer.erase(0, i);
+
+    return word;
+  }
+}
+
+std::string
+consume_word_with_ending(std::string& buffer, char ending) {
+  std::string word = consume_word(buffer, ending);
+
+  if (!buffer.empty() && buffer[0] != ending)
+    __NETFLEX_THROW(error, "expected character '" + std::to_string(ending) + "', got '" + std::to_string(buffer[0]) + "'");
+
+  return word;
 }
 
 bool
@@ -114,6 +150,20 @@ consume_crlf(std::string& buffer) {
 //! parsing wrapper
 //!
 bool
+parse_words(std::string& buffer, std::string& out) {
+  //! dismiss preceding whitespaces if word has not been started to be consumed
+  if (out.empty())
+    utils::consume_whitespaces(buffer);
+
+  //! find word
+  out += utils::consume_words(buffer);
+
+  //! determine whether we finished to parse the words
+  //! if we don't have any more characters in the buffer, we haven't finish
+  return !buffer.empty();
+}
+
+bool
 parse_next_word(std::string& buffer, std::string& word) {
   //! dismiss preceding whitespaces if word has not been started to be consumed
   if (word.empty())
@@ -124,6 +174,21 @@ parse_next_word(std::string& buffer, std::string& word) {
 
   //! determine whether we finished to parse the word
   //! if we don't have any more characters in the buffer, then we did not reach any whitespace
+  //! thus, we haven't finish
+  return !buffer.empty();
+}
+
+bool
+parse_next_word_with_ending(std::string& buffer, std::string& word, char ending) {
+  //! dismiss preceding whitespaces if word has not been started to be consumed
+  if (word.empty())
+    utils::consume_whitespaces(buffer);
+
+  //! find word
+  word += utils::consume_word_with_ending(buffer, ending);
+
+  //! determine whether we finished to parse the word
+  //! if we don't have any more characters in the buffer, then we did not reach the ending character
   //! thus, we haven't finish
   return !buffer.empty();
 }

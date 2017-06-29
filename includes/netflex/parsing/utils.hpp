@@ -39,16 +39,21 @@ extern const char CR;
 extern const char LF;
 
 //! parsing helper
+bool is_space_delimiter(char c);
 bool is_whitespace_delimiter(char c);
 bool is_crlf(const std::string& buffer);
 
 //! consumers
 char consume_whitespaces(std::string& buffer);
-std::string consume_word(std::string& buffer);
+std::string consume_word(std::string& buffer, char ending = 0);
+std::string consume_words(std::string& buffer);
+std::string consume_word_with_ending(std::string& buffer, char ending);
 bool consume_crlf(std::string& buffer);
 
 //! parsing wrapper
+bool parse_words(std::string& buffer, std::string& out);
 bool parse_next_word(std::string& buffer, std::string& out);
+bool parse_next_word_with_ending(std::string& buffer, std::string& word, char ending);
 
 } // namespace utils
 

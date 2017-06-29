@@ -31,7 +31,7 @@ printable_header_list(const http::header_list_t& headers) {
   std::string headers_str;
 
   for (const auto& header : headers)
-    headers_str += header.first + "=" + header.second + " ";
+    headers_str += "[" + header.first + "]=" + header.second + " ";
 
   return headers_str;
 }

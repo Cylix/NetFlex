@@ -110,6 +110,9 @@ header_fields_parser::fetch_header(std::string& buffer) {
   //! reset parser for reuse
   m_parser.reset();
 
+  //! try to find empty line
+  m_state = state::empty_line;
+
   return true;
 }
 
