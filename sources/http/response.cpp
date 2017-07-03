@@ -41,7 +41,7 @@ response::response(void)
 //!
 std::string
 response::to_http_packet(void) const {
-  return m_http_version + " " + std::to_string(m_status) + " " + m_reason + "\r\n" + misc::header_list_to_http_packet(m_headers) + m_body;
+  return misc::status_line_to_http_packet(m_http_version, m_status, m_reason) + misc::header_list_to_http_packet(m_headers) + m_body;
 }
 
 
