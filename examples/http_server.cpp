@@ -62,7 +62,7 @@ main(void) {
   netflex::active_logger = std::unique_ptr<netflex::logger>(new netflex::logger(netflex::logger::log_level::debug));
 
   //! run server
-  server.start("0.0.0.0", 3000);
+  server.start("0.0.0.0", 3001);
 
   //! wait for sigint to exit server
   std::signal(SIGINT, &handle_sigint);

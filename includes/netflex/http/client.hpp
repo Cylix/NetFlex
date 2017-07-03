@@ -27,6 +27,7 @@
 #include <tacopie/tacopie>
 
 #include <netflex/http/request.hpp>
+#include <netflex/http/response.hpp>
 #include <netflex/parsing/request_parser.hpp>
 
 namespace netflex {
@@ -58,6 +59,10 @@ public:
 
   void set_request_handler(const request_handler_t&);
   void set_disconnection_handler(const disconnection_handler_t&);
+
+public:
+  //! send http response
+  void send_response(const response& response);
 
 private:
   //! call callbacks

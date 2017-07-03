@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 #include <netflex/misc/error.hpp>
-#include <netflex/misc/output.hpp>
 #include <netflex/parsing/header_fields_parser.hpp>
 #include <netflex/parsing/utils.hpp>
 
@@ -64,8 +63,6 @@ header_fields_parser::is_done(void) const {
 
 void
 header_fields_parser::apply(http::request& request) const {
-  __NETFLEX_LOG(debug, "parsed headers: " + misc::printable_header_list(m_headers));
-
   request.set_headers(m_headers);
 }
 

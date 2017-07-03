@@ -54,9 +54,6 @@ request_parser::operator<<(const std::string& data) {
 //!
 bool
 request_parser::build_request(void) {
-  if (!m_buffer.size())
-    return false;
-
   //! feed current parser
   *m_current_parser << m_buffer;
 

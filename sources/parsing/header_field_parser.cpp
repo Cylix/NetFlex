@@ -40,6 +40,9 @@ header_field_parser::header_field_parser(void)
 //!
 parser_iface&
 header_field_parser::operator<<(std::string& buffer) {
+  if (!buffer.size())
+    return *this;
+
   if (!fetch_field_name(buffer))
     return *this;
 

@@ -22,6 +22,10 @@
 
 #pragma once
 
+#include <string>
+
+#include <netflex/http/header.hpp>
+
 namespace netflex {
 
 namespace http {
@@ -29,12 +33,49 @@ namespace http {
 class response {
 public:
   //! ctor & dtor
-  response(void)  = default;
+  response(void);
   ~response(void) = default;
 
   //! copy ctor & assignment operator
   response(const response&) = default;
   response& operator=(const response&) = default;
+
+public:
+  //! status line
+  const std::string& get_http_version(void) const;
+  unsigned int get_status_code(void) const;
+  const std::string& get_reason_phase(void) const;
+
+  void set_http_version(const std::string& version);
+  void set_status_code(unsigned int code);
+  void set_reason_phrase(const std::string& reason);
+
+public:
+  //! headers
+  const header_list_t& get_headers(void) const;
+  void add_header(const header& header);
+
+  void set_headers(const header_list_t& headers);
+
+public:
+  //! body
+  const std::string& get_body(void) const;
+
+  void set_body(const std::string& body);
+
+public:
+  //! convert response to http packet
+  std::string to_http_packet(void) const;
+
+private:
+  //! start line
+  std::string m_http_version;
+  unsigned int m_status;
+  std::string m_reason;
+  //! headers
+  header_list_t m_headers;
+  //! body
+  std::string m_body;
 };
 
 } // namespace http

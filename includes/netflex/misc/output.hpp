@@ -28,7 +28,13 @@ namespace netflex {
 
 namespace misc {
 
+//! logging
 std::string printable_header_list(const http::header_list_t& headers);
-}
+
+//! http response formating
+std::string header_list_to_http_packet(const http::header_list_t& headers);
+std::string status_line_to_http_packet(const std::string& http_version, unsigned int status_code, const std::string& reason_phrase);
+
+} // namespace misc
 
 } // namespace netflex

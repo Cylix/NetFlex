@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 #include <netflex/http/request.hpp>
+#include <netflex/misc/output.hpp>
 
 namespace netflex {
 
@@ -29,6 +30,21 @@ namespace http {
 //!
 //! start line information
 //!
+const std::string&
+request::get_method(void) const {
+  return m_method;
+}
+
+const std::string&
+request::get_target(void) const {
+  return m_target;
+}
+
+const std::string&
+request::get_http_version(void) const {
+  return m_http_version;
+}
+
 void
 request::set_method(const std::string& method) {
   m_method = method;
@@ -48,6 +64,11 @@ request::set_http_version(const std::string& http_version) {
 //!
 //! headers information
 //!
+const header_list_t&
+request::get_headers(void) const {
+  return m_headers;
+}
+
 void
 request::set_headers(const header_list_t& headers) {
   m_headers = headers;
@@ -56,6 +77,15 @@ request::set_headers(const header_list_t& headers) {
 void
 request::add_header(const header& header) {
   m_headers[header.field_name] = header.field_value;
+}
+
+
+//!
+//! misc
+//!
+std::string
+request::to_string(void) const {
+  return m_method + " " + m_target + " " + m_http_version + " " + misc::printable_header_list(m_headers);
 }
 
 } // namespace http

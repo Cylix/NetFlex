@@ -22,7 +22,6 @@
 
 #pragma once
 
-#include <list>
 #include <string>
 
 #include <netflex/http/header.hpp>
@@ -43,13 +42,24 @@ public:
 
 public:
   //! start line information
+  const std::string& get_method(void) const;
+  const std::string& get_target(void) const;
+  const std::string& get_http_version(void) const;
+
   void set_method(const std::string& method);
   void set_target(const std::string& target);
   void set_http_version(const std::string& http_version);
 
+public:
   //! headers information
+  const header_list_t& get_headers(void) const;
+
   void set_headers(const header_list_t& headers);
   void add_header(const header& header);
+
+public:
+  //! misc
+  std::string to_string(void) const;
 
 private:
   //! start line information

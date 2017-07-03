@@ -96,7 +96,28 @@ server::on_connection_received(const std::shared_ptr<tacopie::tcp_client>& clien
 //! client callback
 //!
 void
-server::on_http_request_received(bool, const request&, client_iterator_t) {
+server::on_http_request_received(bool success, const request& request, client_iterator_t client) {
+  if (!success) {
+    __NETFLEX_LOG(warn, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "invalid request");
+
+    m_clients.erase(client);
+    return;
+  }
+
+  __NETFLEX_LOG(info, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "receive request " + request.to_string());
+
+  http::response response;
+  //! status line
+  response.set_http_version("HTTP/1.1");
+  response.set_status_code(200);
+  response.set_reason_phrase("OK");
+  //! body
+  response.set_body("hello world!\n");
+  //! header with body information
+  response.add_header({"Content-Length", std::to_string(response.get_body().length())});
+  response.add_header({"Content-Type", "text/html"});
+
+  client->send_response(response);
 }
 
 void

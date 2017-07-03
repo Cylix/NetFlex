@@ -36,7 +36,7 @@ message_body_parser::operator<<(std::string&) {
 
 bool
 message_body_parser::is_done(void) const {
-  return false;
+  return true;
 }
 
 void

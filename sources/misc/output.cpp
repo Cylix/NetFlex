@@ -36,6 +36,22 @@ printable_header_list(const http::header_list_t& headers) {
   return headers_str;
 }
 
+std::string
+header_list_to_http_packet(const http::header_list_t& headers) {
+  std::string headers_str;
+
+  for (const auto& header : headers)
+    headers_str += header.first + ": " + header.second + "\r\n";
+  headers_str += "\r\n";
+
+  return headers_str;
+}
+
+std::string
+status_line_to_http_packet(const std::string& http_version, unsigned int status_code, const std::string& reason_phrase) {
+  return http_version + " " + std::to_string(status_code) + " " + reason_phrase + "\r\n";
+}
+
 } // namespace misc
 
 } // namespace netflex

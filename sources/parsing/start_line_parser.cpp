@@ -41,6 +41,9 @@ start_line_parser::start_line_parser(void)
 //!
 parser_iface&
 start_line_parser::operator<<(std::string& buffer) {
+  if (!buffer.size())
+    return *this;
+
   if (!fetch_method(buffer))
     return *this;
 
@@ -63,8 +66,6 @@ start_line_parser::is_done(void) const {
 
 void
 start_line_parser::apply(http::request& request) const {
-  __NETFLEX_LOG(debug, "parsed start-line: method=" + m_method + " target=" + m_target + " http_version=" + m_http_version);
-
   request.set_method(m_method);
   request.set_target(m_target);
   request.set_http_version(m_http_version);

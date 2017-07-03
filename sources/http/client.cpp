@@ -69,6 +69,17 @@ client::set_disconnection_handler(const disconnection_handler_t& disco_callback)
 
 
 //!
+//! send http response
+//!
+void
+client::send_response(const response& response) {
+  std::string http_response = response.to_http_packet();
+
+  m_tcp_client->async_write({{http_response.begin(), http_response.end()}, nullptr});
+}
+
+
+//!
 //! call callbacks
 //!
 void
