@@ -25,6 +25,7 @@
 #include <string>
 
 #include <netflex/http/header.hpp>
+#include <netflex/routing/params.hpp>
 
 namespace netflex {
 
@@ -58,6 +59,14 @@ public:
   void add_header(const header& header);
 
 public:
+  //! path & params
+  const std::string& get_path(void) const;
+  const routing::params_t& get_params(void) const;
+
+  void set_path(const std::string& path);
+  void set_params(const routing::params_t& params);
+
+public:
   //! misc
   std::string to_string(void) const;
 
@@ -68,6 +77,9 @@ private:
   std::string m_http_version;
   //! headers
   header_list_t m_headers;
+  //! path & params
+  std::string m_path;
+  routing::params_t m_params;
 };
 
 } // namespace http

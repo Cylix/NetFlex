@@ -20,46 +20,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <netflex/routing/route.hpp>
+#pragma once
+
+#include <string>
+#include <unordered_map>
 
 namespace netflex {
 
 namespace routing {
 
-//!
-//! ctor & dtor
-//!
-route::route(const std::string& path, const route_callback_t& callback)
-: m_path(path)
-, m_callback(callback)
-, m_matcher(path) {}
-
-
-//!
-//! matching
-//!
-bool
-route::match(http::request& request) const {
-  params_t params;
-
-  if (!m_matcher.match(request.get_target(), params))
-    return false;
-
-  request.set_path(m_path);
-  request.set_params(params);
-
-  return true;
-}
-
-
-//!
-//! dispatch
-//!
-void
-route::dispatch(const http::request& request, http::response& response) const {
-  if (m_callback)
-    m_callback(request, response);
-}
+//! url params
+typedef std::unordered_map<std::string, std::string> params_t;
 
 } // namespace routing
 

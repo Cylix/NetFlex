@@ -23,8 +23,11 @@
 #pragma once
 
 #include <functional>
-#include <regex>
 #include <string>
+
+#include <netflex/http/request.hpp>
+#include <netflex/http/response.hpp>
+#include <netflex/routing/route_matcher.hpp>
 
 namespace netflex {
 
@@ -32,8 +35,12 @@ namespace routing {
 
 class route {
 public:
+  //! callback associated to the route
+  typedef std::function<void(const http::request&, http::response&)> route_callback_t;
+
+public:
   //! ctor & dtor
-  route(void)  = default;
+  route(const std::string& path, const route_callback_t& callback);
   ~route(void) = default;
 
   //! copy ctor & assignment operator
@@ -41,16 +48,20 @@ public:
   route& operator=(const route&) = default;
 
 public:
-  //! callback associated to the route
-  typedef std::function<void()> route_callback_t;
+  //! matching
+  bool match(http::request& request) const;
+
+public:
+  //! dispatch
+  void dispatch(const http::request&, http::response&) const;
 
 private:
   //! path
   std::string m_path;
   //! callback
   route_callback_t m_callback;
-  //! regex generated from the path and used for path matching
-  std::regex m_match_regex;
+  //! used to match a route with a requested path
+  route_matcher m_matcher;
 };
 
 } // namespace routing

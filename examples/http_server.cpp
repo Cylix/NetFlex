@@ -61,6 +61,19 @@ main(void) {
   //! Enable logging
   netflex::active_logger = std::unique_ptr<netflex::logger>(new netflex::logger(netflex::logger::log_level::debug));
 
+  //! routes
+  server.add_route({"/abc/:var1/def/:var2/:var3",
+    [](const netflex::http::request& request, netflex::http::response& response) {
+      std::cout << "request received for /abc/:var1/def/:var2/:var3 with params:" << std::endl;
+
+      for (const auto& param : request.get_params()) {
+        std::cout << param.first << "=" << param.second << std::endl;
+      }
+
+      response.set_body("it works!\n");
+      response.add_header({"Content-Length", "10"});
+    }});
+
   //! run server
   server.start("0.0.0.0", 3001);
 

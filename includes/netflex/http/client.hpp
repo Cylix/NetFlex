@@ -54,7 +54,7 @@ public:
   //!  > notify on new http request received
   //!  > notify on invalid http request received (err while parsing)
   //!  > notify on client disconnection
-  typedef std::function<void(bool, const request&)> request_handler_t;
+  typedef std::function<void(bool, request&)> request_handler_t;
   typedef tacopie::tcp_client::disconnection_handler_t disconnection_handler_t;
 
   void set_request_handler(const request_handler_t&);
@@ -66,7 +66,7 @@ public:
 
 private:
   //! call callbacks
-  void call_request_received_callback(bool success, const request& request);
+  void call_request_received_callback(bool success, request& request);
 
 public:
   //! tcp_client callback

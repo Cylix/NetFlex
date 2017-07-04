@@ -81,6 +81,30 @@ request::add_header(const header& header) {
 
 
 //!
+//! path & params
+//!
+const std::string&
+request::get_path(void) const {
+  return m_path;
+}
+
+const routing::params_t&
+request::get_params(void) const {
+  return m_params;
+}
+
+void
+request::set_path(const std::string& path) {
+  m_path = path;
+}
+
+void
+request::set_params(const routing::params_t& params) {
+  m_params = params;
+}
+
+
+//!
 //! misc
 //!
 std::string

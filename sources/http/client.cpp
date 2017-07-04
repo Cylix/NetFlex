@@ -83,7 +83,7 @@ client::send_response(const response& response) {
 //! call callbacks
 //!
 void
-client::call_request_received_callback(bool success, const request& request) {
+client::call_request_received_callback(bool success, request& request) {
   if (m_request_received_callback) {
     m_request_received_callback(success, request);
   }
@@ -113,7 +113,8 @@ client::on_async_read_result(tacopie::tcp_client::read_result& result) {
   catch (const netflex_error&) {
     __NETFLEX_LOG(error, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "could not parse request (invalid format), disconnecting");
 
-    call_request_received_callback(false, m_parser.get_currently_parsed_request());
+    request partial_request = m_parser.get_currently_parsed_request();
+    call_request_received_callback(false, partial_request);
 
     return;
   }
@@ -122,7 +123,8 @@ client::on_async_read_result(tacopie::tcp_client::read_result& result) {
   while (m_parser.request_available()) {
     __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "request fully parsed");
 
-    call_request_received_callback(true, m_parser.get_front());
+    request fully_parsed_request = m_parser.get_front();
+    call_request_received_callback(true, fully_parsed_request);
     m_parser.pop_front();
   }
 

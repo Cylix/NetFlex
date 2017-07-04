@@ -65,8 +65,8 @@ private:
 
   //! client callback
   typedef std::list<client>::iterator client_iterator_t;
-  void on_http_request_received(bool, const request&, client_iterator_t);
-  void on_client_disconnected(client_iterator_t);
+  void on_http_request_received(bool success, request& request, client_iterator_t client);
+  void on_client_disconnected(client_iterator_t client);
 
 private:
   //! underlying tcp server

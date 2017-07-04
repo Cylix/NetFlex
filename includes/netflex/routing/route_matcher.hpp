@@ -20,46 +20,45 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <netflex/routing/route.hpp>
+#pragma once
+
+#include <regex>
+#include <string>
+#include <vector>
+
+#include <netflex/routing/params.hpp>
 
 namespace netflex {
 
 namespace routing {
 
-//!
-//! ctor & dtor
-//!
-route::route(const std::string& path, const route_callback_t& callback)
-: m_path(path)
-, m_callback(callback)
-, m_matcher(path) {}
+class route_matcher {
+public:
+  //! ctor & dtor
+  explicit route_matcher(const std::string& path);
+  ~route_matcher(void) = default;
 
+  //! copy ctor & assignment operator
+  route_matcher(const route_matcher&) = default;
+  route_matcher& operator=(const route_matcher&) = default;
 
-//!
-//! matching
-//!
-bool
-route::match(http::request& request) const {
-  params_t params;
+public:
+  //! matching
+  bool match(const std::string& path, params_t& params) const;
 
-  if (!m_matcher.match(request.get_target(), params))
-    return false;
+private:
+  //! build matching regex
+  void build_match_regex(const std::string& path);
 
-  request.set_path(m_path);
-  request.set_params(params);
+  //! matching
+  void match_get_params(const std::string& path, params_t& params) const;
 
-  return true;
-}
-
-
-//!
-//! dispatch
-//!
-void
-route::dispatch(const http::request& request, http::response& response) const {
-  if (m_callback)
-    m_callback(request, response);
-}
+private:
+  //! matching regex
+  std::regex m_match_regex;
+  //! url params to match, in order of appearance
+  std::vector<std::string> m_url_params;
+};
 
 } // namespace routing
 

@@ -96,7 +96,7 @@ server::on_connection_received(const std::shared_ptr<tacopie::tcp_client>& clien
 //! client callback
 //!
 void
-server::on_http_request_received(bool success, const request& request, client_iterator_t client) {
+server::on_http_request_received(bool success, request& request, client_iterator_t client) {
   if (!success) {
     __NETFLEX_LOG(warn, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "invalid request");
 
@@ -116,6 +116,14 @@ server::on_http_request_received(bool success, const request& request, client_it
   //! header with body information
   response.add_header({"Content-Length", std::to_string(response.get_body().length())});
   response.add_header({"Content-Type", "text/html"});
+
+  //! find route matching
+  for (const auto& route : m_routes) {
+    if (route.match(request)) {
+      route.dispatch(request, response);
+      break;
+    }
+  }
 
   client->send_response(response);
 }
