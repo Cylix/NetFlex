@@ -38,7 +38,7 @@ server.add_middleware([](netflex::routing::middleware_chain& chain, netflex::htt
 
   //! alter response
   response.set_body(response.get_body() + "Powered by Netflex\n");
-  response.add_header({"Content-Length", std::to_string(response.get_body().length())});
+  response.add_header({"Content-Length", response.get_body().length()});
 });
 
 //! run server

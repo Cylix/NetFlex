@@ -27,6 +27,18 @@ namespace netflex {
 namespace http {
 
 //!
+//! ctors
+//!
+header::header(const std::string& field_name, const std::string& field_value)
+: field_name(field_name)
+, field_value(field_value) {}
+
+header::header(const std::string& field_name, const char* field_value)
+: field_name(field_name)
+, field_value(field_value) {}
+
+
+//!
 //! printable string
 //!
 std::string

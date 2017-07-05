@@ -70,7 +70,7 @@ main(void) {
       __NETFLEX_LOG(info, "Params: " + netflex::misc::printable_params_list(request.get_params()));
 
       response.set_body("What's up?!\n");
-      response.add_header({"Content-Length", "12"});
+      response.add_header({"Content-Length", 12});
     }});
 
   //! optional middlewares
@@ -83,7 +83,7 @@ main(void) {
 
     //! alter response
     response.set_body(response.get_body() + "Powered by Netflex\n");
-    response.add_header({"Content-Length", std::to_string(response.get_body().length())});
+    response.add_header({"Content-Length", response.get_body().length()});
   });
 
   //! run server

@@ -31,6 +31,16 @@ namespace netflex {
 namespace http {
 
 struct header {
+  //! ctors
+  header(void) = default;
+  header(const std::string& field_name, const std::string& field_value);
+  header(const std::string& field_name, const char* field_value);
+
+  template <typename T>
+  header(const std::string& field_name, T field_value)
+  : field_name(field_name)
+  , field_value(std::to_string(field_value)) {}
+
   //! header information
   std::string field_name;
   std::string field_value;

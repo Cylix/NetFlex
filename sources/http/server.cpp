@@ -187,7 +187,7 @@ server::dispatch(routing::middleware_chain&, http::request& request, http::respo
   //! 4040 not found body
   response.set_body("Page not found\n");
   //! 404 not found headers
-  response.add_header({"Content-Length", std::to_string(response.get_body().length())});
+  response.add_header({"Content-Length", response.get_body().length()});
 }
 
 
