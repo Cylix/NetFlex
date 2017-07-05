@@ -26,6 +26,9 @@ namespace netflex {
 
 namespace misc {
 
+//!
+//! logging
+//!
 std::string
 printable_header_list(const http::header_list_t& headers) {
   std::string headers_str;
@@ -36,6 +39,20 @@ printable_header_list(const http::header_list_t& headers) {
   return headers_str;
 }
 
+std::string
+printable_params_list(const routing::params_t& params) {
+  std::string params_str;
+
+  for (const auto& param : params)
+    params_str += "[" + param.first + "]=" + param.second + " ";
+
+  return params_str;
+}
+
+
+//!
+//! http response formating
+//!
 std::string
 header_list_to_http_packet(const http::header_list_t& headers) {
   std::string headers_str;

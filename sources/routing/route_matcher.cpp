@@ -22,8 +22,6 @@
 
 #include <netflex/routing/route_matcher.hpp>
 
-#include <iostream>
-
 namespace netflex {
 
 namespace routing {
@@ -42,7 +40,7 @@ route_matcher::route_matcher(const std::string& path) {
 void
 route_matcher::build_match_regex(const std::string& path) {
   //! match var1 in /abc/:var1/def
-  std::regex find_url_params_regex("/:([a-zA-Z0-9]*)");
+  std::regex find_url_params_regex("/:([a-zA-Z0-9_\\-]*)");
   std::smatch sm;
 
   auto params_it  = std::sregex_iterator(path.cbegin(), path.cend(), find_url_params_regex);
@@ -70,7 +68,7 @@ route_matcher::build_match_regex(const std::string& path) {
   //!    > (\\?([^=]+)=([^&\\#]*)) ==> match first ?var=val
   //!    > (&([^=]+)=([^&\\#]*))*)?(\\#.*)? ==> match subsequent &var=val
   //!  > (\\#.*)? ==> match #comments
-  m_match_regex = std::regex(std::regex_replace(path, find_url_params_regex, "/([a-zA-Z0-9]*)") + "/?((\\?([^=]+)=([^&\\#]*))(&([^=]+)=([^&\\#]*))*)?(\\#.*)*");
+  m_match_regex = std::regex(std::regex_replace(path, find_url_params_regex, "/([a-zA-Z0-9_\\-]*)") + "/?((\\?([^=]+)=([^&\\#]*))(&([^=]+)=([^&\\#]*))*)?(\\#.*)*");
 }
 
 

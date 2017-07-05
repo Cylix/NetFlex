@@ -10,6 +10,44 @@
 
 **This library is still under development**
 
+## Example
+
+```cpp
+//! netflex server
+netflex::http::server server;
+
+//! routes
+//! /:var_name provides you a way to define URLs including variables
+server.add_route({"/users/:user_name/articles/:post_id",
+  [](const netflex::http::request& request, netflex::http::response& response) {
+    __NETFLEX_LOG(info, "/users/:user_name/articles/:post_id callback triggered");
+    __NETFLEX_LOG(info, "Headers: " + netflex::misc::printable_header_list(request.get_headers()));
+    __NETFLEX_LOG(info, "Params: " + netflex::misc::printable_params_list(request.get_params()));
+
+    response.set_body("What's up?!\n");
+    response.add_header({"Content-Length", "12"});
+  }});
+
+//! optional middlewares
+server.add_middleware([](netflex::routing::middleware_chain& chain, netflex::http::request& request, netflex::http::response& response) {
+  //! alter request
+  request.add_header({"MiddleWare-Custom-Header", "MiddleWare custom header value"});
+
+  //! proceed
+  chain.proceed();
+
+  //! alter response
+  response.set_body(response.get_body() + "Powered by Netflex\n");
+  response.add_header({"Content-Length", std::to_string(response.get_body().length())});
+});
+
+//! run server
+server.start("0.0.0.0", 3001);
+```
+
+## Wiki
+A [Wiki](https://github.com/Cylix/netflex/wiki) is available and provides full documentation for the library as well as [installation explanations](https://github.com/Cylix/netflex/wiki/Installation).
+
 ## Motivations and goals
 Serving HTTP requests from a C++ software might seem unconventional, but some projects do require it (and I personally already encounter such need).
 
@@ -32,13 +70,6 @@ One of its goal is to be as much flexible as possible in order for the users to 
 
 That is, `NetFlex` aims to be `HTTP/1.1` RFC compliant.
 Support will be first provided for `HTTP`, then `HTTPS` in a second time and lastly `HTTP/2.0`.
-
-## Example
-
-*No example available yet*
-
-## Wiki
-A [Wiki](https://github.com/Cylix/netflex/wiki) is available and provides full documentation for the library as well as [installation explanations](https://github.com/Cylix/netflex/wiki/Installation).
 
 ## License
 `NetFlex` is under [MIT License](LICENSE).

@@ -24,6 +24,7 @@
 
 //! http
 #include <netflex/http/client.hpp>
+#include <netflex/http/header.hpp>
 #include <netflex/http/request.hpp>
 #include <netflex/http/response.hpp>
 #include <netflex/http/server.hpp>
@@ -31,10 +32,14 @@
 //! misc
 #include <netflex/misc/error.hpp>
 #include <netflex/misc/logger.hpp>
+#include <netflex/misc/output.hpp>
 
 //! parsing
 #include <netflex/parsing/parser_iface.hpp>
 #include <netflex/parsing/request_parser.hpp>
 
 //! routing
+#include <netflex/routing/middleware_chain.hpp>
+#include <netflex/routing/params.hpp>
+#include <netflex/routing/route_matcher.hpp>
 #include <netflex/routing/route.hpp>

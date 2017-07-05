@@ -47,40 +47,33 @@ handle_sigint(int) {
 
 int
 main(void) {
+  //! Enable logging
+  netflex::active_logger = std::unique_ptr<netflex::logger>(new netflex::logger);
+
 #ifdef _WIN32
   //! Windows netword DLL init
   WORD version = MAKEWORD(2, 2);
   WSADATA data;
 
   if (WSAStartup(version, &data) != 0) {
-    std::cerr << "WSAStartup() failure" << std::endl;
+    __NETFLEX_LOG(error, "WSAStartup() failure");
     return -1;
   }
 #endif /* _WIN32 */
 
-  //! Enable logging
-  netflex::active_logger = std::unique_ptr<netflex::logger>(new netflex::logger(netflex::logger::log_level::debug));
-
   //! routes
-  server.add_route({"/abc/:var1/def/:var2/:var3",
+  //! /:var_name provides you a way to define URLs including variables
+  server.add_route({"/users/:user_name/articles/:post_id",
     [](const netflex::http::request& request, netflex::http::response& response) {
-      std::cout << "request received for /abc/:var1/def/:var2/:var3" << std::endl;
+      __NETFLEX_LOG(info, "/users/:user_name/articles/:post_id callback triggered");
+      __NETFLEX_LOG(info, "Headers: " + netflex::misc::printable_header_list(request.get_headers()));
+      __NETFLEX_LOG(info, "Params: " + netflex::misc::printable_params_list(request.get_params()));
 
-      std::cout << "Params:" << std::endl;
-      for (const auto& param : request.get_params()) {
-        std::cout << param.first << "=" << param.second << std::endl;
-      }
-
-      std::cout << "Headers:" << std::endl;
-      for (const auto& param : request.get_headers()) {
-        std::cout << param.first << "=" << param.second << std::endl;
-      }
-
-      response.set_body("it works!\n");
-      response.add_header({"Content-Length", "10"});
+      response.set_body("What's up?!\n");
+      response.add_header({"Content-Length", "12"});
     }});
 
-  //! middlewares
+  //! optional middlewares
   server.add_middleware([](netflex::routing::middleware_chain& chain, netflex::http::request& request, netflex::http::response& response) {
     //! alter request
     request.add_header({"MiddleWare-Custom-Header", "MiddleWare custom header value"});

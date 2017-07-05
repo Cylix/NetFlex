@@ -100,7 +100,7 @@ client::on_async_read_result(tacopie::tcp_client::read_result& result) {
   //! if request has failed, simply return
   //! disconnection callback will be called by the tcp_client right after
   if (!result.success) {
-    __NETFLEX_LOG(warn, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "async_read failure");
+    __NETFLEX_LOG(debug, __NETFLEX_CLIENT_LOG_PREFIX(m_tcp_client->get_host(), m_tcp_client->get_port()) + "async_read failure");
     return;
   }
 

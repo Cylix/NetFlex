@@ -23,6 +23,7 @@
 #pragma once
 
 #include <netflex/http/header.hpp>
+#include <netflex/routing/params.hpp>
 
 namespace netflex {
 
@@ -30,6 +31,7 @@ namespace misc {
 
 //! logging
 std::string printable_header_list(const http::header_list_t& headers);
+std::string printable_params_list(const routing::params_t& params);
 
 //! http response formating
 std::string header_list_to_http_packet(const http::header_list_t& headers);

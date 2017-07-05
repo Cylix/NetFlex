@@ -45,3 +45,8 @@ link_directories(${DEPS_LIBRARIES})
 ###
 add_executable(http_server http_server.cpp)
 target_link_libraries(http_server netflex)
+
+# __NETFLEX_LOGGING_ENABLED
+IF (LOGGING_ENABLED)
+  set_target_properties(http_server PROPERTIES COMPILE_DEFINITIONS "__NETFLEX_LOGGING_ENABLED=${LOGGING_ENABLED}")
+ENDIF (LOGGING_ENABLED)

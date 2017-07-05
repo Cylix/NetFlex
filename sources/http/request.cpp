@@ -109,7 +109,7 @@ request::set_params(const routing::params_t& params) {
 //!
 std::string
 request::to_string(void) const {
-  return m_method + " " + m_target + " " + m_http_version + " " + misc::printable_header_list(m_headers);
+  return m_method + " " + m_target + " " + m_http_version;
 }
 
 } // namespace http
