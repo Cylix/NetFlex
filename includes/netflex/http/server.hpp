@@ -29,6 +29,7 @@
 #include <tacopie/tacopie>
 
 #include <netflex/http/client.hpp>
+#include <netflex/routing/middleware_chain.hpp>
 #include <netflex/routing/route.hpp>
 
 namespace netflex {
@@ -38,7 +39,7 @@ namespace http {
 class server {
 public:
   //! ctor & dtor
-  server(void)  = default;
+  server(void);
   ~server(void) = default;
 
   //! copy ctor & assignment operator
@@ -50,6 +51,12 @@ public:
   server& add_route(const routing::route& route);
   server& add_routes(const std::vector<routing::route>& routes);
   server& set_route(const std::vector<routing::route>& routes);
+
+public:
+  //! add middlewares
+  server& add_middleware(const routing::middleware_t& middleware);
+  server& add_middlewares(const std::list<routing::middleware_t>& middlewares);
+  server& set_middlewares(const std::list<routing::middleware_t>& middlewares);
 
 public:
   //! start & stop the server
@@ -68,11 +75,16 @@ private:
   void on_http_request_received(bool success, request& request, client_iterator_t client);
   void on_client_disconnected(client_iterator_t client);
 
+  //! dispatch
+  void dispatch(routing::middleware_chain& chain, http::request& request, http::response& response);
+
 private:
   //! underlying tcp server
   tacopie::tcp_server m_tcp_server;
   //! server routes
   std::vector<routing::route> m_routes;
+  //! server middlewares
+  std::list<routing::middleware_t> m_middlewares;
   //! clients
   std::list<client> m_clients;
 };

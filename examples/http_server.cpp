@@ -64,15 +64,34 @@ main(void) {
   //! routes
   server.add_route({"/abc/:var1/def/:var2/:var3",
     [](const netflex::http::request& request, netflex::http::response& response) {
-      std::cout << "request received for /abc/:var1/def/:var2/:var3 with params:" << std::endl;
+      std::cout << "request received for /abc/:var1/def/:var2/:var3" << std::endl;
 
+      std::cout << "Params:" << std::endl;
       for (const auto& param : request.get_params()) {
+        std::cout << param.first << "=" << param.second << std::endl;
+      }
+
+      std::cout << "Headers:" << std::endl;
+      for (const auto& param : request.get_headers()) {
         std::cout << param.first << "=" << param.second << std::endl;
       }
 
       response.set_body("it works!\n");
       response.add_header({"Content-Length", "10"});
     }});
+
+  //! middlewares
+  server.add_middleware([](netflex::routing::middleware_chain& chain, netflex::http::request& request, netflex::http::response& response) {
+    //! alter request
+    request.add_header({"MiddleWare-Custom-Header", "MiddleWare custom header value"});
+
+    //! proceed
+    chain.proceed();
+
+    //! alter response
+    response.set_body(response.get_body() + "Powered by Netflex\n");
+    response.add_header({"Content-Length", std::to_string(response.get_body().length())});
+  });
 
   //! run server
   server.start("0.0.0.0", 3001);

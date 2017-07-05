@@ -28,6 +28,14 @@ namespace netflex {
 namespace http {
 
 //!
+//! ctor & dtor
+//!
+server::server(void)
+//! insert first middleware (dispatch)
+: m_middlewares({1, std::bind(&server::dispatch, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)}) {}
+
+
+//!
 //! add routes to the server
 //!
 server&
@@ -45,6 +53,37 @@ server::add_routes(const std::vector<routing::route>& routes) {
 server&
 server::set_route(const std::vector<routing::route>& routes) {
   m_routes = routes;
+  return *this;
+}
+
+
+//!
+//! add middlewares
+//!
+server&
+server::add_middleware(const routing::middleware_t& middleware) {
+  //! insert all middlewares after the user defined middlewares, but always before the dispatch middleware
+  m_middlewares.insert(std::prev(m_middlewares.end()), middleware);
+
+  return *this;
+}
+
+server&
+server::add_middlewares(const std::list<routing::middleware_t>& middlewares) {
+  //! insert all middlewares after the user defined middlewares, but always before the dispatch middleware
+  m_middlewares.insert(std::prev(m_middlewares.end()), middlewares.begin(), middlewares.end());
+
+  return *this;
+}
+
+server&
+server::set_middlewares(const std::list<routing::middleware_t>& middlewares) {
+  //! erase all middlewares except the dispatch one
+  m_middlewares.erase(m_middlewares.begin(), std::prev(m_middlewares.end()));
+
+  //! insert all middlewares after the user defined middlewares, but always before the dispatch middleware
+  m_middlewares.insert(std::prev(m_middlewares.end()), middlewares.begin(), middlewares.end());
+
   return *this;
 }
 
@@ -111,19 +150,12 @@ server::on_http_request_received(bool success, request& request, client_iterator
   response.set_http_version("HTTP/1.1");
   response.set_status_code(200);
   response.set_reason_phrase("OK");
-  //! body
-  response.set_body("hello world!\n");
   //! header with body information
-  response.add_header({"Content-Length", std::to_string(response.get_body().length())});
   response.add_header({"Content-Type", "text/html"});
 
-  //! find route matching
-  for (const auto& route : m_routes) {
-    if (route.match(request)) {
-      route.dispatch(request, response);
-      break;
-    }
-  }
+  //! middleware chain, including dispatch
+  routing::middleware_chain chain(m_middlewares, request, response);
+  chain.proceed();
 
   client->send_response(response);
 }
@@ -133,6 +165,29 @@ server::on_client_disconnected(client_iterator_t client) {
   __NETFLEX_LOG(info, __NETFLEX_CLIENT_LOG_PREFIX(client->get_host(), client->get_port()) + "client disconnected");
 
   m_clients.erase(client);
+}
+
+
+//!
+//! dispatch
+//!
+void
+server::dispatch(routing::middleware_chain&, http::request& request, http::response& response) {
+  //! find route matching
+  for (const auto& route : m_routes) {
+    if (route.match(request)) {
+      route.dispatch(request, response);
+      return;
+    }
+  }
+
+  //! 404 not found status
+  response.set_status_code(404);
+  response.set_reason_phrase("Not Found");
+  //! 4040 not found body
+  response.set_body("Page not found\n");
+  //! 404 not found headers
+  response.add_header({"Content-Length", std::to_string(response.get_body().length())});
 }
 
 
