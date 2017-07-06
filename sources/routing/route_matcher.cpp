@@ -68,7 +68,7 @@ route_matcher::build_match_regex(const std::string& path) {
   //!    > (\\?([^=]+)=([^&\\#]*)) ==> match first ?var=val
   //!    > (&([^=]+)=([^&\\#]*))*)?(\\#.*)? ==> match subsequent &var=val
   //!  > (\\#.*)? ==> match #comments
-  m_match_regex = std::regex(std::regex_replace(path, find_url_params_regex, "/([a-zA-Z0-9_\\-]*)") + "/?((\\?([^=]+)=([^&\\#]*))(&([^=]+)=([^&\\#]*))*)?(\\#.*)*");
+  m_match_regex = std::regex(std::regex_replace(path, find_url_params_regex, std::string("/([a-zA-Z0-9_\\-]*)")) + "/?((\\?([^=]+)=([^&\\#]*))(&([^=]+)=([^&\\#]*))*)?(\\#.*)*");
 }
 
 
