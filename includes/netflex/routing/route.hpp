@@ -25,6 +25,7 @@
 #include <functional>
 #include <string>
 
+#include <netflex/http/method.hpp>
 #include <netflex/http/request.hpp>
 #include <netflex/http/response.hpp>
 #include <netflex/routing/route_matcher.hpp>
@@ -40,7 +41,7 @@ public:
 
 public:
   //! ctor & dtor
-  route(const std::string& path, const route_callback_t& callback);
+  route(http::method m, const std::string& path, const route_callback_t& callback);
   ~route(void) = default;
 
   //! copy ctor & assignment operator
@@ -56,7 +57,8 @@ public:
   void dispatch(const http::request&, http::response&) const;
 
 private:
-  //! path
+  //! method & path
+  http::method m_method;
   std::string m_path;
   //! callback
   route_callback_t m_callback;

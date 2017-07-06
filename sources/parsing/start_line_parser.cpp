@@ -66,7 +66,7 @@ start_line_parser::is_done(void) const {
 
 void
 start_line_parser::apply(http::request& request) const {
-  request.set_method(m_method);
+  request.set_raw_method(m_method);
   request.set_target(m_target);
   request.set_http_version(m_http_version);
 }

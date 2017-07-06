@@ -30,9 +30,14 @@ namespace http {
 //!
 //! start line information
 //!
-const std::string&
+method
 request::get_method(void) const {
   return m_method;
+}
+
+const std::string&
+request::get_raw_method(void) const {
+  return m_raw_method;
 }
 
 const std::string&
@@ -46,8 +51,15 @@ request::get_http_version(void) const {
 }
 
 void
-request::set_method(const std::string& method) {
-  m_method = method;
+request::set_method(method method) {
+  m_method     = method;
+  m_raw_method = method_to_string(method);
+}
+
+void
+request::set_raw_method(const std::string& method) {
+  m_method     = method_from_string(method);
+  m_raw_method = method;
 }
 
 void
@@ -109,7 +121,7 @@ request::set_params(const routing::params_t& params) {
 //!
 std::string
 request::to_string(void) const {
-  return m_method + " " + m_target + " " + m_http_version;
+  return m_raw_method + " " + m_target + " " + m_http_version;
 }
 
 } // namespace http

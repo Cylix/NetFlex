@@ -18,7 +18,7 @@ netflex::http::server server;
 
 //! routes
 //! /:var_name provides you a way to define URLs including variables
-server.add_route({"/users/:user_name/articles/:post_id",
+server.add_route({netflex::http::method::GET, "/users/:user_name/articles/:post_id",
   [](const netflex::http::request& request, netflex::http::response& response) {
     __NETFLEX_LOG(info, "/users/:user_name/articles/:post_id callback triggered");
     __NETFLEX_LOG(info, "Headers: " + netflex::misc::printable_header_list(request.get_headers()));

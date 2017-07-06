@@ -9,8 +9,8 @@
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 //
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -22,25 +22,28 @@
 
 #pragma once
 
-//! http
-#include <netflex/http/client.hpp>
-#include <netflex/http/header.hpp>
-#include <netflex/http/method.hpp>
-#include <netflex/http/request.hpp>
-#include <netflex/http/response.hpp>
-#include <netflex/http/server.hpp>
+#include <string>
 
-//! misc
-#include <netflex/misc/error.hpp>
-#include <netflex/misc/logger.hpp>
-#include <netflex/misc/output.hpp>
+namespace netflex {
 
-//! parsing
-#include <netflex/parsing/parser_iface.hpp>
-#include <netflex/parsing/request_parser.hpp>
+namespace http {
 
-//! routing
-#include <netflex/routing/middleware_chain.hpp>
-#include <netflex/routing/params.hpp>
-#include <netflex/routing/route_matcher.hpp>
-#include <netflex/routing/route.hpp>
+enum class method {
+  OPTIONS,
+  HEAD,
+  GET,
+  POST,
+  PUT,
+  PATCH,
+  DELETE,
+  TRACE,
+  CONNECT,
+  unknown
+};
+
+method method_from_string(const std::string& str);
+std::string method_to_string(method m);
+
+} // namespace http
+
+} // namespace netflex

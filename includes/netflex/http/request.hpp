@@ -25,6 +25,7 @@
 #include <string>
 
 #include <netflex/http/header.hpp>
+#include <netflex/http/method.hpp>
 #include <netflex/routing/params.hpp>
 
 namespace netflex {
@@ -43,11 +44,13 @@ public:
 
 public:
   //! start line information
-  const std::string& get_method(void) const;
+  method get_method(void) const;
+  const std::string& get_raw_method(void) const;
   const std::string& get_target(void) const;
   const std::string& get_http_version(void) const;
 
-  void set_method(const std::string& method);
+  void set_method(method method);
+  void set_raw_method(const std::string& method);
   void set_target(const std::string& target);
   void set_http_version(const std::string& http_version);
 
@@ -72,7 +75,8 @@ public:
 
 private:
   //! start line information
-  std::string m_method;
+  method m_method;
+  std::string m_raw_method;
   std::string m_target;
   std::string m_http_version;
   //! headers

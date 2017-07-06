@@ -20,52 +20,79 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <netflex/routing/route.hpp>
+#include <netflex/http/method.hpp>
 
 namespace netflex {
 
-namespace routing {
+namespace http {
 
-//!
-//! ctor & dtor
-//!
-route::route(http::method m, const std::string& path, const route_callback_t& callback)
-: m_method(m)
-, m_path(path)
-, m_callback(callback)
-, m_matcher(path) {}
+method
+method_from_string(const std::string& str) {
+  if (str == "OPTIONS")
+    return method::OPTIONS;
 
+  if (str == "HEAD")
+    return method::HEAD;
 
-//!
-//! matching
-//!
-bool
-route::match(http::request& request) const {
-  //! no method matching, return
-  if (request.get_method() != m_method)
-    return false;
+  if (str == "GET")
+    return method::GET;
 
-  //! no path matching, return
-  params_t params;
-  if (!m_matcher.match(request.get_target(), params))
-    return false;
+  if (str == "POST")
+    return method::POST;
 
-  request.set_path(m_path);
-  request.set_params(params);
+  if (str == "PUT")
+    return method::PUT;
 
-  return true;
+  if (str == "PATCH")
+    return method::PATCH;
+
+  if (str == "DELETE")
+    return method::DELETE;
+
+  if (str == "TRACE")
+    return method::TRACE;
+
+  if (str == "CONNECT")
+    return method::CONNECT;
+
+  return method::unknown;
 }
 
+std::string
+method_to_string(method m) {
+  switch (m) {
+  case method::OPTIONS:
+    return "OPTIONS";
 
-//!
-//! dispatch
-//!
-void
-route::dispatch(const http::request& request, http::response& response) const {
-  if (m_callback)
-    m_callback(request, response);
+  case method::HEAD:
+    return "HEAD";
+
+  case method::GET:
+    return "GET";
+
+  case method::POST:
+    return "POST";
+
+  case method::PUT:
+    return "PUT";
+
+  case method::PATCH:
+    return "PATCH";
+
+  case method::DELETE:
+    return "DELETE";
+
+  case method::TRACE:
+    return "TRACE";
+
+  case method::CONNECT:
+    return "CONNECT";
+
+  default:
+    return "";
+  }
 }
 
-} // namespace routing
+} // namespace http
 
 } // namespace netflex
