@@ -32,7 +32,7 @@ namespace parsing {
 class header_field_parser : public parser_iface {
 public:
   //! ctor & dtor
-  header_field_parser(void);
+  header_field_parser(http::request& request);
   ~header_field_parser(void) = default;
 
   //! copy ctor & assignment operator
@@ -40,9 +40,6 @@ public:
   header_field_parser& operator=(const header_field_parser&) = delete;
 
 public:
-  //! retrieve informations
-  const http::header& get_header(void) const;
-
   //! reset state
   void reset(void);
 
@@ -51,7 +48,6 @@ public:
   parser_iface&
   operator<<(std::string&);
   bool is_done(void) const;
-  void apply(http::request&) const;
 
 private:
   //! parsing state

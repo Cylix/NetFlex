@@ -27,6 +27,12 @@ namespace netflex {
 namespace parsing {
 
 //!
+//! ctor
+//!
+message_body_parser::message_body_parser(http::request& request)
+: parser_iface(request) {}
+
+//!
 //! parser_iface impl
 //!
 parser_iface&
@@ -37,10 +43,6 @@ message_body_parser::operator<<(std::string&) {
 bool
 message_body_parser::is_done(void) const {
   return true;
-}
-
-void
-message_body_parser::apply(http::request&) const {
 }
 
 } // namespace parsing

@@ -20,27 +20,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include <netflex/http/request.hpp>
 #include <netflex/parsing/parser_iface.hpp>
 
 namespace netflex {
 
 namespace parsing {
 
-//! different http packet parsing stages
-enum class parsing_stage {
-  start_line,
-  header_fields,
-  message_body
-};
-
-//! create the parser corresponding to the given stage
-std::unique_ptr<parser_iface> create_parser(parsing_stage stage, http::request& request);
-//! switch to the next parsing stage *or go back to initial one if last stage already reached
-//! and return the parser corresponding to that next stage
-std::unique_ptr<parser_iface> switch_to_next_stage(parsing_stage& stage, http::request& request);
+//!
+//! ctor & virtual dtor
+//!
+parser_iface::parser_iface(http::request& request)
+: m_request(request) {}
 
 } // namespace parsing
 

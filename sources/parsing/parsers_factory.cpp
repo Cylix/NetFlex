@@ -34,14 +34,14 @@ namespace parsing {
 //! create the parser corresponding to the given stage
 //!
 std::unique_ptr<parser_iface>
-create_parser(parsing_stage stage) {
+create_parser(parsing_stage stage, http::request& request) {
   switch (stage) {
   case parsing_stage::start_line:
-    return std::unique_ptr<parser_iface>(new start_line_parser);
+    return std::unique_ptr<parser_iface>(new start_line_parser(request));
   case parsing_stage::header_fields:
-    return std::unique_ptr<parser_iface>(new header_fields_parser);
+    return std::unique_ptr<parser_iface>(new header_fields_parser(request));
   case parsing_stage::message_body:
-    return std::unique_ptr<parser_iface>(new message_body_parser);
+    return std::unique_ptr<parser_iface>(new message_body_parser(request));
   default:
     __NETFLEX_THROW(error, "create_parser received invalid parsing_stage");
   }
@@ -53,7 +53,7 @@ create_parser(parsing_stage stage) {
 //! and return the parser corresponding to that next stage
 //!
 std::unique_ptr<parser_iface>
-switch_to_next_stage(parsing_stage& stage) {
+switch_to_next_stage(parsing_stage& stage, http::request& request) {
   switch (stage) {
   case parsing_stage::start_line:
     stage = parsing_stage::header_fields;
@@ -68,7 +68,7 @@ switch_to_next_stage(parsing_stage& stage) {
     __NETFLEX_THROW(error, "create_parser received invalid parsing_stage");
   }
 
-  return create_parser(stage);
+  return create_parser(stage, request);
 }
 
 } // namespace parsing

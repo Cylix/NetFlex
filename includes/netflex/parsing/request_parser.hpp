@@ -68,9 +68,9 @@ private:
   //! buffer
   std::string m_buffer;
   //! current parsing state (request & parser)
+  http::request m_current_request;
   parsing_stage m_current_stage;
   std::unique_ptr<parser_iface> m_current_parser;
-  http::request m_current_request;
   //! parsed requests, ready for dequeing
   std::deque<http::request> m_available_requests;
 };

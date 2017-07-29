@@ -32,7 +32,7 @@ namespace parsing {
 //!
 request_parser::request_parser(void)
 : m_current_stage(parsing_stage::start_line)
-, m_current_parser(create_parser(m_current_stage)) {}
+, m_current_parser(create_parser(m_current_stage, m_current_request)) {}
 
 
 //!
@@ -58,9 +58,6 @@ request_parser::build_request(void) {
   *m_current_parser << m_buffer;
 
   if (m_current_parser->is_done()) {
-    //! apply parser result to current request
-    m_current_parser->apply(m_current_request);
-
     //! request fully built
     if (m_current_stage == parsing_stage::message_body) {
       //! store request as available
@@ -70,7 +67,7 @@ request_parser::build_request(void) {
     }
 
     //! switch to next stage
-    m_current_parser = switch_to_next_stage(m_current_stage);
+    m_current_parser = switch_to_next_stage(m_current_stage, m_current_request);
 
     return true;
   }

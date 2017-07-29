@@ -31,8 +31,10 @@ namespace parsing {
 //!
 //! ctor & dtor
 //!
-header_fields_parser::header_fields_parser(void)
-: m_state(state::empty_line) {}
+header_fields_parser::header_fields_parser(http::request& request)
+: parser_iface(request)
+, m_state(state::empty_line)
+, m_parser(request) {}
 
 
 //!
@@ -59,11 +61,6 @@ header_fields_parser::operator<<(std::string& buffer) {
 bool
 header_fields_parser::is_done(void) const {
   return m_state == state::done;
-}
-
-void
-header_fields_parser::apply(http::request& request) const {
-  request.set_headers(m_headers);
 }
 
 
@@ -99,10 +96,6 @@ header_fields_parser::fetch_header(std::string& buffer) {
 
   if (!m_parser.is_done())
     return false;
-
-  //! grab header and store it here
-  http::header header          = m_parser.get_header();
-  m_headers[header.field_name] = header.field_value;
 
   //! reset parser for reuse
   m_parser.reset();

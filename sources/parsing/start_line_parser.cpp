@@ -31,8 +31,9 @@ namespace parsing {
 //!
 //! ctor & dtor
 //!
-start_line_parser::start_line_parser(void)
-: m_last_consumed_whitespace(0)
+start_line_parser::start_line_parser(http::request& request)
+: parser_iface(request)
+, m_last_consumed_whitespace(0)
 , m_state(state::method) {}
 
 
@@ -62,13 +63,6 @@ start_line_parser::operator<<(std::string& buffer) {
 bool
 start_line_parser::is_done(void) const {
   return m_state == state::done;
-}
-
-void
-start_line_parser::apply(http::request& request) const {
-  request.set_raw_method(m_method);
-  request.set_target(m_target);
-  request.set_http_version(m_http_version);
 }
 
 
@@ -138,6 +132,10 @@ start_line_parser::fetch_trailing(std::string& buffer) {
 
   //! consume LF
   buffer.erase(0, 1);
+  //! set parse line information
+  m_request.set_raw_method(m_method);
+  m_request.set_target(m_target);
+  m_request.set_http_version(m_http_version);
   //! process to next step
   m_state = state::done;
   return true;

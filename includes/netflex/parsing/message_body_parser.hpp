@@ -31,7 +31,7 @@ namespace parsing {
 class message_body_parser : public parser_iface {
 public:
   //! ctor & dtor
-  message_body_parser(void)  = default;
+  message_body_parser(http::request& request);
   ~message_body_parser(void) = default;
 
   //! copy ctor & assignment operator
@@ -42,7 +42,6 @@ public:
   //! parser_iface impl
   parser_iface& operator<<(std::string&);
   bool is_done(void) const;
-  void apply(http::request&) const;
 };
 
 } // namespace parsing

@@ -34,7 +34,7 @@ namespace parsing {
 class header_fields_parser : public parser_iface {
 public:
   //! ctor & dtor
-  header_fields_parser(void);
+  header_fields_parser(http::request& request);
   ~header_fields_parser(void) = default;
 
   //! copy ctor & assignment operator
@@ -53,7 +53,6 @@ public:
   //! parser_iface impl
   parser_iface& operator<<(std::string&);
   bool is_done(void) const;
-  void apply(http::request&) const;
 
 private:
   //! parse headers list
@@ -65,8 +64,6 @@ private:
   state m_state;
   //! parser
   header_field_parser m_parser;
-  //! headers parsers
-  http::header_list_t m_headers;
 };
 
 } // namespace parsing

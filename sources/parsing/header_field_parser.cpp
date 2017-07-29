@@ -31,8 +31,9 @@ namespace parsing {
 //!
 //! ctor & dtor
 //!
-header_field_parser::header_field_parser(void)
-: m_state(state::field_name) {}
+header_field_parser::header_field_parser(http::request& request)
+: parser_iface(request)
+, m_state(state::field_name) {}
 
 
 //!
@@ -58,11 +59,6 @@ header_field_parser::operator<<(std::string& buffer) {
 bool
 header_field_parser::is_done(void) const {
   return m_state == state::done;
-}
-
-void
-header_field_parser::apply(http::request& request) const {
-  request.add_header(m_header);
 }
 
 
@@ -124,18 +120,11 @@ header_field_parser::fetch_trailing(std::string& buffer) {
 
   //! consume LF
   buffer.erase(0, 1);
+  //! store header in request
+  m_request.add_header(m_header);
   //! process to next step
   m_state = state::done;
   return true;
-}
-
-
-//!
-//! retrieve informations
-//!
-const http::header&
-header_field_parser::get_header(void) const {
-  return m_header;
 }
 
 

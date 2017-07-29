@@ -38,7 +38,7 @@ namespace parsing {
 class start_line_parser : public parser_iface {
 public:
   //! ctor & dtor
-  start_line_parser(void);
+  start_line_parser(http::request& request);
   ~start_line_parser(void) = default;
 
   //! copy ctor & assignment operator
@@ -49,7 +49,6 @@ public:
   //! parser_iface impl
   parser_iface& operator<<(std::string&);
   bool is_done(void) const;
-  void apply(http::request&) const;
 
 private:
   //! parsing state

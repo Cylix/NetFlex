@@ -32,7 +32,8 @@ namespace parsing {
 
 class parser_iface {
 public:
-  //! virtual dtor
+  //! ctor & virtual dtor
+  explicit parser_iface(http::request&);
   virtual ~parser_iface(void) = default;
 
   //! take data as parameter which is consumed to build the reply
@@ -43,9 +44,9 @@ public:
   //! returns whether the given http packet section has been fully parsed
   virtual bool is_done(void) const = 0;
 
-  //! apply the parsed data onto the given request
-  //! only applied if the parsing has been fully done (is_done=true)
-  virtual void apply(http::request&) const = 0;
+protected:
+  //! request
+  http::request& m_request;
 };
 
 } // namespace parsing
