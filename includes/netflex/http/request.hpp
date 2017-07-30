@@ -56,10 +56,15 @@ public:
 
 public:
   //! headers information
+  const std::string& get_header(const std::string& name) const;
   const header_list_t& get_headers(void) const;
 
   void set_headers(const header_list_t& headers);
   void add_header(const header& header);
+
+  bool has_header(const std::string& name) const;
+
+  void remove_header(const std::string& name);
 
 public:
   //! path & params

@@ -20,6 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#include <algorithm>
+#include <regex>
+
 #include <netflex/misc/error.hpp>
 #include <netflex/parsing/utils.hpp>
 
@@ -191,6 +194,54 @@ parse_next_word_with_ending(std::string& buffer, std::string& word, char ending)
   //! if we don't have any more characters in the buffer, then we did not reach the ending character
   //! thus, we haven't finish
   return !buffer.empty();
+}
+
+
+//!
+//! string manipulation
+//!
+std::vector<std::string>
+split(const std::string& str, char sep) {
+  std::regex re(std::string(1, sep));
+
+  //! passing -1 as the submatch index parameter performs splitting
+  std::sregex_token_iterator
+    first{str.begin(), str.end(), re, -1},
+    last;
+
+  return {first, last};
+}
+
+void
+trim(std::string& str) {
+  ltrim(str);
+  rtrim(str);
+}
+
+void
+ltrim(std::string& str) {
+  str.erase(str.begin(), std::find_if(str.begin(), str.end(), [](int ch) {
+    return !std::isspace(ch);
+  }));
+}
+
+void
+rtrim(std::string& str) {
+  str.erase(std::find_if(str.rbegin(), str.rend(), [](int ch) {
+    return !std::isspace(ch);
+  })
+              .base(),
+    str.end());
+}
+
+void
+to_lower(std::string& str) {
+  std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+}
+
+void
+to_upper(std::string& str) {
+  std::transform(str.begin(), str.end(), str.begin(), ::toupper);
 }
 
 } // namespace utils

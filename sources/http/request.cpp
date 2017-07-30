@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 #include <netflex/http/request.hpp>
+#include <netflex/misc/error.hpp>
 #include <netflex/misc/output.hpp>
 
 namespace netflex {
@@ -76,6 +77,17 @@ request::set_http_version(const std::string& http_version) {
 //!
 //! headers information
 //!
+const std::string&
+request::get_header(const std::string& name) const {
+  auto header = m_headers.find(name);
+
+  if (header == m_headers.end()) {
+    __NETFLEX_THROW(error, "no such header: " + name);
+  }
+
+  return header->second;
+}
+
 const header_list_t&
 request::get_headers(void) const {
   return m_headers;
@@ -89,6 +101,16 @@ request::set_headers(const header_list_t& headers) {
 void
 request::add_header(const header& header) {
   m_headers[header.field_name] = header.field_value;
+}
+
+bool
+request::has_header(const std::string& name) const {
+  return m_headers.find(name) != m_headers.end();
+}
+
+void
+request::remove_header(const std::string& name) {
+  m_headers.erase(name);
 }
 
 

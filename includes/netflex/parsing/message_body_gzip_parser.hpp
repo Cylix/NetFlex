@@ -22,61 +22,26 @@
 
 #pragma once
 
-#include <list>
-#include <memory>
-
 #include <netflex/parsing/parser_iface.hpp>
 
 namespace netflex {
 
 namespace parsing {
 
-class message_body_parser : public parser_iface {
+class message_body_gzip_parser : public parser_iface {
 public:
   //! ctor & dtor
-  message_body_parser(http::request& request);
-  ~message_body_parser(void) = default;
+  message_body_gzip_parser(http::request& request);
+  ~message_body_gzip_parser(void) = default;
 
   //! copy ctor & assignment operator
-  message_body_parser(const message_body_parser&) = delete;
-  message_body_parser& operator=(const message_body_parser&) = delete;
+  message_body_gzip_parser(const message_body_gzip_parser&) = delete;
+  message_body_gzip_parser& operator=(const message_body_gzip_parser&) = delete;
 
 public:
   //! parser_iface impl
   parser_iface& operator<<(std::string&);
   bool is_done(void) const;
-
-private:
-  //! parse body by delegating to other appropriate parsers
-  bool parse_body(std::string&);
-
-private:
-  //! parsing state
-  enum class state {
-    content_length,
-    chuncked,
-    compress,
-    deflate,
-    gzip,
-    done
-  };
-
-  //! build states list from request headers
-  std::list<state> build_states_from_request_headers(void) const;
-
-  //! create parser from given state
-  std::unique_ptr<parser_iface> create_parser_from_state(state s) const;
-
-  //! fetch content length
-  unsigned int fetch_content_length(void) const;
-
-private:
-  //! list of states to process, current state is head of list
-  std::list<state> m_states;
-  //! current parser
-  std::unique_ptr<parser_iface> m_current_parser;
-  //! content length
-  unsigned int m_content_length;
 };
 
 } // namespace parsing

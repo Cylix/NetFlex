@@ -20,51 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include <string>
-#include <vector>
+#include <netflex/parsing/message_body_content_length_parser.hpp>
 
 namespace netflex {
 
 namespace parsing {
 
-namespace utils {
+//!
+//! ctor
+//!
+message_body_content_length_parser::message_body_content_length_parser(http::request& request)
+: parser_iface(request) {}
 
-//! whitespace tokens
-extern const char SP;
-extern const char HTAB;
-extern const char VT;
-extern const char FF;
-extern const char CR;
-extern const char LF;
 
-//! parsing helper
-bool is_space_delimiter(char c);
-bool is_whitespace_delimiter(char c);
-bool is_crlf(const std::string& buffer);
+//!
+//! parser_iface impl
+//!
+parser_iface&
+message_body_content_length_parser::operator<<(std::string&) {
+  return *this;
+}
 
-//! consumers
-char consume_whitespaces(std::string& buffer);
-std::string consume_word(std::string& buffer, char ending = 0);
-std::string consume_words(std::string& buffer);
-std::string consume_word_with_ending(std::string& buffer, char ending);
-bool consume_crlf(std::string& buffer);
-
-//! parsing wrapper
-bool parse_words(std::string& buffer, std::string& out);
-bool parse_next_word(std::string& buffer, std::string& out);
-bool parse_next_word_with_ending(std::string& buffer, std::string& word, char ending);
-
-//! string manipulation
-std::vector<std::string> split(const std::string& str, char sep);
-void trim(std::string& str);
-void ltrim(std::string& str);
-void rtrim(std::string& str);
-void to_lower(std::string& str);
-void to_upper(std::string& str);
-
-} // namespace utils
+bool
+message_body_content_length_parser::is_done(void) const {
+  return true;
+}
 
 } // namespace parsing
 
