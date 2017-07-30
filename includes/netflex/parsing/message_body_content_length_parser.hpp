@@ -22,6 +22,8 @@
 
 #pragma once
 
+#include <string>
+
 #include <netflex/parsing/parser_iface.hpp>
 
 namespace netflex {
@@ -42,6 +44,19 @@ public:
   //! parser_iface impl
   parser_iface& operator<<(std::string&);
   bool is_done(void) const;
+
+private:
+  //! fetch body
+  void fetch_body(std::string& str);
+
+  //! fetch content length
+  unsigned int fetch_content_length(void) const;
+
+private:
+  //! content length
+  unsigned int m_content_length;
+  //! body
+  std::string m_body;
 };
 
 } // namespace parsing

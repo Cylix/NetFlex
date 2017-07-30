@@ -75,6 +75,11 @@ public:
   void set_params(const routing::params_t& params);
 
 public:
+  //! body
+  const std::string& get_body(void) const;
+  void set_body(const std::string& body);
+
+public:
   //! misc
   std::string to_string(void) const;
 
@@ -89,6 +94,8 @@ private:
   //! path & params
   std::string m_path;
   routing::params_t m_params;
+  //! body
+  std::string m_body;
 };
 
 } // namespace http

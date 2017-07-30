@@ -139,6 +139,20 @@ request::set_params(const routing::params_t& params) {
 
 
 //!
+//! body
+//!
+const std::string&
+request::get_body(void) const {
+  return m_body;
+}
+
+void
+request::set_body(const std::string& body) {
+  m_body = body;
+}
+
+
+//!
 //! misc
 //!
 std::string

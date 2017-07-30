@@ -63,11 +63,12 @@ main(void) {
 
   //! routes
   //! /:var_name provides you a way to define URLs including variables
-  server.add_route({netflex::http::method::GET, "/users/:user_name/articles/:post_id",
+  server.add_route({netflex::http::method::POST, "/users/:user_name/articles/:post_id",
     [](const netflex::http::request& request, netflex::http::response& response) {
       __NETFLEX_LOG(info, "/users/:user_name/articles/:post_id callback triggered");
       __NETFLEX_LOG(info, "Headers: " + netflex::misc::printable_header_list(request.get_headers()));
       __NETFLEX_LOG(info, "Params: " + netflex::misc::printable_params_list(request.get_params()));
+      __NETFLEX_LOG(info, "Body: " + request.get_body());
 
       response.set_body("What's up?!\n");
       response.add_header({"Content-Length", 12});

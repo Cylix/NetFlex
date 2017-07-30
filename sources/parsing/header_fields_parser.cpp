@@ -88,7 +88,7 @@ header_fields_parser::fetch_empty_line(std::string& buffer) {
 
 bool
 header_fields_parser::fetch_header(std::string& buffer) {
-  if (m_state > state::done)
+  if (m_state > state::header_field)
     return true;
 
   //! feed parser and try to build header

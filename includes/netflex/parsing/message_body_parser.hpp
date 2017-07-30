@@ -67,16 +67,11 @@ private:
   //! create parser from given state
   std::unique_ptr<parser_iface> create_parser_from_state(state s) const;
 
-  //! fetch content length
-  unsigned int fetch_content_length(void) const;
-
 private:
   //! list of states to process, current state is head of list
   std::list<state> m_states;
   //! current parser
   std::unique_ptr<parser_iface> m_current_parser;
-  //! content length
-  unsigned int m_content_length;
 };
 
 } // namespace parsing

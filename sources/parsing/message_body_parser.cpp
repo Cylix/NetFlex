@@ -20,7 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <cstdlib>
 #include <vector>
 
 #include <netflex/misc/error.hpp>
@@ -42,8 +41,7 @@ namespace parsing {
 message_body_parser::message_body_parser(http::request& request)
 : parser_iface(request)
 , m_states(build_states_from_request_headers())
-, m_current_parser(create_parser_from_state(m_states.front()))
-, m_content_length(fetch_content_length()) {}
+, m_current_parser(create_parser_from_state(m_states.front())) {}
 
 
 //!
@@ -127,19 +125,6 @@ message_body_parser::build_states_from_request_headers(void) const {
   states.push_back(state::done);
 
   return states;
-}
-
-
-//!
-//! fetch content length
-//!
-unsigned int
-message_body_parser::fetch_content_length(void) const {
-  if (m_request.has_header("Content-Length")) {
-    return std::strtoul(m_request.get_header("Content-Length").c_str(), nullptr, 10);
-  }
-
-  return 0;
 }
 
 
