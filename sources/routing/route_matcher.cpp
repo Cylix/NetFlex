@@ -40,7 +40,7 @@ route_matcher::route_matcher(const std::string& path) {
 void
 route_matcher::build_match_regex(const std::string& path) {
   //! match var1 in /abc/:var1/def
-  std::regex find_url_params_regex("/:([a-zA-Z0-9_\\-]*)");
+  std::regex find_url_params_regex("/:([a-zA-Z0-9_\\-]+)");
   std::smatch sm;
 
   auto params_it  = std::sregex_iterator(path.cbegin(), path.cend(), find_url_params_regex);
@@ -61,14 +61,15 @@ route_matcher::build_match_regex(const std::string& path) {
   //! transform /abc/:var1/def into /abc/([a-zA-Z0-9]*)/def to match url params values
   //! also match trailing slash, get params and #comments
   //!
-  //! regex_replace(path, reg, "/([a-zA-Z0-9]*)") ==> transform /abc/:var1/def into /abc/([a-zA-Z0-9]*)/def
+  //! regex_replace(path, reg, "/([a-zA-Z0-9]+)") ==> transform /abc/:var1/def into /abc/([a-zA-Z0-9]*)/def
   //! "/?((\\?([^=]+)=([^&\\#]*))(&([^=]+)=([^&\\#]*))*)?(\\#.*)?" ==> match trailing slash, get params and #comments
   //!  > /? ==> match trailing slash
   //!  > ((\\?([^=]+)=([^&\\#]*))(&([^=]+)=([^&\\#]*))*)? ==> match get params
   //!    > (\\?([^=]+)=([^&\\#]*)) ==> match first ?var=val
   //!    > (&([^=]+)=([^&\\#]*))*)?(\\#.*)? ==> match subsequent &var=val
   //!  > (\\#.*)? ==> match #comments
-  m_match_regex = std::regex(std::regex_replace(path, find_url_params_regex, std::string("/([a-zA-Z0-9_\\-]*)")) + "/?((\\?([^=]+)=([^&\\#]*))(&([^=]+)=([^&\\#]*))*)?(\\#.*)*");
+  m_match_regex_str = std::regex_replace(path, find_url_params_regex, std::string("/([a-zA-Z0-9_\\-]+)")) + "/?((\\?([^=]+)=([^&\\#]*))(&([^=]+)=([^&\\#]*))*)?(\\#.*)*";
+  m_match_regex     = std::regex(m_match_regex_str);
 }
 
 
@@ -94,7 +95,7 @@ route_matcher::match(const std::string& path, params_t& params) const {
 
 void
 route_matcher::match_get_params(const std::string& path, params_t& params) const {
-  std::regex params_regex("[\\?&]([^=]+)=([^&]+)");
+  std::regex params_regex("[\\?&]([^=]+)=([^&]*)");
   std::smatch sm;
 
   auto params_it  = std::sregex_iterator(path.cbegin(), path.cend(), params_regex);

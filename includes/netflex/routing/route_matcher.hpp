@@ -46,15 +46,16 @@ public:
   //! matching
   bool match(const std::string& path, params_t& params) const;
 
-private:
+protected:
   //! build matching regex
   void build_match_regex(const std::string& path);
 
   //! matching
   void match_get_params(const std::string& path, params_t& params) const;
 
-private:
+protected:
   //! matching regex
+  std::string m_match_regex_str;
   std::regex m_match_regex;
   //! url params to match, in order of appearance
   std::vector<std::string> m_url_params;
