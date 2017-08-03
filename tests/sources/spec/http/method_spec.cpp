@@ -19,3 +19,41 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+
+#include <gtest/gtest.h>
+
+#include <netflex/netflex>
+
+//!
+//! method_from_string
+//!
+TEST(method, method_from_string) {
+  EXPECT_EQ(netflex::http::method_from_string("OPTIONS"), netflex::http::method::OPTIONS);
+  EXPECT_EQ(netflex::http::method_from_string("HEAD"), netflex::http::method::HEAD);
+  EXPECT_EQ(netflex::http::method_from_string("GET"), netflex::http::method::GET);
+  EXPECT_EQ(netflex::http::method_from_string("POST"), netflex::http::method::POST);
+  EXPECT_EQ(netflex::http::method_from_string("PUT"), netflex::http::method::PUT);
+  EXPECT_EQ(netflex::http::method_from_string("PATCH"), netflex::http::method::PATCH);
+  EXPECT_EQ(netflex::http::method_from_string("DELETE"), netflex::http::method::DELETE);
+  EXPECT_EQ(netflex::http::method_from_string("TRACE"), netflex::http::method::TRACE);
+  EXPECT_EQ(netflex::http::method_from_string("CONNECT"), netflex::http::method::CONNECT);
+  EXPECT_EQ(netflex::http::method_from_string("YOLO"), netflex::http::method::unknown);
+}
+
+
+//!
+//! method_to_string
+//!
+TEST(method, method_to_string) {
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::OPTIONS), "OPTIONS");
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::HEAD), "HEAD");
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::GET), "GET");
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::POST), "POST");
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::PUT), "PUT");
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::PATCH), "PATCH");
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::DELETE), "DELETE");
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::TRACE), "TRACE");
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::CONNECT), "CONNECT");
+  EXPECT_EQ(netflex::http::method_to_string(netflex::http::method::unknown), "");
+  EXPECT_EQ(netflex::http::method_to_string((netflex::http::method) 42), "");
+}
