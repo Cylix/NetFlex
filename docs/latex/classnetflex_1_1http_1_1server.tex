@@ -1,0 +1,46 @@
+\hypertarget{classnetflex_1_1http_1_1server}{}\section{netflex\+:\+:http\+:\+:server Class Reference}
+\label{classnetflex_1_1http_1_1server}\index{netflex\+::http\+::server@{netflex\+::http\+::server}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_af153788cc4e18c486bf9f5cfaf1d6cc5}\label{classnetflex_1_1http_1_1server_af153788cc4e18c486bf9f5cfaf1d6cc5}} 
+\hyperlink{classnetflex_1_1http_1_1server_af153788cc4e18c486bf9f5cfaf1d6cc5}{server} (void)
+\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_ac9ba1d17e987a083f1e4865ed13d3b98}\label{classnetflex_1_1http_1_1server_ac9ba1d17e987a083f1e4865ed13d3b98}} 
+\hyperlink{classnetflex_1_1http_1_1server_ac9ba1d17e987a083f1e4865ed13d3b98}{server} (const \hyperlink{classnetflex_1_1http_1_1server}{server} \&)=delete
+\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_a9bca5e45a63350039f6af97245129c5a}\label{classnetflex_1_1http_1_1server_a9bca5e45a63350039f6af97245129c5a}} 
+\hyperlink{classnetflex_1_1http_1_1server}{server} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1http_1_1server}{server} \&)=delete
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_a704f899f913b798d217bf75309043add}\label{classnetflex_1_1http_1_1server_a704f899f913b798d217bf75309043add}} 
+\hyperlink{classnetflex_1_1http_1_1server}{server} \& \hyperlink{classnetflex_1_1http_1_1server_a704f899f913b798d217bf75309043add}{add\+\_\+route} (const \hyperlink{classnetflex_1_1routing_1_1route}{routing\+::route} \&route)
+\begin{DoxyCompactList}\small\item\em add routes to the server \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_a1363b27c4d5752706239407dc961d8d5}\label{classnetflex_1_1http_1_1server_a1363b27c4d5752706239407dc961d8d5}} 
+\hyperlink{classnetflex_1_1http_1_1server}{server} \& {\bfseries add\+\_\+routes} (const std\+::vector$<$ \hyperlink{classnetflex_1_1routing_1_1route}{routing\+::route} $>$ \&routes)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_ac55de13a22c11bbf5a93c5e105e2bf0b}\label{classnetflex_1_1http_1_1server_ac55de13a22c11bbf5a93c5e105e2bf0b}} 
+\hyperlink{classnetflex_1_1http_1_1server}{server} \& {\bfseries set\+\_\+route} (const std\+::vector$<$ \hyperlink{classnetflex_1_1routing_1_1route}{routing\+::route} $>$ \&routes)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_a636cba8b31debed0d880db5905736450}\label{classnetflex_1_1http_1_1server_a636cba8b31debed0d880db5905736450}} 
+\hyperlink{classnetflex_1_1http_1_1server}{server} \& \hyperlink{classnetflex_1_1http_1_1server_a636cba8b31debed0d880db5905736450}{add\+\_\+middleware} (const routing\+::middleware\+\_\+t \&middleware)
+\begin{DoxyCompactList}\small\item\em add middlewares \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_a266ef122b1fd38062a5b45ef58f15b2a}\label{classnetflex_1_1http_1_1server_a266ef122b1fd38062a5b45ef58f15b2a}} 
+\hyperlink{classnetflex_1_1http_1_1server}{server} \& {\bfseries add\+\_\+middlewares} (const std\+::list$<$ routing\+::middleware\+\_\+t $>$ \&middlewares)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_a1f7b8f1cfb800f68d9ca4cfa1ed3aa08}\label{classnetflex_1_1http_1_1server_a1f7b8f1cfb800f68d9ca4cfa1ed3aa08}} 
+\hyperlink{classnetflex_1_1http_1_1server}{server} \& {\bfseries set\+\_\+middlewares} (const std\+::list$<$ routing\+::middleware\+\_\+t $>$ \&middlewares)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_a2eb01cb96d5ebe6c9ddc25eea32b14d0}\label{classnetflex_1_1http_1_1server_a2eb01cb96d5ebe6c9ddc25eea32b14d0}} 
+void \hyperlink{classnetflex_1_1http_1_1server_a2eb01cb96d5ebe6c9ddc25eea32b14d0}{start} (const std\+::string \&host=\char`\"{}0.\+0.\+0.\+0\char`\"{}, unsigned int port=3000)
+\begin{DoxyCompactList}\small\item\em start \& stop the server \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_aee4736188137a75879e972d325b2c460}\label{classnetflex_1_1http_1_1server_aee4736188137a75879e972d325b2c460}} 
+void {\bfseries stop} (void)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1server_a0b901ac09d2aa5a1597197c756307609}\label{classnetflex_1_1http_1_1server_a0b901ac09d2aa5a1597197c756307609}} 
+bool \hyperlink{classnetflex_1_1http_1_1server_a0b901ac09d2aa5a1597197c756307609}{is\+\_\+running} (void) const
+\begin{DoxyCompactList}\small\item\em returns whether the server is currently running or not \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/netflex/http/server.\+hpp\end{DoxyCompactItemize}

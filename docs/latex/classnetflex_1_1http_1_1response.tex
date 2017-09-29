@@ -1,0 +1,55 @@
+\hypertarget{classnetflex_1_1http_1_1response}{}\section{netflex\+:\+:http\+:\+:response Class Reference}
+\label{classnetflex_1_1http_1_1response}\index{netflex\+::http\+::response@{netflex\+::http\+::response}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_a73aab521e1e08f804a58fd79b562f0bc}\label{classnetflex_1_1http_1_1response_a73aab521e1e08f804a58fd79b562f0bc}} 
+\hyperlink{classnetflex_1_1http_1_1response_a73aab521e1e08f804a58fd79b562f0bc}{response} (void)
+\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_a3b45f99380312143e915f6e820ec8cec}\label{classnetflex_1_1http_1_1response_a3b45f99380312143e915f6e820ec8cec}} 
+\hyperlink{classnetflex_1_1http_1_1response_a3b45f99380312143e915f6e820ec8cec}{response} (const \hyperlink{classnetflex_1_1http_1_1response}{response} \&)=default
+\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_a9ebb5c421d490002b7a441d3be9b9c09}\label{classnetflex_1_1http_1_1response_a9ebb5c421d490002b7a441d3be9b9c09}} 
+\hyperlink{classnetflex_1_1http_1_1response}{response} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1http_1_1response}{response} \&)=default
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_a1f6462ae67d321210e3acba1cbc91674}\label{classnetflex_1_1http_1_1response_a1f6462ae67d321210e3acba1cbc91674}} 
+const std\+::string \& \hyperlink{classnetflex_1_1http_1_1response_a1f6462ae67d321210e3acba1cbc91674}{get\+\_\+http\+\_\+version} (void) const
+\begin{DoxyCompactList}\small\item\em status line \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_a3bd6c8c90f81524c4facecb5c100d753}\label{classnetflex_1_1http_1_1response_a3bd6c8c90f81524c4facecb5c100d753}} 
+unsigned int {\bfseries get\+\_\+status\+\_\+code} (void) const
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_a3c09893bbf3974704fbe594f63cecdb4}\label{classnetflex_1_1http_1_1response_a3c09893bbf3974704fbe594f63cecdb4}} 
+const std\+::string \& {\bfseries get\+\_\+reason\+\_\+phase} (void) const
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_af183e759ed09bb71eb838fa69fa0c1bf}\label{classnetflex_1_1http_1_1response_af183e759ed09bb71eb838fa69fa0c1bf}} 
+void {\bfseries set\+\_\+http\+\_\+version} (const std\+::string \&version)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_a8aead942bd679932d47047cf0cd9298e}\label{classnetflex_1_1http_1_1response_a8aead942bd679932d47047cf0cd9298e}} 
+void {\bfseries set\+\_\+status\+\_\+code} (unsigned int code)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_abd5b17d8d4291f17351a8e6182a0a073}\label{classnetflex_1_1http_1_1response_abd5b17d8d4291f17351a8e6182a0a073}} 
+void {\bfseries set\+\_\+reason\+\_\+phrase} (const std\+::string \&reason)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_aee706c42e2d04c91a5332b90f9741237}\label{classnetflex_1_1http_1_1response_aee706c42e2d04c91a5332b90f9741237}} 
+const header\+\_\+list\+\_\+t \& \hyperlink{classnetflex_1_1http_1_1response_aee706c42e2d04c91a5332b90f9741237}{get\+\_\+headers} (void) const
+\begin{DoxyCompactList}\small\item\em headers \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_ae6b96db147ca22d2c3f5fe9b399b6cdb}\label{classnetflex_1_1http_1_1response_ae6b96db147ca22d2c3f5fe9b399b6cdb}} 
+void {\bfseries add\+\_\+header} (const \hyperlink{structnetflex_1_1http_1_1header}{header} \&\hyperlink{structnetflex_1_1http_1_1header}{header})
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_af1e5a84c152c64b17bf029d94a551635}\label{classnetflex_1_1http_1_1response_af1e5a84c152c64b17bf029d94a551635}} 
+void {\bfseries set\+\_\+headers} (const header\+\_\+list\+\_\+t \&headers)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_a13222bdab2d580652cec32177fbfaa0e}\label{classnetflex_1_1http_1_1response_a13222bdab2d580652cec32177fbfaa0e}} 
+const std\+::string \& \hyperlink{classnetflex_1_1http_1_1response_a13222bdab2d580652cec32177fbfaa0e}{get\+\_\+body} (void) const
+\begin{DoxyCompactList}\small\item\em body \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_adc5c33e406d082e71d9803433136a685}\label{classnetflex_1_1http_1_1response_adc5c33e406d082e71d9803433136a685}} 
+void {\bfseries set\+\_\+body} (const std\+::string \&body)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1response_a5e6e4e483bee30dacbe6b6685201ddd0}\label{classnetflex_1_1http_1_1response_a5e6e4e483bee30dacbe6b6685201ddd0}} 
+std\+::string \hyperlink{classnetflex_1_1http_1_1response_a5e6e4e483bee30dacbe6b6685201ddd0}{to\+\_\+http\+\_\+packet} (void) const
+\begin{DoxyCompactList}\small\item\em convert response to http packet \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/netflex/http/response.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\hypertarget{classnetflex_1_1http_1_1client}{}\section{netflex\+:\+:http\+:\+:client Class Reference}
+\label{classnetflex_1_1http_1_1client}\index{netflex\+::http\+::client@{netflex\+::http\+::client}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ void(bool, \hyperlink{classnetflex_1_1http_1_1request}{request} \&)$>$ \hyperlink{classnetflex_1_1http_1_1client_aeac22a78222d25d3224bf50b8e44fb2d}{request\+\_\+handler\+\_\+t}
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_acacb8798dcade63c52a674b3f7820fba}\label{classnetflex_1_1http_1_1client_acacb8798dcade63c52a674b3f7820fba}} 
+typedef tacopie\+::tcp\+\_\+client\+::disconnection\+\_\+handler\+\_\+t {\bfseries disconnection\+\_\+handler\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_a0b14a82f29bad24559d159f9459895a6}\label{classnetflex_1_1http_1_1client_a0b14a82f29bad24559d159f9459895a6}} 
+\hyperlink{classnetflex_1_1http_1_1client_a0b14a82f29bad24559d159f9459895a6}{client} (const std\+::shared\+\_\+ptr$<$ tacopie\+::tcp\+\_\+client $>$ \&tcp\+\_\+client)
+\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_af13de483802dc1096a13870d9ecf5fa9}\label{classnetflex_1_1http_1_1client_af13de483802dc1096a13870d9ecf5fa9}} 
+\hyperlink{classnetflex_1_1http_1_1client_af13de483802dc1096a13870d9ecf5fa9}{client} (const \hyperlink{classnetflex_1_1http_1_1client}{client} \&)=delete
+\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_acc99fbf45017b7593e1c2851487ebb88}\label{classnetflex_1_1http_1_1client_acc99fbf45017b7593e1c2851487ebb88}} 
+\hyperlink{classnetflex_1_1http_1_1client}{client} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1http_1_1client}{client} \&)=delete
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_a30d5d978725c09449266ea86e4dd130b}\label{classnetflex_1_1http_1_1client_a30d5d978725c09449266ea86e4dd130b}} 
+const std\+::string \& \hyperlink{classnetflex_1_1http_1_1client_a30d5d978725c09449266ea86e4dd130b}{get\+\_\+host} (void) const
+\begin{DoxyCompactList}\small\item\em host \& port \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_a9d64406a2b36fa59610798ee9abcf735}\label{classnetflex_1_1http_1_1client_a9d64406a2b36fa59610798ee9abcf735}} 
+std\+::uint32\+\_\+t {\bfseries get\+\_\+port} (void) const
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_a69d20e66a63e3911104b309b8bfb72d0}\label{classnetflex_1_1http_1_1client_a69d20e66a63e3911104b309b8bfb72d0}} 
+void {\bfseries set\+\_\+request\+\_\+handler} (const \hyperlink{classnetflex_1_1http_1_1client_aeac22a78222d25d3224bf50b8e44fb2d}{request\+\_\+handler\+\_\+t} \&)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_a19c20f06646dc840257883f50e5ad8d5}\label{classnetflex_1_1http_1_1client_a19c20f06646dc840257883f50e5ad8d5}} 
+void {\bfseries set\+\_\+disconnection\+\_\+handler} (const disconnection\+\_\+handler\+\_\+t \&)
+\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_a8b00e06dfa90d8c96f9773ce043d0776}\label{classnetflex_1_1http_1_1client_a8b00e06dfa90d8c96f9773ce043d0776}} 
+void \hyperlink{classnetflex_1_1http_1_1client_a8b00e06dfa90d8c96f9773ce043d0776}{send\+\_\+response} (const \hyperlink{classnetflex_1_1http_1_1response}{response} \&\hyperlink{classnetflex_1_1http_1_1response}{response})
+\begin{DoxyCompactList}\small\item\em send http response \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_ac0efa9afc9099104d8612da474d01b00}\label{classnetflex_1_1http_1_1client_ac0efa9afc9099104d8612da474d01b00}} 
+void \hyperlink{classnetflex_1_1http_1_1client_ac0efa9afc9099104d8612da474d01b00}{on\+\_\+async\+\_\+read\+\_\+result} (tacopie\+::tcp\+\_\+client\+::read\+\_\+result \&)
+\begin{DoxyCompactList}\small\item\em tcp\+\_\+client callback \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1client_aeac22a78222d25d3224bf50b8e44fb2d}\label{classnetflex_1_1http_1_1client_aeac22a78222d25d3224bf50b8e44fb2d}} 
+\index{netflex\+::http\+::client@{netflex\+::http\+::client}!request\+\_\+handler\+\_\+t@{request\+\_\+handler\+\_\+t}}
+\index{request\+\_\+handler\+\_\+t@{request\+\_\+handler\+\_\+t}!netflex\+::http\+::client@{netflex\+::http\+::client}}
+\subsubsection{\texorpdfstring{request\+\_\+handler\+\_\+t}{request\_handler\_t}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(bool, \hyperlink{classnetflex_1_1http_1_1request}{request}\&)$>$ \hyperlink{classnetflex_1_1http_1_1client_aeac22a78222d25d3224bf50b8e44fb2d}{netflex\+::http\+::client\+::request\+\_\+handler\+\_\+t}}
+
+callbacks \begin{quote}
+notify on new http request received notify on invalid http request received (err while parsing) notify on client disconnection \end{quote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/netflex/http/client.\+hpp\end{DoxyCompactItemize}

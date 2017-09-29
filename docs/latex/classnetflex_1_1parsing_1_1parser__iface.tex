@@ -1,0 +1,43 @@
+\hypertarget{classnetflex_1_1parsing_1_1parser__iface}{}\section{netflex\+:\+:parsing\+:\+:parser\+\_\+iface Class Reference}
+\label{classnetflex_1_1parsing_1_1parser__iface}\index{netflex\+::parsing\+::parser\+\_\+iface@{netflex\+::parsing\+::parser\+\_\+iface}}
+Inheritance diagram for netflex\+:\+:parsing\+:\+:parser\+\_\+iface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.536586cm]{classnetflex_1_1parsing_1_1parser__iface}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1parser__iface_aacba4e88059a0802b22c19b324bae9ec}\label{classnetflex_1_1parsing_1_1parser__iface_aacba4e88059a0802b22c19b324bae9ec}} 
+\hyperlink{classnetflex_1_1parsing_1_1parser__iface_aacba4e88059a0802b22c19b324bae9ec}{parser\+\_\+iface} (\hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&)
+\begin{DoxyCompactList}\small\item\em ctor \& virtual dtor \end{DoxyCompactList}\item 
+virtual \hyperlink{classnetflex_1_1parsing_1_1parser__iface}{parser\+\_\+iface} \& \hyperlink{classnetflex_1_1parsing_1_1parser__iface_ae41c581b5cb219fed4cf5fccf27011c3}{operator$<$$<$} (std\+::string \&)=0
+\item 
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1parser__iface_afebd1cc50d5958f712dfac0c023fd162}\label{classnetflex_1_1parsing_1_1parser__iface_afebd1cc50d5958f712dfac0c023fd162}} 
+virtual bool \hyperlink{classnetflex_1_1parsing_1_1parser__iface_afebd1cc50d5958f712dfac0c023fd162}{is\+\_\+done} (void) const =0
+\begin{DoxyCompactList}\small\item\em returns whether the given http packet section has been fully parsed \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1parser__iface_a893c1abb768c2884318d7f35d315621b}\label{classnetflex_1_1parsing_1_1parser__iface_a893c1abb768c2884318d7f35d315621b}} 
+\hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \& \hyperlink{classnetflex_1_1parsing_1_1parser__iface_a893c1abb768c2884318d7f35d315621b}{m\+\_\+request}
+\begin{DoxyCompactList}\small\item\em request \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1parser__iface_ae41c581b5cb219fed4cf5fccf27011c3}\label{classnetflex_1_1parsing_1_1parser__iface_ae41c581b5cb219fed4cf5fccf27011c3}} 
+\index{netflex\+::parsing\+::parser\+\_\+iface@{netflex\+::parsing\+::parser\+\_\+iface}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!netflex\+::parsing\+::parser\+\_\+iface@{netflex\+::parsing\+::parser\+\_\+iface}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily virtual \hyperlink{classnetflex_1_1parsing_1_1parser__iface}{parser\+\_\+iface}\& netflex\+::parsing\+::parser\+\_\+iface\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+take data as parameter which is consumed to build the reply every bytes used to build the reply must be removed from the buffer passed as parameter in case of invalid format, an \hyperlink{classnetflex_1_1netflex__error}{netflex\+\_\+error} exception will be raised 
+
+Implemented in \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser_a255c485598692bee975e6db49d8ec13c}{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser}, \hyperlink{classnetflex_1_1parsing_1_1start__line__parser_a663858012ee38e99d0c39444221bf4b5}{netflex\+::parsing\+::start\+\_\+line\+\_\+parser}, \hyperlink{classnetflex_1_1parsing_1_1header__field__parser_acdb399c2199106c99a2fcb4db1fbebca}{netflex\+::parsing\+::header\+\_\+field\+\_\+parser}, \hyperlink{classnetflex_1_1parsing_1_1message__body__parser_adb35dd992073f27e5c85d13453cd3db6}{netflex\+::parsing\+::message\+\_\+body\+\_\+parser}, \hyperlink{classnetflex_1_1parsing_1_1message__body__content__length__parser_a57265653361c2c29919799e2a7346a48}{netflex\+::parsing\+::message\+\_\+body\+\_\+content\+\_\+length\+\_\+parser}, \hyperlink{classnetflex_1_1parsing_1_1message__body__chuncked__parser_ac7a1529423ff3e606f418a6c5853e47d}{netflex\+::parsing\+::message\+\_\+body\+\_\+chuncked\+\_\+parser}, \hyperlink{classnetflex_1_1parsing_1_1message__body__compress__parser_a75fc64c9be07c57fd44028862933387b}{netflex\+::parsing\+::message\+\_\+body\+\_\+compress\+\_\+parser}, \hyperlink{classnetflex_1_1parsing_1_1message__body__deflate__parser_af7ee85cc5edee4e1f6cf34bebccceaa4}{netflex\+::parsing\+::message\+\_\+body\+\_\+deflate\+\_\+parser}, and \hyperlink{classnetflex_1_1parsing_1_1message__body__gzip__parser_a5adc84970912dcd766bb559dff7fe582}{netflex\+::parsing\+::message\+\_\+body\+\_\+gzip\+\_\+parser}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/netflex/parsing/parser\+\_\+iface.\+hpp\end{DoxyCompactItemize}
