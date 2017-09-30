@@ -30,25 +30,60 @@ namespace netflex {
 
 namespace http {
 
+//!
+//! representation of an HTTP header
+//!
 struct header {
-  //! ctors
+  //! default ctor
   header(void) = default;
+
+  //!
+  //! std::string-based ctor
+  //!
+  //! \param field_name header name
+  //! \param field_value header value
+  //!
   header(const std::string& field_name, const std::string& field_value);
+
+  //!
+  //! char*-based ctor
+  //!
+  //! \param field_name header name
+  //! \param field_value header value
+  //!
   header(const std::string& field_name, const char* field_value);
 
+  //!
+  //! to_string-based ctor
+  //!
+  //! \param field_name header name
+  //! \param field_value header value
+  //!
   template <typename T>
   header(const std::string& field_name, T field_value)
   : field_name(field_name)
   , field_value(std::to_string(field_value)) {}
 
-  //! header information
+  //!
+  //! header name
+  //!
   std::string field_name;
+
+  //!
+  //! header value
+  //!
   std::string field_value;
 
-  //! printable string
+  //!
+  //! \return printable string
+  //!
   std::string to_s(void) const;
 };
 
+//!
+//! convenience typedef for list of headers
+//! stored as hashtable
+//!
 typedef std::unordered_map<std::string, std::string> header_list_t;
 
 } // namespace http

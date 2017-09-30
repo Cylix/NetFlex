@@ -28,6 +28,9 @@ namespace netflex {
 
 namespace http {
 
+//!
+//! standard HTTP methods
+//!
 enum class method {
   OPTIONS,
   HEAD,
@@ -41,7 +44,20 @@ enum class method {
   unknown
 };
 
+//!
+//! convert a string to a method enum (case sensitive)
+//!
+//! \param str string to convert
+//! \return conversion
+//!
 method method_from_string(const std::string& str);
+
+//!
+//! convert a method to a string
+//!
+//! \param m method to convert
+//! \return conversion
+//!
 std::string method_to_string(method m);
 
 } // namespace http

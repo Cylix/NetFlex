@@ -31,18 +31,31 @@ namespace netflex {
 
 namespace parsing {
 
+//!
+//! parser for all header fields
+//!
 class header_fields_parser : public parser_iface {
 public:
-  //! ctor & dtor
-  header_fields_parser(http::request& request);
+  //!
+  //! default ctor
+  //!
+  //! \param request request to be initialized
+  //!
+  explicit header_fields_parser(http::request& request);
+
+  //! default dtor
   ~header_fields_parser(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   header_fields_parser(const header_fields_parser&) = delete;
+  //! assignment operator
   header_fields_parser& operator=(const header_fields_parser&) = delete;
 
 private:
+  //!
   //! parsing state
+  //! specify which part of the headers fields is being parsed
+  //!
   enum class state {
     empty_line,
     header_field,
@@ -50,19 +63,48 @@ private:
   };
 
 public:
-  //! parser_iface impl
-  parser_iface& operator<<(std::string&);
+  //!
+  //! consume input data to parse it and init the request
+  //! if not enough data is passed in, this method would need to be called again later
+  //! input data is modified whenever a token is consumed by parsing, even if parsing is incomplete or invalid
+  //! invalid data would lead to a raised exception
+  //!
+  //! \param data input data to be parsed
+  //! \return reference to the current object
+  //!
+  parser_iface& operator<<(std::string& data);
+
+  //!
+  //! \return whether the parsing is done or not
+  //!
   bool is_done(void) const;
 
 private:
-  //! parse headers list
+  //!
+  //! try to fetch the empty line (end of header list)
+  //!
+  //! \param buffer input data
+  //! \return true if empty line is parsed, false otherwise
+  //!
   bool fetch_empty_line(std::string& buffer);
+
+  //!
+  //! parse header
+  //!
+  //! \param buffer input data
+  //! \return true if header is parsed, false otherwise
+  //!
   bool fetch_header(std::string& buffer);
 
 private:
+  //!
   //! current state
+  //!
   state m_state;
+
+  //!
   //! parser
+  //!
   header_field_parser m_parser;
 };
 

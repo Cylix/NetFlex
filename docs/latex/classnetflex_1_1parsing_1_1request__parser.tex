@@ -1,35 +1,104 @@
 \hypertarget{classnetflex_1_1parsing_1_1request__parser}{}\section{netflex\+:\+:parsing\+:\+:request\+\_\+parser Class Reference}
 \label{classnetflex_1_1parsing_1_1request__parser}\index{netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}}
+
+
+{\ttfamily \#include $<$request\+\_\+parser.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a7ab3962c03f01b2be6459adec8d502be}\label{classnetflex_1_1parsing_1_1request__parser_a7ab3962c03f01b2be6459adec8d502be}} 
 \hyperlink{classnetflex_1_1parsing_1_1request__parser_a7ab3962c03f01b2be6459adec8d502be}{request\+\_\+parser} (void)
-\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em default ctor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a69f8693a6fe481f2e3ec5eedf529fdfd}\label{classnetflex_1_1parsing_1_1request__parser_a69f8693a6fe481f2e3ec5eedf529fdfd}} 
+\hyperlink{classnetflex_1_1parsing_1_1request__parser_a69f8693a6fe481f2e3ec5eedf529fdfd}{$\sim$request\+\_\+parser} (void)=default
+\begin{DoxyCompactList}\small\item\em default dtor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_aa47a7676d5e2da63d2d0e5be9bc3d483}\label{classnetflex_1_1parsing_1_1request__parser_aa47a7676d5e2da63d2d0e5be9bc3d483}} 
 \hyperlink{classnetflex_1_1parsing_1_1request__parser_aa47a7676d5e2da63d2d0e5be9bc3d483}{request\+\_\+parser} (const \hyperlink{classnetflex_1_1parsing_1_1request__parser}{request\+\_\+parser} \&)=delete
-\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_ae767b927e82531e4cd8b1581cf9c391b}\label{classnetflex_1_1parsing_1_1request__parser_ae767b927e82531e4cd8b1581cf9c391b}} 
-\hyperlink{classnetflex_1_1parsing_1_1request__parser}{request\+\_\+parser} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1parsing_1_1request__parser}{request\+\_\+parser} \&)=delete
-\item 
-\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a812651cbfdbff54e025fe131563de818}\label{classnetflex_1_1parsing_1_1request__parser_a812651cbfdbff54e025fe131563de818}} 
+\hyperlink{classnetflex_1_1parsing_1_1request__parser}{request\+\_\+parser} \& \hyperlink{classnetflex_1_1parsing_1_1request__parser_ae767b927e82531e4cd8b1581cf9c391b}{operator=} (const \hyperlink{classnetflex_1_1parsing_1_1request__parser}{request\+\_\+parser} \&)=delete
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
 \hyperlink{classnetflex_1_1parsing_1_1request__parser}{request\+\_\+parser} \& \hyperlink{classnetflex_1_1parsing_1_1request__parser_a812651cbfdbff54e025fe131563de818}{operator$<$$<$} (const std\+::string \&data)
-\begin{DoxyCompactList}\small\item\em add data to the parser \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a04e1c01d3e1dfa09df931bfb0c866e07}\label{classnetflex_1_1parsing_1_1request__parser_a04e1c01d3e1dfa09df931bfb0c866e07}} 
+\item 
 void \hyperlink{classnetflex_1_1parsing_1_1request__parser_a04e1c01d3e1dfa09df931bfb0c866e07}{operator$>$$>$} (\hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&request)
-\begin{DoxyCompactList}\small\item\em get request \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a922495ec5c2ac20be2f8495ec1b06217}\label{classnetflex_1_1parsing_1_1request__parser_a922495ec5c2ac20be2f8495ec1b06217}} 
-const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \& {\bfseries get\+\_\+front} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_abd61692d9c98b6d02733afcd9b5fe5ce}\label{classnetflex_1_1parsing_1_1request__parser_abd61692d9c98b6d02733afcd9b5fe5ce}} 
-void {\bfseries pop\+\_\+front} (void)
+const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \& \hyperlink{classnetflex_1_1parsing_1_1request__parser_a922495ec5c2ac20be2f8495ec1b06217}{get\+\_\+front} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a7ca420f9a3451b2e631fa5f3394f096a}\label{classnetflex_1_1parsing_1_1request__parser_a7ca420f9a3451b2e631fa5f3394f096a}} 
+void \hyperlink{classnetflex_1_1parsing_1_1request__parser_abd61692d9c98b6d02733afcd9b5fe5ce}{pop\+\_\+front} (void)
+\item 
 const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \& \hyperlink{classnetflex_1_1parsing_1_1request__parser_a7ca420f9a3451b2e631fa5f3394f096a}{get\+\_\+currently\+\_\+parsed\+\_\+request} (void) const
-\begin{DoxyCompactList}\small\item\em get incomplete request currently being parsed \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_aa0918393e460b72dec336ee75db7e2eb}\label{classnetflex_1_1parsing_1_1request__parser_aa0918393e460b72dec336ee75db7e2eb}} 
+\item 
 bool \hyperlink{classnetflex_1_1parsing_1_1request__parser_aa0918393e460b72dec336ee75db7e2eb}{request\+\_\+available} (void) const
-\begin{DoxyCompactList}\small\item\em returns whether a request is available \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+request parser connect all parsers between each other and make sure the right order is followed can handle multiple requests 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a7ca420f9a3451b2e631fa5f3394f096a}\label{classnetflex_1_1parsing_1_1request__parser_a7ca420f9a3451b2e631fa5f3394f096a}} 
+\index{netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}!get\+\_\+currently\+\_\+parsed\+\_\+request@{get\+\_\+currently\+\_\+parsed\+\_\+request}}
+\index{get\+\_\+currently\+\_\+parsed\+\_\+request@{get\+\_\+currently\+\_\+parsed\+\_\+request}!netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}}
+\subsubsection{\texorpdfstring{get\+\_\+currently\+\_\+parsed\+\_\+request()}{get\_currently\_parsed\_request()}}
+{\footnotesize\ttfamily const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request}\& netflex\+::parsing\+::request\+\_\+parser\+::get\+\_\+currently\+\_\+parsed\+\_\+request (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+incomplete request currently being parsed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a922495ec5c2ac20be2f8495ec1b06217}\label{classnetflex_1_1parsing_1_1request__parser_a922495ec5c2ac20be2f8495ec1b06217}} 
+\index{netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}!get\+\_\+front@{get\+\_\+front}}
+\index{get\+\_\+front@{get\+\_\+front}!netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}}
+\subsubsection{\texorpdfstring{get\+\_\+front()}{get\_front()}}
+{\footnotesize\ttfamily const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request}\& netflex\+::parsing\+::request\+\_\+parser\+::get\+\_\+front (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+the first available request. Throws if no request is available 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a812651cbfdbff54e025fe131563de818}\label{classnetflex_1_1parsing_1_1request__parser_a812651cbfdbff54e025fe131563de818}} 
+\index{netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \hyperlink{classnetflex_1_1parsing_1_1request__parser}{request\+\_\+parser}\& netflex\+::parsing\+::request\+\_\+parser\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})}
+
+add data to the parser. This data will be used for parsing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & data to feed the parser \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the current object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_a04e1c01d3e1dfa09df931bfb0c866e07}\label{classnetflex_1_1parsing_1_1request__parser_a04e1c01d3e1dfa09df931bfb0c866e07}} 
+\index{netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}}
+\subsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily void netflex\+::parsing\+::request\+\_\+parser\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&}]{request }\end{DoxyParamCaption})}
+
+same as get\+\_\+front
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & object where to store the request \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_abd61692d9c98b6d02733afcd9b5fe5ce}\label{classnetflex_1_1parsing_1_1request__parser_abd61692d9c98b6d02733afcd9b5fe5ce}} 
+\index{netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}!pop\+\_\+front@{pop\+\_\+front}}
+\index{pop\+\_\+front@{pop\+\_\+front}!netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}}
+\subsubsection{\texorpdfstring{pop\+\_\+front()}{pop\_front()}}
+{\footnotesize\ttfamily void netflex\+::parsing\+::request\+\_\+parser\+::pop\+\_\+front (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+remove the first available request. Throws if no request is available \mbox{\Hypertarget{classnetflex_1_1parsing_1_1request__parser_aa0918393e460b72dec336ee75db7e2eb}\label{classnetflex_1_1parsing_1_1request__parser_aa0918393e460b72dec336ee75db7e2eb}} 
+\index{netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}!request\+\_\+available@{request\+\_\+available}}
+\index{request\+\_\+available@{request\+\_\+available}!netflex\+::parsing\+::request\+\_\+parser@{netflex\+::parsing\+::request\+\_\+parser}}
+\subsubsection{\texorpdfstring{request\+\_\+available()}{request\_available()}}
+{\footnotesize\ttfamily bool netflex\+::parsing\+::request\+\_\+parser\+::request\+\_\+available (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+whether a request is available 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

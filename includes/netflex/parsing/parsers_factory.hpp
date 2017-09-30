@@ -29,17 +29,33 @@ namespace netflex {
 
 namespace parsing {
 
+//!
 //! different http packet parsing stages
+//! high level breakdown
+//!
 enum class parsing_stage {
   start_line,
   header_fields,
   message_body
 };
 
+//!
 //! create the parser corresponding to the given stage
+//!
+//! \param stage current stage
+//! \param request request to be initialized
+//! \return appropriate parser
+//!
 std::unique_ptr<parser_iface> create_parser(parsing_stage stage, http::request& request);
+
+//!
 //! switch to the next parsing stage *or go back to initial one if last stage already reached
 //! and return the parser corresponding to that next stage
+//!
+//! \param stage current stage (will be set to the next one)
+//! \param request request to be initialized
+//! \return appropriate parser
+//!
 std::unique_ptr<parser_iface> switch_to_next_stage(parsing_stage& stage, http::request& request);
 
 } // namespace parsing

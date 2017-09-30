@@ -73,36 +73,154 @@ $(function() {
 <div class="title">netflex::routing::route Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="route_8hpp_source.html">route.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a5af1479be27de20f7c395bf2fb0f3639"><td class="memItemLeft" align="right" valign="top"><a id="a5af1479be27de20f7c395bf2fb0f3639"></a>
-typedef std::function&lt; void(const <a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;, <a class="el" href="classnetflex_1_1http_1_1response.html">http::response</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a5af1479be27de20f7c395bf2fb0f3639">route_callback_t</a></td></tr>
-<tr class="memdesc:a5af1479be27de20f7c395bf2fb0f3639"><td class="mdescLeft">&#160;</td><td class="mdescRight">callback associated to the route <br /></td></tr>
+<tr class="memitem:a5af1479be27de20f7c395bf2fb0f3639"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(const <a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;, <a class="el" href="classnetflex_1_1http_1_1response.html">http::response</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a5af1479be27de20f7c395bf2fb0f3639">route_callback_t</a></td></tr>
 <tr class="separator:a5af1479be27de20f7c395bf2fb0f3639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a15868bae2313eaf230380fbb6266a153"><td class="memItemLeft" align="right" valign="top"><a id="a15868bae2313eaf230380fbb6266a153"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a15868bae2313eaf230380fbb6266a153">route</a> (http::method m, const std::string &amp;path, const <a class="el" href="classnetflex_1_1routing_1_1route.html#a5af1479be27de20f7c395bf2fb0f3639">route_callback_t</a> &amp;callback)</td></tr>
-<tr class="memdesc:a15868bae2313eaf230380fbb6266a153"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctor &amp; dtor <br /></td></tr>
+<tr class="memitem:a15868bae2313eaf230380fbb6266a153"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a15868bae2313eaf230380fbb6266a153">route</a> (http::method m, const std::string &amp;path, const <a class="el" href="classnetflex_1_1routing_1_1route.html#a5af1479be27de20f7c395bf2fb0f3639">route_callback_t</a> &amp;callback)</td></tr>
 <tr class="separator:a15868bae2313eaf230380fbb6266a153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e68b4ef51fecfe72e80f068d79ec360"><td class="memItemLeft" align="right" valign="top"><a id="a0e68b4ef51fecfe72e80f068d79ec360"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a0e68b4ef51fecfe72e80f068d79ec360">~route</a> (void)=default</td></tr>
+<tr class="memdesc:a0e68b4ef51fecfe72e80f068d79ec360"><td class="mdescLeft">&#160;</td><td class="mdescRight">default dtor <br /></td></tr>
+<tr class="separator:a0e68b4ef51fecfe72e80f068d79ec360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb3c4755a0dc9b5385ac54a0ef75a4f4"><td class="memItemLeft" align="right" valign="top"><a id="acb3c4755a0dc9b5385ac54a0ef75a4f4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#acb3c4755a0dc9b5385ac54a0ef75a4f4">route</a> (const <a class="el" href="classnetflex_1_1routing_1_1route.html">route</a> &amp;)=default</td></tr>
-<tr class="memdesc:acb3c4755a0dc9b5385ac54a0ef75a4f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor &amp; assignment operator <br /></td></tr>
+<tr class="memdesc:acb3c4755a0dc9b5385ac54a0ef75a4f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor <br /></td></tr>
 <tr class="separator:acb3c4755a0dc9b5385ac54a0ef75a4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c7f2bfd6148ef3d2137f01150cbdeef"><td class="memItemLeft" align="right" valign="top"><a id="a4c7f2bfd6148ef3d2137f01150cbdeef"></a>
-<a class="el" href="classnetflex_1_1routing_1_1route.html">route</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classnetflex_1_1routing_1_1route.html">route</a> &amp;)=default</td></tr>
+<a class="el" href="classnetflex_1_1routing_1_1route.html">route</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a4c7f2bfd6148ef3d2137f01150cbdeef">operator=</a> (const <a class="el" href="classnetflex_1_1routing_1_1route.html">route</a> &amp;)=default</td></tr>
+<tr class="memdesc:a4c7f2bfd6148ef3d2137f01150cbdeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator <br /></td></tr>
 <tr class="separator:a4c7f2bfd6148ef3d2137f01150cbdeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c02cde61aeaae8fc15ea3fc316e9bee"><td class="memItemLeft" align="right" valign="top"><a id="a2c02cde61aeaae8fc15ea3fc316e9bee"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a2c02cde61aeaae8fc15ea3fc316e9bee">match</a> (<a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;request) const</td></tr>
-<tr class="memdesc:a2c02cde61aeaae8fc15ea3fc316e9bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">matching <br /></td></tr>
+<tr class="memitem:a2c02cde61aeaae8fc15ea3fc316e9bee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a2c02cde61aeaae8fc15ea3fc316e9bee">match</a> (<a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;request) const</td></tr>
 <tr class="separator:a2c02cde61aeaae8fc15ea3fc316e9bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e6f2e7560002a10c1f037a560516666"><td class="memItemLeft" align="right" valign="top"><a id="a1e6f2e7560002a10c1f037a560516666"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a1e6f2e7560002a10c1f037a560516666">dispatch</a> (const <a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;, <a class="el" href="classnetflex_1_1http_1_1response.html">http::response</a> &amp;) const</td></tr>
-<tr class="memdesc:a1e6f2e7560002a10c1f037a560516666"><td class="mdescLeft">&#160;</td><td class="mdescRight">dispatch <br /></td></tr>
-<tr class="separator:a1e6f2e7560002a10c1f037a560516666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f36c264c33c928298900e217291bc5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1route.html#a7f36c264c33c928298900e217291bc5c">dispatch</a> (const <a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;request, <a class="el" href="classnetflex_1_1http_1_1response.html">http::response</a> &amp;response) const</td></tr>
+<tr class="separator:a7f36c264c33c928298900e217291bc5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>define a route for the server specify path, method and callback to be called path can be regex and contains params (like /articles/:id) </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a5af1479be27de20f7c395bf2fb0f3639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5af1479be27de20f7c395bf2fb0f3639">&#9670;&nbsp;</a></span>route_callback_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;void(const <a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a>&amp;, <a class="el" href="classnetflex_1_1http_1_1response.html">http::response</a>&amp;)&gt; <a class="el" href="classnetflex_1_1routing_1_1route.html#a5af1479be27de20f7c395bf2fb0f3639">netflex::routing::route::route_callback_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>callback associated to the route, to be called on dispatch in case of match takes as parameter the request (const) and the response (to be modified) </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a15868bae2313eaf230380fbb6266a153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15868bae2313eaf230380fbb6266a153">&#9670;&nbsp;</a></span>route()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">netflex::routing::route::route </td>
+          <td>(</td>
+          <td class="paramtype">http::method&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classnetflex_1_1routing_1_1route.html#a5af1479be27de20f7c395bf2fb0f3639">route_callback_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>ctor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>HTTP verb of the route </td></tr>
+    <tr><td class="paramname">path</td><td>path of the route </td></tr>
+    <tr><td class="paramname">callback</td><td>callback to be called on dispatch in case of match </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7f36c264c33c928298900e217291bc5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f36c264c33c928298900e217291bc5c">&#9670;&nbsp;</a></span>dispatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::routing::route::dispatch </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnetflex_1_1http_1_1response.html">http::response</a> &amp;&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>dispatch the request (and the response) to the pre-defined route callback</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>the http request </td></tr>
+    <tr><td class="paramname">response</td><td>the http response to return to the client </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2c02cde61aeaae8fc15ea3fc316e9bee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c02cde61aeaae8fc15ea3fc316e9bee">&#9670;&nbsp;</a></span>match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool netflex::routing::route::match </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;&#160;</td>
+          <td class="paramname"><em>request</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>match the given http request with the underlying route to check if the requested route is this one</p>
+<dl class="section return"><dt>Returns</dt><dd>true if match, false otherwise </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/netflex/routing/<a class="el" href="route_8hpp_source.html">route.hpp</a></li>
 </ul>

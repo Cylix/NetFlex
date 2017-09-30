@@ -72,61 +72,320 @@ $(function() {
 <div class="title">netflex::http::response Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="response_8hpp_source.html">response.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a73aab521e1e08f804a58fd79b562f0bc"><td class="memItemLeft" align="right" valign="top"><a id="a73aab521e1e08f804a58fd79b562f0bc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a73aab521e1e08f804a58fd79b562f0bc">response</a> (void)</td></tr>
-<tr class="memdesc:a73aab521e1e08f804a58fd79b562f0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctor &amp; dtor <br /></td></tr>
+<tr class="memdesc:a73aab521e1e08f804a58fd79b562f0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">default ctor <br /></td></tr>
 <tr class="separator:a73aab521e1e08f804a58fd79b562f0bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27993dd9909d70007f01d5cab50490b4"><td class="memItemLeft" align="right" valign="top"><a id="a27993dd9909d70007f01d5cab50490b4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a27993dd9909d70007f01d5cab50490b4">~response</a> (void)=default</td></tr>
+<tr class="memdesc:a27993dd9909d70007f01d5cab50490b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">default dtor <br /></td></tr>
+<tr class="separator:a27993dd9909d70007f01d5cab50490b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b45f99380312143e915f6e820ec8cec"><td class="memItemLeft" align="right" valign="top"><a id="a3b45f99380312143e915f6e820ec8cec"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a3b45f99380312143e915f6e820ec8cec">response</a> (const <a class="el" href="classnetflex_1_1http_1_1response.html">response</a> &amp;)=default</td></tr>
-<tr class="memdesc:a3b45f99380312143e915f6e820ec8cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor &amp; assignment operator <br /></td></tr>
+<tr class="memdesc:a3b45f99380312143e915f6e820ec8cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor <br /></td></tr>
 <tr class="separator:a3b45f99380312143e915f6e820ec8cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ebb5c421d490002b7a441d3be9b9c09"><td class="memItemLeft" align="right" valign="top"><a id="a9ebb5c421d490002b7a441d3be9b9c09"></a>
-<a class="el" href="classnetflex_1_1http_1_1response.html">response</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classnetflex_1_1http_1_1response.html">response</a> &amp;)=default</td></tr>
+<a class="el" href="classnetflex_1_1http_1_1response.html">response</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a9ebb5c421d490002b7a441d3be9b9c09">operator=</a> (const <a class="el" href="classnetflex_1_1http_1_1response.html">response</a> &amp;)=default</td></tr>
+<tr class="memdesc:a9ebb5c421d490002b7a441d3be9b9c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator <br /></td></tr>
 <tr class="separator:a9ebb5c421d490002b7a441d3be9b9c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f6462ae67d321210e3acba1cbc91674"><td class="memItemLeft" align="right" valign="top"><a id="a1f6462ae67d321210e3acba1cbc91674"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a1f6462ae67d321210e3acba1cbc91674">get_http_version</a> (void) const</td></tr>
-<tr class="memdesc:a1f6462ae67d321210e3acba1cbc91674"><td class="mdescLeft">&#160;</td><td class="mdescRight">status line <br /></td></tr>
+<tr class="memitem:a1f6462ae67d321210e3acba1cbc91674"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a1f6462ae67d321210e3acba1cbc91674">get_http_version</a> (void) const</td></tr>
 <tr class="separator:a1f6462ae67d321210e3acba1cbc91674"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bd6c8c90f81524c4facecb5c100d753"><td class="memItemLeft" align="right" valign="top"><a id="a3bd6c8c90f81524c4facecb5c100d753"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>get_status_code</b> (void) const</td></tr>
+<tr class="memitem:a3bd6c8c90f81524c4facecb5c100d753"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a3bd6c8c90f81524c4facecb5c100d753">get_status_code</a> (void) const</td></tr>
 <tr class="separator:a3bd6c8c90f81524c4facecb5c100d753"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c09893bbf3974704fbe594f63cecdb4"><td class="memItemLeft" align="right" valign="top"><a id="a3c09893bbf3974704fbe594f63cecdb4"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_reason_phase</b> (void) const</td></tr>
+<tr class="memitem:a3c09893bbf3974704fbe594f63cecdb4"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a3c09893bbf3974704fbe594f63cecdb4">get_reason_phase</a> (void) const</td></tr>
 <tr class="separator:a3c09893bbf3974704fbe594f63cecdb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af183e759ed09bb71eb838fa69fa0c1bf"><td class="memItemLeft" align="right" valign="top"><a id="af183e759ed09bb71eb838fa69fa0c1bf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_http_version</b> (const std::string &amp;version)</td></tr>
+<tr class="memitem:af183e759ed09bb71eb838fa69fa0c1bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#af183e759ed09bb71eb838fa69fa0c1bf">set_http_version</a> (const std::string &amp;version)</td></tr>
 <tr class="separator:af183e759ed09bb71eb838fa69fa0c1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aead942bd679932d47047cf0cd9298e"><td class="memItemLeft" align="right" valign="top"><a id="a8aead942bd679932d47047cf0cd9298e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_status_code</b> (unsigned int code)</td></tr>
+<tr class="memitem:a8aead942bd679932d47047cf0cd9298e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a8aead942bd679932d47047cf0cd9298e">set_status_code</a> (unsigned int code)</td></tr>
 <tr class="separator:a8aead942bd679932d47047cf0cd9298e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd5b17d8d4291f17351a8e6182a0a073"><td class="memItemLeft" align="right" valign="top"><a id="abd5b17d8d4291f17351a8e6182a0a073"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_reason_phrase</b> (const std::string &amp;reason)</td></tr>
+<tr class="memitem:abd5b17d8d4291f17351a8e6182a0a073"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#abd5b17d8d4291f17351a8e6182a0a073">set_reason_phrase</a> (const std::string &amp;reason)</td></tr>
 <tr class="separator:abd5b17d8d4291f17351a8e6182a0a073"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee706c42e2d04c91a5332b90f9741237"><td class="memItemLeft" align="right" valign="top"><a id="aee706c42e2d04c91a5332b90f9741237"></a>
-const header_list_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#aee706c42e2d04c91a5332b90f9741237">get_headers</a> (void) const</td></tr>
-<tr class="memdesc:aee706c42e2d04c91a5332b90f9741237"><td class="mdescLeft">&#160;</td><td class="mdescRight">headers <br /></td></tr>
+<tr class="memitem:aee706c42e2d04c91a5332b90f9741237"><td class="memItemLeft" align="right" valign="top">const header_list_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#aee706c42e2d04c91a5332b90f9741237">get_headers</a> (void) const</td></tr>
 <tr class="separator:aee706c42e2d04c91a5332b90f9741237"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6b96db147ca22d2c3f5fe9b399b6cdb"><td class="memItemLeft" align="right" valign="top"><a id="ae6b96db147ca22d2c3f5fe9b399b6cdb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_header</b> (const <a class="el" href="structnetflex_1_1http_1_1header.html">header</a> &amp;<a class="el" href="structnetflex_1_1http_1_1header.html">header</a>)</td></tr>
+<tr class="memitem:ae6b96db147ca22d2c3f5fe9b399b6cdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#ae6b96db147ca22d2c3f5fe9b399b6cdb">add_header</a> (const <a class="el" href="structnetflex_1_1http_1_1header.html">header</a> &amp;<a class="el" href="structnetflex_1_1http_1_1header.html">header</a>)</td></tr>
 <tr class="separator:ae6b96db147ca22d2c3f5fe9b399b6cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1e5a84c152c64b17bf029d94a551635"><td class="memItemLeft" align="right" valign="top"><a id="af1e5a84c152c64b17bf029d94a551635"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_headers</b> (const header_list_t &amp;headers)</td></tr>
+<tr class="memitem:af1e5a84c152c64b17bf029d94a551635"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#af1e5a84c152c64b17bf029d94a551635">set_headers</a> (const header_list_t &amp;headers)</td></tr>
 <tr class="separator:af1e5a84c152c64b17bf029d94a551635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13222bdab2d580652cec32177fbfaa0e"><td class="memItemLeft" align="right" valign="top"><a id="a13222bdab2d580652cec32177fbfaa0e"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a13222bdab2d580652cec32177fbfaa0e">get_body</a> (void) const</td></tr>
-<tr class="memdesc:a13222bdab2d580652cec32177fbfaa0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">body <br /></td></tr>
+<tr class="memitem:a13222bdab2d580652cec32177fbfaa0e"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a13222bdab2d580652cec32177fbfaa0e">get_body</a> (void) const</td></tr>
 <tr class="separator:a13222bdab2d580652cec32177fbfaa0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc5c33e406d082e71d9803433136a685"><td class="memItemLeft" align="right" valign="top"><a id="adc5c33e406d082e71d9803433136a685"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_body</b> (const std::string &amp;body)</td></tr>
+<tr class="memitem:adc5c33e406d082e71d9803433136a685"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#adc5c33e406d082e71d9803433136a685">set_body</a> (const std::string &amp;body)</td></tr>
 <tr class="separator:adc5c33e406d082e71d9803433136a685"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e6e4e483bee30dacbe6b6685201ddd0"><td class="memItemLeft" align="right" valign="top"><a id="a5e6e4e483bee30dacbe6b6685201ddd0"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a5e6e4e483bee30dacbe6b6685201ddd0">to_http_packet</a> (void) const</td></tr>
-<tr class="memdesc:a5e6e4e483bee30dacbe6b6685201ddd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert response to http packet <br /></td></tr>
+<tr class="memitem:a5e6e4e483bee30dacbe6b6685201ddd0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1response.html#a5e6e4e483bee30dacbe6b6685201ddd0">to_http_packet</a> (void) const</td></tr>
 <tr class="separator:a5e6e4e483bee30dacbe6b6685201ddd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>http response representation contains all information related to the http response to be sent </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae6b96db147ca22d2c3f5fe9b399b6cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6b96db147ca22d2c3f5fe9b399b6cdb">&#9670;&nbsp;</a></span>add_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::response::add_header </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structnetflex_1_1http_1_1header.html">header</a> &amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>add a header to the headers list to be returned to the client if the header already exists, override it</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>header to be added </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a13222bdab2d580652cec32177fbfaa0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13222bdab2d580652cec32177fbfaa0e">&#9670;&nbsp;</a></span>get_body()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::response::get_body </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>response body </dd></dl>
+
+</div>
+</div>
+<a id="aee706c42e2d04c91a5332b90f9741237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee706c42e2d04c91a5332b90f9741237">&#9670;&nbsp;</a></span>get_headers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const header_list_t&amp; netflex::http::response::get_headers </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>headers list of the http response </dd></dl>
+
+</div>
+</div>
+<a id="a1f6462ae67d321210e3acba1cbc91674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f6462ae67d321210e3acba1cbc91674">&#9670;&nbsp;</a></span>get_http_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::response::get_http_version </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>http version </dd></dl>
+
+</div>
+</div>
+<a id="a3c09893bbf3974704fbe594f63cecdb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c09893bbf3974704fbe594f63cecdb4">&#9670;&nbsp;</a></span>get_reason_phase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::response::get_reason_phase </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>reason phrase for status code </dd></dl>
+
+</div>
+</div>
+<a id="a3bd6c8c90f81524c4facecb5c100d753"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bd6c8c90f81524c4facecb5c100d753">&#9670;&nbsp;</a></span>get_status_code()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int netflex::http::response::get_status_code </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>status code </dd></dl>
+
+</div>
+</div>
+<a id="adc5c33e406d082e71d9803433136a685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc5c33e406d082e71d9803433136a685">&#9670;&nbsp;</a></span>set_body()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::response::set_body </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set response body to be returned to the client</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">body</td><td>new body to be returned </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af1e5a84c152c64b17bf029d94a551635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1e5a84c152c64b17bf029d94a551635">&#9670;&nbsp;</a></span>set_headers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::response::set_headers </td>
+          <td>(</td>
+          <td class="paramtype">const header_list_t &amp;&#160;</td>
+          <td class="paramname"><em>headers</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set a headers list to be used for the http response</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">headers</td><td>headers list for http response </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af183e759ed09bb71eb838fa69fa0c1bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af183e759ed09bb71eb838fa69fa0c1bf">&#9670;&nbsp;</a></span>set_http_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::response::set_http_version </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>version</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set the http version used for the response</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">version</td><td>http version </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abd5b17d8d4291f17351a8e6182a0a073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5b17d8d4291f17351a8e6182a0a073">&#9670;&nbsp;</a></span>set_reason_phrase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::response::set_reason_phrase </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>reason</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set reason phrase</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reason</td><td>reason phrase to return to the client </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8aead942bd679932d47047cf0cd9298e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aead942bd679932d47047cf0cd9298e">&#9670;&nbsp;</a></span>set_status_code()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::response::set_status_code </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set response status code</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>status code to return to the client </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5e6e4e483bee30dacbe6b6685201ddd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6e4e483bee30dacbe6b6685201ddd0">&#9670;&nbsp;</a></span>to_http_packet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string netflex::http::response::to_http_packet </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>convert response to http packet</p>
+<dl class="section return"><dt>Returns</dt><dd>conversion </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/netflex/http/<a class="el" href="response_8hpp_source.html">response.hpp</a></li>
 </ul>

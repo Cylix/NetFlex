@@ -28,30 +28,57 @@ namespace netflex {
 
 namespace parsing {
 
+//!
 //! HTTP Start Line
 //! https://tools.ietf.org/html/rfc7230#section-3.1
 //!
 //! start-line     = request-line / status-line
 //! request-line   = method SP request-target SP HTTP-version CRLF
 //! method         = token
+//!
 
+//!
+//! start line parser
+//!
 class start_line_parser : public parser_iface {
 public:
-  //! ctor & dtor
-  start_line_parser(http::request& request);
+  //!
+  //! default ctor
+  //!
+  //! \param request request to be initialized
+  //!
+  explicit start_line_parser(http::request& request);
+
+  //! default dtor
   ~start_line_parser(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   start_line_parser(const start_line_parser&) = delete;
+  //! assignment operator
   start_line_parser& operator=(const start_line_parser&) = delete;
 
 public:
-  //! parser_iface impl
-  parser_iface& operator<<(std::string&);
+  //!
+  //! consume input data to parse it and init the request
+  //! if not enough data is passed in, this method would need to be called again later
+  //! input data is modified whenever a token is consumed by parsing, even if parsing is incomplete or invalid
+  //! invalid data would lead to a raised exception
+  //!
+  //! \param data input data to be parsed
+  //! \return reference to the current object
+  //!
+  parser_iface& operator<<(std::string& data);
+
+  //!
+  //! \return whether the parsing is done or not
+  //!
   bool is_done(void) const;
 
 private:
+  //!
   //! parsing state
+  //! specify which part of the start-line is being parsed
+  //!
   enum class state {
     method,
     target,
@@ -61,20 +88,62 @@ private:
   };
 
 private:
-  //! retrieve start line information
+  //!
+  //! parse method
+  //!
+  //! \param buffer input data
+  //! \return whether the method has been parsed or not
+  //!
   bool fetch_method(std::string& buffer);
+
+  //!
+  //! parse target
+  //!
+  //! \param buffer input data
+  //! \return whether the target has been parsed or not
+  //!
   bool fetch_target(std::string& buffer);
+
+  //!
+  //! parse http version
+  //!
+  //! \param buffer input data
+  //! \return whether the http version has been parsed or not
+  //!
   bool fetch_http_version(std::string& buffer);
+
+  //!
+  //! parse the trailing characters (basically clear buffer)
+  //!
+  //! \param buffer input data
+  //! \return whether the trailing characters have been fully parsed or not
+  //!
   bool fetch_trailing(std::string& buffer);
 
 private:
-  //! information retrieved
+  //!
+  //! parsed method
+  //!
   std::string m_method;
+
+  //!
+  //! parsed target
+  //!
   std::string m_target;
+
+  //!
+  //! parsed http version
+  //!
   std::string m_http_version;
+
+  //!
   //! keep track of last whitespace character erased in fetch trailing
+  //!
   char m_last_consumed_whitespace;
+
+  //!
   //! current state
+  //!
   state m_state;
 };
 

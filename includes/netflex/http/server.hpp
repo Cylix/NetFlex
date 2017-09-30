@@ -36,56 +36,157 @@ namespace netflex {
 
 namespace http {
 
+//!
+//! http server itself
+//! listen for incoming connection, detect requests, parse them and dispatch them before sending the appropriate responses
+//!
 class server {
 public:
-  //! ctor & dtor
+  //! default ctor
   server(void);
+  //! default dtor
   ~server(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   server(const server&) = delete;
+  //! assignment operator
   server& operator=(const server&) = delete;
 
 public:
-  //! add routes to the server
+  //!
+  //! add route to the server
+  //!
+  //! \param route route to be added
+  //! \return reference to the current object
+  //!
   server& add_route(const routing::route& route);
+
+  //!
+  //! add multiple routes to the server
+  //!
+  //! \param routes routes to be added
+  //! \return reference to the current object
+  //!
   server& add_routes(const std::vector<routing::route>& routes);
+
+  //!
+  //! set routes for the server
+  //!
+  //! \param routes routes to be set
+  //! \return reference to the current object
+  //!
   server& set_route(const std::vector<routing::route>& routes);
 
 public:
-  //! add middlewares
+  //!
+  //! add middleware to the server
+  //! added middleware is added at the highest level (on top of all the previously added middleware)
+  //! this mean that the added middleware will be the last to be executed
+  //!
+  //! \param middleware middleware to be added
+  //! \return reference to the current object
+  //!
   server& add_middleware(const routing::middleware_t& middleware);
+
+  //!
+  //! add multiple middlewares to the server
+  //! added middlewares are added at the highest level (on top of all the previously added middleware)
+  //! this mean that the added middlewares will be the last to be executed
+  //! middleares should be ranged from the lowest to the highest level
+  //!
+  //! \param middlewares middlewares to be added
+  //! \return reference to the current object
+  //!
   server& add_middlewares(const std::list<routing::middleware_t>& middlewares);
+
+  //!
+  //! set middlewares for the server
+  //! middleares should be ranged from the lowest to the highest level
+  //!
+  //! \param middlewares middlewares to be added
+  //! \return reference to the current object
+  //!
   server& set_middlewares(const std::list<routing::middleware_t>& middlewares);
 
 public:
-  //! start & stop the server
+  //!
+  //! start the server at the given host and port
+  //!
+  //! \param host host to bind
+  //! \param port port to bind
+  //!
   void start(const std::string& host = "0.0.0.0", unsigned int port = 3000);
+
+  //!
+  //! stop the server
+  //!
   void stop(void);
 
-  //! returns whether the server is currently running or not
+  //!
+  //! \return whether the server is currently running or not
+  //!
   bool is_running(void) const;
 
 private:
+  //!
   //! tacopie::tcp_server callback
+  //! called whenever the tcp server receives a new connection
+  //!
+  //! \return whether the server takes charge of the management of the connection or not (always true in our case)
+  //!
   bool on_connection_received(const std::shared_ptr<tacopie::tcp_client>& client);
 
-  //! client callback
+  //!
+  //! convenience typedef
+  //!
   typedef std::list<client>::iterator client_iterator_t;
+
+  //!
+  //! client callback
+  //! called whenever a client receives a new http request (valid or invalid)
+  //!
+  //! \param success whether the received request is valid or not
+  //! \param request the received request
+  //! \param client iterator to the client in m_clients that trigerred the callback
+  //!
   void on_http_request_received(bool success, request& request, client_iterator_t client);
+
+  //!
+  //! client callback
+  //! called whenever a client disconnected from the server
+  //!
+  //! \param client iterator to the client in m_clients that trigerred the callback
+  //!
   void on_client_disconnected(client_iterator_t client);
 
-  //! dispatch
+  //!
+  //! dispatch the request and its response by using the specified middleware chain
+  //!
+  //! \param chain chain of middlewares to be executed
+  //! \param request received http request
+  //! \param response response to be sent
+  //!
   void dispatch(routing::middleware_chain& chain, http::request& request, http::response& response);
 
 private:
+  //!
   //! underlying tcp server
+  //!
   tacopie::tcp_server m_tcp_server;
+
+  //!
   //! server routes
+  //!
   std::vector<routing::route> m_routes;
+
+  //!
   //! server middlewares
+  //!
   std::list<routing::middleware_t> m_middlewares;
+
+  //!
   //! clients
+  //!
   std::list<client> m_clients;
 };
 

@@ -1,29 +1,93 @@
 \hypertarget{classnetflex_1_1routing_1_1route}{}\section{netflex\+:\+:routing\+:\+:route Class Reference}
 \label{classnetflex_1_1routing_1_1route}\index{netflex\+::routing\+::route@{netflex\+::routing\+::route}}
+
+
+{\ttfamily \#include $<$route.\+hpp$>$}
+
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a5af1479be27de20f7c395bf2fb0f3639}\label{classnetflex_1_1routing_1_1route_a5af1479be27de20f7c395bf2fb0f3639}} 
 typedef std\+::function$<$ void(const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&, \hyperlink{classnetflex_1_1http_1_1response}{http\+::response} \&)$>$ \hyperlink{classnetflex_1_1routing_1_1route_a5af1479be27de20f7c395bf2fb0f3639}{route\+\_\+callback\+\_\+t}
-\begin{DoxyCompactList}\small\item\em callback associated to the route \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a15868bae2313eaf230380fbb6266a153}\label{classnetflex_1_1routing_1_1route_a15868bae2313eaf230380fbb6266a153}} 
 \hyperlink{classnetflex_1_1routing_1_1route_a15868bae2313eaf230380fbb6266a153}{route} (http\+::method m, const std\+::string \&path, const \hyperlink{classnetflex_1_1routing_1_1route_a5af1479be27de20f7c395bf2fb0f3639}{route\+\_\+callback\+\_\+t} \&callback)
-\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\item 
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a0e68b4ef51fecfe72e80f068d79ec360}\label{classnetflex_1_1routing_1_1route_a0e68b4ef51fecfe72e80f068d79ec360}} 
+\hyperlink{classnetflex_1_1routing_1_1route_a0e68b4ef51fecfe72e80f068d79ec360}{$\sim$route} (void)=default
+\begin{DoxyCompactList}\small\item\em default dtor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1routing_1_1route_acb3c4755a0dc9b5385ac54a0ef75a4f4}\label{classnetflex_1_1routing_1_1route_acb3c4755a0dc9b5385ac54a0ef75a4f4}} 
 \hyperlink{classnetflex_1_1routing_1_1route_acb3c4755a0dc9b5385ac54a0ef75a4f4}{route} (const \hyperlink{classnetflex_1_1routing_1_1route}{route} \&)=default
-\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a4c7f2bfd6148ef3d2137f01150cbdeef}\label{classnetflex_1_1routing_1_1route_a4c7f2bfd6148ef3d2137f01150cbdeef}} 
-\hyperlink{classnetflex_1_1routing_1_1route}{route} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1routing_1_1route}{route} \&)=default
-\item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a2c02cde61aeaae8fc15ea3fc316e9bee}\label{classnetflex_1_1routing_1_1route_a2c02cde61aeaae8fc15ea3fc316e9bee}} 
+\hyperlink{classnetflex_1_1routing_1_1route}{route} \& \hyperlink{classnetflex_1_1routing_1_1route_a4c7f2bfd6148ef3d2137f01150cbdeef}{operator=} (const \hyperlink{classnetflex_1_1routing_1_1route}{route} \&)=default
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
 bool \hyperlink{classnetflex_1_1routing_1_1route_a2c02cde61aeaae8fc15ea3fc316e9bee}{match} (\hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&request) const
-\begin{DoxyCompactList}\small\item\em matching \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a1e6f2e7560002a10c1f037a560516666}\label{classnetflex_1_1routing_1_1route_a1e6f2e7560002a10c1f037a560516666}} 
-void \hyperlink{classnetflex_1_1routing_1_1route_a1e6f2e7560002a10c1f037a560516666}{dispatch} (const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&, \hyperlink{classnetflex_1_1http_1_1response}{http\+::response} \&) const
-\begin{DoxyCompactList}\small\item\em dispatch \end{DoxyCompactList}\end{DoxyCompactItemize}
+\item 
+void \hyperlink{classnetflex_1_1routing_1_1route_a7f36c264c33c928298900e217291bc5c}{dispatch} (const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&request, \hyperlink{classnetflex_1_1http_1_1response}{http\+::response} \&response) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+define a route for the server specify path, method and callback to be called path can be regex and contains params (like /articles/\+:id) 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a5af1479be27de20f7c395bf2fb0f3639}\label{classnetflex_1_1routing_1_1route_a5af1479be27de20f7c395bf2fb0f3639}} 
+\index{netflex\+::routing\+::route@{netflex\+::routing\+::route}!route\+\_\+callback\+\_\+t@{route\+\_\+callback\+\_\+t}}
+\index{route\+\_\+callback\+\_\+t@{route\+\_\+callback\+\_\+t}!netflex\+::routing\+::route@{netflex\+::routing\+::route}}
+\subsubsection{\texorpdfstring{route\+\_\+callback\+\_\+t}{route\_callback\_t}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request}\&, \hyperlink{classnetflex_1_1http_1_1response}{http\+::response}\&)$>$ \hyperlink{classnetflex_1_1routing_1_1route_a5af1479be27de20f7c395bf2fb0f3639}{netflex\+::routing\+::route\+::route\+\_\+callback\+\_\+t}}
+
+callback associated to the route, to be called on dispatch in case of match takes as parameter the request (const) and the response (to be modified) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a15868bae2313eaf230380fbb6266a153}\label{classnetflex_1_1routing_1_1route_a15868bae2313eaf230380fbb6266a153}} 
+\index{netflex\+::routing\+::route@{netflex\+::routing\+::route}!route@{route}}
+\index{route@{route}!netflex\+::routing\+::route@{netflex\+::routing\+::route}}
+\subsubsection{\texorpdfstring{route()}{route()}}
+{\footnotesize\ttfamily netflex\+::routing\+::route\+::route (\begin{DoxyParamCaption}\item[{http\+::method}]{m,  }\item[{const std\+::string \&}]{path,  }\item[{const \hyperlink{classnetflex_1_1routing_1_1route_a5af1479be27de20f7c395bf2fb0f3639}{route\+\_\+callback\+\_\+t} \&}]{callback }\end{DoxyParamCaption})}
+
+ctor
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & H\+T\+TP verb of the route \\
+\hline
+{\em path} & path of the route \\
+\hline
+{\em callback} & callback to be called on dispatch in case of match \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a7f36c264c33c928298900e217291bc5c}\label{classnetflex_1_1routing_1_1route_a7f36c264c33c928298900e217291bc5c}} 
+\index{netflex\+::routing\+::route@{netflex\+::routing\+::route}!dispatch@{dispatch}}
+\index{dispatch@{dispatch}!netflex\+::routing\+::route@{netflex\+::routing\+::route}}
+\subsubsection{\texorpdfstring{dispatch()}{dispatch()}}
+{\footnotesize\ttfamily void netflex\+::routing\+::route\+::dispatch (\begin{DoxyParamCaption}\item[{const \hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&}]{request,  }\item[{\hyperlink{classnetflex_1_1http_1_1response}{http\+::response} \&}]{response }\end{DoxyParamCaption}) const}
+
+dispatch the request (and the response) to the pre-\/defined route callback
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & the http request \\
+\hline
+{\em response} & the http response to return to the client \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route_a2c02cde61aeaae8fc15ea3fc316e9bee}\label{classnetflex_1_1routing_1_1route_a2c02cde61aeaae8fc15ea3fc316e9bee}} 
+\index{netflex\+::routing\+::route@{netflex\+::routing\+::route}!match@{match}}
+\index{match@{match}!netflex\+::routing\+::route@{netflex\+::routing\+::route}}
+\subsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily bool netflex\+::routing\+::route\+::match (\begin{DoxyParamCaption}\item[{\hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&}]{request }\end{DoxyParamCaption}) const}
+
+match the given http request with the underlying route to check if the requested route is this one
+
+\begin{DoxyReturn}{Returns}
+true if match, false otherwise 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

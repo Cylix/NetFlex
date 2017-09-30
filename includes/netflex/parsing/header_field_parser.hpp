@@ -29,28 +29,56 @@ namespace netflex {
 
 namespace parsing {
 
+//!
+//! parser for a single header field
+//!
 class header_field_parser : public parser_iface {
 public:
-  //! ctor & dtor
-  header_field_parser(http::request& request);
+  //!
+  //! default ctor
+  //!
+  //! \param request request to be initialized
+  //!
+  explicit header_field_parser(http::request& request);
+
+  //!
+  //! default dtor
+  //!
   ~header_field_parser(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   header_field_parser(const header_field_parser&) = delete;
+  //! assignment operator
   header_field_parser& operator=(const header_field_parser&) = delete;
 
 public:
-  //! reset state
+  //!
+  //! reset state of parsing (startover again)
+  //!
   void reset(void);
 
 public:
-  //! parser_iface impl
-  parser_iface&
-  operator<<(std::string&);
+  //!
+  //! consume input data to parse it and init the request
+  //! if not enough data is passed in, this method would need to be called again later
+  //! input data is modified whenever a token is consumed by parsing, even if parsing is incomplete or invalid
+  //! invalid data would lead to a raised exception
+  //!
+  //! \param data input data to be parsed
+  //! \return reference to the current object
+  //!
+  parser_iface& operator<<(std::string& data);
+
+  //!
+  //! \return whether the parsing is done or not
+  //!
   bool is_done(void) const;
 
 private:
+  //!
   //! parsing state
+  //! specify which part of the header field is being parsed
+  //!
   enum class state {
     field_name,
     field_value,
@@ -59,17 +87,44 @@ private:
   };
 
 private:
-  //! parse header
+  //!
+  //! parse the header field name
+  //!
+  //! \param buffer input data
+  //! \return whether the header field name is fully parsed or not
+  //!
   bool fetch_field_name(std::string& buffer);
+
+  //!
+  //! parse the header field value
+  //!
+  //! \param buffer input data
+  //! \return whether the header field value is fully parsed or not
+  //!
   bool fetch_field_value(std::string& buffer);
+
+  //!
+  //! parse the trailing characters (basically clear buffer)
+  //!
+  //! \param buffer input data
+  //! \return whether the trailing characters have been fully parsed or not
+  //!
   bool fetch_trailing(std::string& buffer);
 
 private:
+  //!
   //! parser header
+  //!
   http::header m_header;
+
+  //!
   //! keep track of last whitespace character erased in fetch trailing
+  //!
   char m_last_consumed_whitespace;
+
+  //!
   //! current state
+  //!
   state m_state;
 };
 

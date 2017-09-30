@@ -31,27 +31,57 @@ namespace netflex {
 
 namespace parsing {
 
+//!
+//! parser for body
+//!
 class message_body_parser : public parser_iface {
 public:
-  //! ctor & dtor
-  message_body_parser(http::request& request);
+  //!
+  //! default ctor
+  //!
+  //! \param request request to be initialized
+  //!
+  explicit message_body_parser(http::request& request);
+
+  //! default dtor
   ~message_body_parser(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   message_body_parser(const message_body_parser&) = delete;
+  //! assignment operator
   message_body_parser& operator=(const message_body_parser&) = delete;
 
 public:
-  //! parser_iface impl
-  parser_iface& operator<<(std::string&);
+  //!
+  //! consume input data to parse it and init the request
+  //! if not enough data is passed in, this method would need to be called again later
+  //! input data is modified whenever a token is consumed by parsing, even if parsing is incomplete or invalid
+  //! invalid data would lead to a raised exception
+  //!
+  //! \param data input data to be parsed
+  //! \return reference to the current object
+  //!
+  parser_iface& operator<<(std::string& data);
+
+  //!
+  //! \return whether the parsing is done or not
+  //!
   bool is_done(void) const;
 
 private:
+  //!
   //! parse body by delegating to other appropriate parsers
-  bool parse_body(std::string&);
+  //!
+  //! \param data input data
+  //! \return whether the body has been fully parsed or not
+  //!
+  bool parse_body(std::string& data);
 
 private:
+  //!
   //! parsing state
+  //! specify which part of the header field is being parsed
+  //!
   enum class state {
     content_length,
     chuncked,
@@ -61,16 +91,30 @@ private:
     done
   };
 
+  //!
   //! build states list from request headers
+  //!
+  //! \return list of states
+  //!
   std::list<state> build_states_from_request_headers(void) const;
 
+  //!
   //! create parser from given state
+  //!
+  //! \param s state to be used to build the appropriate parser
+  //! \return appropriate parser
+  //!
   std::unique_ptr<parser_iface> create_parser_from_state(state s) const;
 
 private:
+  //!
   //! list of states to process, current state is head of list
+  //!
   std::list<state> m_states;
+
+  //!
   //! current parser
+  //!
   std::unique_ptr<parser_iface> m_current_parser;
 };
 

@@ -34,44 +34,92 @@ namespace netflex {
 
 namespace parsing {
 
+//!
+//! request parser
+//! connect all parsers between each other and make sure the right order is followed
+//! can handle multiple requests
+//!
+
 class request_parser {
 public:
-  //! ctor & dtor
+  //! default ctor
   request_parser(void);
+  //! default dtor
   ~request_parser(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   request_parser(const request_parser&) = delete;
+  //! assignment operator
   request_parser& operator=(const request_parser&) = delete;
 
 public:
-  //! add data to the parser
+  //!
+  //! add data to the parser. This data will be used for parsing.
+  //!
+  //! \param data data to feed the parser
+  //! \return reference to the current object
+  //!
   request_parser& operator<<(const std::string& data);
 
-  //! get request
+  //!
+  //! same as get_front
+  //!
+  //! \param request object where to store the request
+  //!
   void operator>>(http::request& request);
+
+  //!
+  //! \return the first available request. Throws if no request is available
+  //!
   const http::request& get_front(void) const;
+
+  //!
+  //! remove the first available request. Throws if no request is available
+  //!
   void pop_front(void);
 
-  //! get incomplete request currently being parsed
+  //!
+  //! \return incomplete request currently being parsed
+  //!
   const http::request& get_currently_parsed_request(void) const;
 
-  //! returns whether a request is available
-  bool
-  request_available(void) const;
+  //!
+  //! \return whether a request is available
+  //!
+  bool request_available(void) const;
 
 private:
+  //!
   //! build request
+  //!
+  //! \return whether the request is fully built
+  //!
   bool build_request(void);
 
 private:
+  //!
   //! buffer
+  //!
   std::string m_buffer;
-  //! current parsing state (request & parser)
+
+  //!
+  //! request currently being built
+  //!
   http::request m_current_request;
+
+  //!
+  //! current parsing state
+  //!
   parsing_stage m_current_stage;
+
+  //!
+  //! current parser
+  //!
   std::unique_ptr<parser_iface> m_current_parser;
+
+  //!
   //! parsed requests, ready for dequeing
+  //!
   std::deque<http::request> m_available_requests;
 };
 

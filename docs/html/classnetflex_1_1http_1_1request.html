@@ -72,89 +72,546 @@ $(function() {
 <div class="title">netflex::http::request Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="request_8hpp_source.html">request.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1c2202c8142807f69cd4bb627af2a3d2"><td class="memItemLeft" align="right" valign="top"><a id="a1c2202c8142807f69cd4bb627af2a3d2"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a1c2202c8142807f69cd4bb627af2a3d2">request</a> (void)=default</td></tr>
-<tr class="memdesc:a1c2202c8142807f69cd4bb627af2a3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctor &amp; dtor <br /></td></tr>
+<tr class="memdesc:a1c2202c8142807f69cd4bb627af2a3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">default ctor <br /></td></tr>
 <tr class="separator:a1c2202c8142807f69cd4bb627af2a3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69340af75304fa6dcecf111aa2963b0"><td class="memItemLeft" align="right" valign="top"><a id="ac69340af75304fa6dcecf111aa2963b0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#ac69340af75304fa6dcecf111aa2963b0">~request</a> (void)=default</td></tr>
+<tr class="memdesc:ac69340af75304fa6dcecf111aa2963b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">default dtor <br /></td></tr>
+<tr class="separator:ac69340af75304fa6dcecf111aa2963b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af184b288745bda0dc34aec705ec5807e"><td class="memItemLeft" align="right" valign="top"><a id="af184b288745bda0dc34aec705ec5807e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#af184b288745bda0dc34aec705ec5807e">request</a> (const <a class="el" href="classnetflex_1_1http_1_1request.html">request</a> &amp;)=default</td></tr>
-<tr class="memdesc:af184b288745bda0dc34aec705ec5807e"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor &amp; assignment operator <br /></td></tr>
+<tr class="memdesc:af184b288745bda0dc34aec705ec5807e"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor <br /></td></tr>
 <tr class="separator:af184b288745bda0dc34aec705ec5807e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef5f7d7812a7fb94f85715fcdcf3686f"><td class="memItemLeft" align="right" valign="top"><a id="aef5f7d7812a7fb94f85715fcdcf3686f"></a>
-<a class="el" href="classnetflex_1_1http_1_1request.html">request</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classnetflex_1_1http_1_1request.html">request</a> &amp;)=default</td></tr>
+<a class="el" href="classnetflex_1_1http_1_1request.html">request</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#aef5f7d7812a7fb94f85715fcdcf3686f">operator=</a> (const <a class="el" href="classnetflex_1_1http_1_1request.html">request</a> &amp;)=default</td></tr>
+<tr class="memdesc:aef5f7d7812a7fb94f85715fcdcf3686f"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator <br /></td></tr>
 <tr class="separator:aef5f7d7812a7fb94f85715fcdcf3686f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a465930c432dc303f6767858e971eda56"><td class="memItemLeft" align="right" valign="top"><a id="a465930c432dc303f6767858e971eda56"></a>
-method&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a465930c432dc303f6767858e971eda56">get_method</a> (void) const</td></tr>
-<tr class="memdesc:a465930c432dc303f6767858e971eda56"><td class="mdescLeft">&#160;</td><td class="mdescRight">start line information <br /></td></tr>
+<tr class="memitem:a465930c432dc303f6767858e971eda56"><td class="memItemLeft" align="right" valign="top">method&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a465930c432dc303f6767858e971eda56">get_method</a> (void) const</td></tr>
 <tr class="separator:a465930c432dc303f6767858e971eda56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a708887a8c3a3582dbec9e1e5e2ec7b0b"><td class="memItemLeft" align="right" valign="top"><a id="a708887a8c3a3582dbec9e1e5e2ec7b0b"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_raw_method</b> (void) const</td></tr>
+<tr class="memitem:a708887a8c3a3582dbec9e1e5e2ec7b0b"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a708887a8c3a3582dbec9e1e5e2ec7b0b">get_raw_method</a> (void) const</td></tr>
 <tr class="separator:a708887a8c3a3582dbec9e1e5e2ec7b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed90cb36a29b9bd2b0346ba0f399615a"><td class="memItemLeft" align="right" valign="top"><a id="aed90cb36a29b9bd2b0346ba0f399615a"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_target</b> (void) const</td></tr>
+<tr class="memitem:aed90cb36a29b9bd2b0346ba0f399615a"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#aed90cb36a29b9bd2b0346ba0f399615a">get_target</a> (void) const</td></tr>
 <tr class="separator:aed90cb36a29b9bd2b0346ba0f399615a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0cabbb537eb7470d06f4c8039d0e7cb"><td class="memItemLeft" align="right" valign="top"><a id="ab0cabbb537eb7470d06f4c8039d0e7cb"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_http_version</b> (void) const</td></tr>
+<tr class="memitem:ab0cabbb537eb7470d06f4c8039d0e7cb"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#ab0cabbb537eb7470d06f4c8039d0e7cb">get_http_version</a> (void) const</td></tr>
 <tr class="separator:ab0cabbb537eb7470d06f4c8039d0e7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7210ff25735da523403171152ff653d4"><td class="memItemLeft" align="right" valign="top"><a id="a7210ff25735da523403171152ff653d4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_method</b> (method method)</td></tr>
+<tr class="memitem:a7210ff25735da523403171152ff653d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a7210ff25735da523403171152ff653d4">set_method</a> (method method)</td></tr>
 <tr class="separator:a7210ff25735da523403171152ff653d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7e544191ac0fc2b97460265bccb4353"><td class="memItemLeft" align="right" valign="top"><a id="ad7e544191ac0fc2b97460265bccb4353"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_raw_method</b> (const std::string &amp;method)</td></tr>
+<tr class="memitem:ad7e544191ac0fc2b97460265bccb4353"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#ad7e544191ac0fc2b97460265bccb4353">set_raw_method</a> (const std::string &amp;method)</td></tr>
 <tr class="separator:ad7e544191ac0fc2b97460265bccb4353"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8d678abf27538c7b3d7aade35496b06"><td class="memItemLeft" align="right" valign="top"><a id="ab8d678abf27538c7b3d7aade35496b06"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_target</b> (const std::string &amp;target)</td></tr>
+<tr class="memitem:ab8d678abf27538c7b3d7aade35496b06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#ab8d678abf27538c7b3d7aade35496b06">set_target</a> (const std::string &amp;target)</td></tr>
 <tr class="separator:ab8d678abf27538c7b3d7aade35496b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2c0c3caea31016028defd3b76035bd3"><td class="memItemLeft" align="right" valign="top"><a id="ab2c0c3caea31016028defd3b76035bd3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_http_version</b> (const std::string &amp;http_version)</td></tr>
+<tr class="memitem:ab2c0c3caea31016028defd3b76035bd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#ab2c0c3caea31016028defd3b76035bd3">set_http_version</a> (const std::string &amp;http_version)</td></tr>
 <tr class="separator:ab2c0c3caea31016028defd3b76035bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d94ca7f1b6ce44a27c655570f2b8899"><td class="memItemLeft" align="right" valign="top"><a id="a5d94ca7f1b6ce44a27c655570f2b8899"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a5d94ca7f1b6ce44a27c655570f2b8899">get_header</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:a5d94ca7f1b6ce44a27c655570f2b8899"><td class="mdescLeft">&#160;</td><td class="mdescRight">headers information <br /></td></tr>
+<tr class="memitem:a5d94ca7f1b6ce44a27c655570f2b8899"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a5d94ca7f1b6ce44a27c655570f2b8899">get_header</a> (const std::string &amp;name) const</td></tr>
 <tr class="separator:a5d94ca7f1b6ce44a27c655570f2b8899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20a9b71acd61945261bbeaf81a73caf8"><td class="memItemLeft" align="right" valign="top"><a id="a20a9b71acd61945261bbeaf81a73caf8"></a>
-const header_list_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_headers</b> (void) const</td></tr>
+<tr class="memitem:a20a9b71acd61945261bbeaf81a73caf8"><td class="memItemLeft" align="right" valign="top">const header_list_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a20a9b71acd61945261bbeaf81a73caf8">get_headers</a> (void) const</td></tr>
 <tr class="separator:a20a9b71acd61945261bbeaf81a73caf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacda09c64841cb272c08262b6bae68a8"><td class="memItemLeft" align="right" valign="top"><a id="aacda09c64841cb272c08262b6bae68a8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_headers</b> (const header_list_t &amp;headers)</td></tr>
+<tr class="memitem:aacda09c64841cb272c08262b6bae68a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#aacda09c64841cb272c08262b6bae68a8">set_headers</a> (const header_list_t &amp;headers)</td></tr>
 <tr class="separator:aacda09c64841cb272c08262b6bae68a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18b1513d2b6a274cae832ad13dbe7760"><td class="memItemLeft" align="right" valign="top"><a id="a18b1513d2b6a274cae832ad13dbe7760"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_header</b> (const <a class="el" href="structnetflex_1_1http_1_1header.html">header</a> &amp;<a class="el" href="structnetflex_1_1http_1_1header.html">header</a>)</td></tr>
+<tr class="memitem:a18b1513d2b6a274cae832ad13dbe7760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a18b1513d2b6a274cae832ad13dbe7760">add_header</a> (const <a class="el" href="structnetflex_1_1http_1_1header.html">header</a> &amp;<a class="el" href="structnetflex_1_1http_1_1header.html">header</a>)</td></tr>
 <tr class="separator:a18b1513d2b6a274cae832ad13dbe7760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a906fb3043367133866daa9f18ad97393"><td class="memItemLeft" align="right" valign="top"><a id="a906fb3043367133866daa9f18ad97393"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_header</b> (const std::string &amp;name) const</td></tr>
+<tr class="memitem:a906fb3043367133866daa9f18ad97393"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a906fb3043367133866daa9f18ad97393">has_header</a> (const std::string &amp;name) const</td></tr>
 <tr class="separator:a906fb3043367133866daa9f18ad97393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab598096641d91c5dc961e153cf47e445"><td class="memItemLeft" align="right" valign="top"><a id="ab598096641d91c5dc961e153cf47e445"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_header</b> (const std::string &amp;name)</td></tr>
+<tr class="memitem:ab598096641d91c5dc961e153cf47e445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#ab598096641d91c5dc961e153cf47e445">remove_header</a> (const std::string &amp;name)</td></tr>
 <tr class="separator:ab598096641d91c5dc961e153cf47e445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15483d8fc6a9af72832cb38b12457edf"><td class="memItemLeft" align="right" valign="top"><a id="a15483d8fc6a9af72832cb38b12457edf"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a15483d8fc6a9af72832cb38b12457edf">get_path</a> (void) const</td></tr>
-<tr class="memdesc:a15483d8fc6a9af72832cb38b12457edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">path &amp; params <br /></td></tr>
+<tr class="memitem:a15483d8fc6a9af72832cb38b12457edf"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a15483d8fc6a9af72832cb38b12457edf">get_path</a> (void) const</td></tr>
 <tr class="separator:a15483d8fc6a9af72832cb38b12457edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c1cf98cae207060ee3f456a5bda0335"><td class="memItemLeft" align="right" valign="top"><a id="a3c1cf98cae207060ee3f456a5bda0335"></a>
-const routing::params_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_params</b> (void) const</td></tr>
+<tr class="memitem:a3c1cf98cae207060ee3f456a5bda0335"><td class="memItemLeft" align="right" valign="top">const routing::params_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a3c1cf98cae207060ee3f456a5bda0335">get_params</a> (void) const</td></tr>
 <tr class="separator:a3c1cf98cae207060ee3f456a5bda0335"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54a7cd43699b222513b38621852c1c09"><td class="memItemLeft" align="right" valign="top"><a id="a54a7cd43699b222513b38621852c1c09"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_path</b> (const std::string &amp;path)</td></tr>
+<tr class="memitem:a54a7cd43699b222513b38621852c1c09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a54a7cd43699b222513b38621852c1c09">set_path</a> (const std::string &amp;path)</td></tr>
 <tr class="separator:a54a7cd43699b222513b38621852c1c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaf8bbb7e3b359b96991bf8b4fa6e807"><td class="memItemLeft" align="right" valign="top"><a id="afaf8bbb7e3b359b96991bf8b4fa6e807"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_params</b> (const routing::params_t &amp;params)</td></tr>
+<tr class="memitem:afaf8bbb7e3b359b96991bf8b4fa6e807"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#afaf8bbb7e3b359b96991bf8b4fa6e807">set_params</a> (const routing::params_t &amp;params)</td></tr>
 <tr class="separator:afaf8bbb7e3b359b96991bf8b4fa6e807"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87b3e0c5dc64ea8b4e7dda4e81254fbe"><td class="memItemLeft" align="right" valign="top"><a id="a87b3e0c5dc64ea8b4e7dda4e81254fbe"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a87b3e0c5dc64ea8b4e7dda4e81254fbe">get_body</a> (void) const</td></tr>
-<tr class="memdesc:a87b3e0c5dc64ea8b4e7dda4e81254fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">body <br /></td></tr>
+<tr class="memitem:a87b3e0c5dc64ea8b4e7dda4e81254fbe"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a87b3e0c5dc64ea8b4e7dda4e81254fbe">get_body</a> (void) const</td></tr>
 <tr class="separator:a87b3e0c5dc64ea8b4e7dda4e81254fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa47455728e271b519826dc060f829c48"><td class="memItemLeft" align="right" valign="top"><a id="aa47455728e271b519826dc060f829c48"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_body</b> (const std::string &amp;body)</td></tr>
+<tr class="memitem:aa47455728e271b519826dc060f829c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#aa47455728e271b519826dc060f829c48">set_body</a> (const std::string &amp;body)</td></tr>
 <tr class="separator:aa47455728e271b519826dc060f829c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bc2a51ee9d86cdea633adf8fd22261c"><td class="memItemLeft" align="right" valign="top"><a id="a8bc2a51ee9d86cdea633adf8fd22261c"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a8bc2a51ee9d86cdea633adf8fd22261c">to_string</a> (void) const</td></tr>
-<tr class="memdesc:a8bc2a51ee9d86cdea633adf8fd22261c"><td class="mdescLeft">&#160;</td><td class="mdescRight">misc <br /></td></tr>
+<tr class="memitem:a8bc2a51ee9d86cdea633adf8fd22261c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1request.html#a8bc2a51ee9d86cdea633adf8fd22261c">to_string</a> (void) const</td></tr>
 <tr class="separator:a8bc2a51ee9d86cdea633adf8fd22261c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>http request representation contains all information related to the received http request </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a18b1513d2b6a274cae832ad13dbe7760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b1513d2b6a274cae832ad13dbe7760">&#9670;&nbsp;</a></span>add_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::add_header </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structnetflex_1_1http_1_1header.html">header</a> &amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>add a new header to the request header if header already exists, override its value</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>header to be added </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a87b3e0c5dc64ea8b4e7dda4e81254fbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b3e0c5dc64ea8b4e7dda4e81254fbe">&#9670;&nbsp;</a></span>get_body()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::request::get_body </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>request body </dd></dl>
+
+</div>
+</div>
+<a id="a5d94ca7f1b6ce44a27c655570f2b8899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d94ca7f1b6ce44a27c655570f2b8899">&#9670;&nbsp;</a></span>get_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::request::get_header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>return specific header throws an exception if header does not exist</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>header name to get </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>requested header value </dd></dl>
+
+</div>
+</div>
+<a id="a20a9b71acd61945261bbeaf81a73caf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a9b71acd61945261bbeaf81a73caf8">&#9670;&nbsp;</a></span>get_headers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const header_list_t&amp; netflex::http::request::get_headers </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>all headers for request </dd></dl>
+
+</div>
+</div>
+<a id="ab0cabbb537eb7470d06f4c8039d0e7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0cabbb537eb7470d06f4c8039d0e7cb">&#9670;&nbsp;</a></span>get_http_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::request::get_http_version </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>request http version </dd></dl>
+
+</div>
+</div>
+<a id="a465930c432dc303f6767858e971eda56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a465930c432dc303f6767858e971eda56">&#9670;&nbsp;</a></span>get_method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">method netflex::http::request::get_method </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>request http verb </dd></dl>
+
+</div>
+</div>
+<a id="a3c1cf98cae207060ee3f456a5bda0335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1cf98cae207060ee3f456a5bda0335">&#9670;&nbsp;</a></span>get_params()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const routing::params_t&amp; netflex::http::request::get_params </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>request params (route params and GET params) </dd></dl>
+
+</div>
+</div>
+<a id="a15483d8fc6a9af72832cb38b12457edf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15483d8fc6a9af72832cb38b12457edf">&#9670;&nbsp;</a></span>get_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::request::get_path </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>requested path </dd></dl>
+
+</div>
+</div>
+<a id="a708887a8c3a3582dbec9e1e5e2ec7b0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a708887a8c3a3582dbec9e1e5e2ec7b0b">&#9670;&nbsp;</a></span>get_raw_method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::request::get_raw_method </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>request http verb (string version) </dd></dl>
+
+</div>
+</div>
+<a id="aed90cb36a29b9bd2b0346ba0f399615a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed90cb36a29b9bd2b0346ba0f399615a">&#9670;&nbsp;</a></span>get_target()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::request::get_target </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>status line target </dd></dl>
+
+</div>
+</div>
+<a id="a906fb3043367133866daa9f18ad97393"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a906fb3043367133866daa9f18ad97393">&#9670;&nbsp;</a></span>has_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool netflex::http::request::has_header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>return whether the request contains a specific header</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>header name to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the requested header is present or not </dd></dl>
+
+</div>
+</div>
+<a id="ab598096641d91c5dc961e153cf47e445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab598096641d91c5dc961e153cf47e445">&#9670;&nbsp;</a></span>remove_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::remove_header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>remove a header from the request does nothing if header does not exist</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>name of the header to remove </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa47455728e271b519826dc060f829c48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa47455728e271b519826dc060f829c48">&#9670;&nbsp;</a></span>set_body()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::set_body </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set request body</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">body</td><td>new request body </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aacda09c64841cb272c08262b6bae68a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacda09c64841cb272c08262b6bae68a8">&#9670;&nbsp;</a></span>set_headers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::set_headers </td>
+          <td>(</td>
+          <td class="paramtype">const header_list_t &amp;&#160;</td>
+          <td class="paramname"><em>headers</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set request headers</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">headers</td><td>new headers for request </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab2c0c3caea31016028defd3b76035bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2c0c3caea31016028defd3b76035bd3">&#9670;&nbsp;</a></span>set_http_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::set_http_version </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>http_version</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set new http version</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">http_version</td><td>new http version </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7210ff25735da523403171152ff653d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7210ff25735da523403171152ff653d4">&#9670;&nbsp;</a></span>set_method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::set_method </td>
+          <td>(</td>
+          <td class="paramtype">method&#160;</td>
+          <td class="paramname"><em>method</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set new http verb</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>new http verb </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afaf8bbb7e3b359b96991bf8b4fa6e807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaf8bbb7e3b359b96991bf8b4fa6e807">&#9670;&nbsp;</a></span>set_params()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::set_params </td>
+          <td>(</td>
+          <td class="paramtype">const routing::params_t &amp;&#160;</td>
+          <td class="paramname"><em>params</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set request params</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td>new request params </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a54a7cd43699b222513b38621852c1c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54a7cd43699b222513b38621852c1c09">&#9670;&nbsp;</a></span>set_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::set_path </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set requested path</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>new path for request </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad7e544191ac0fc2b97460265bccb4353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e544191ac0fc2b97460265bccb4353">&#9670;&nbsp;</a></span>set_raw_method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::set_raw_method </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>method</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set new http verb (string version)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>new http verb </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab8d678abf27538c7b3d7aade35496b06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8d678abf27538c7b3d7aade35496b06">&#9670;&nbsp;</a></span>set_target()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::request::set_target </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set new status line target</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>new status line target </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8bc2a51ee9d86cdea633adf8fd22261c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc2a51ee9d86cdea633adf8fd22261c">&#9670;&nbsp;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string netflex::http::request::to_string </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>printable version of the request (for logging purpose) </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/netflex/http/<a class="el" href="request_8hpp_source.html">request.hpp</a></li>
 </ul>

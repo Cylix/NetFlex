@@ -34,35 +34,73 @@ namespace netflex {
 
 namespace routing {
 
+//!
+//! define a route for the server
+//! specify path, method and callback to be called
+//! path can be regex and contains params (like /articles/:id)
+//!
 class route {
 public:
-  //! callback associated to the route
+  //!
+  //! callback associated to the route, to be called on dispatch in case of match
+  //! takes as parameter the request (const) and the response (to be modified)
+  //!
   typedef std::function<void(const http::request&, http::response&)> route_callback_t;
 
 public:
-  //! ctor & dtor
+  //!
+  //! ctor
+  //!
+  //! \param m HTTP verb of the route
+  //! \param path path of the route
+  //! \param callback callback to be called on dispatch in case of match
+  //!
   route(http::method m, const std::string& path, const route_callback_t& callback);
+
+  //! default dtor
   ~route(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   route(const route&) = default;
+  //! assignment operator
   route& operator=(const route&) = default;
 
 public:
-  //! matching
+  //!
+  //! match the given http request with the underlying route to check if the requested route is this one
+  //!
+  //! \return true if match, false otherwise
+  //!
   bool match(http::request& request) const;
 
 public:
-  //! dispatch
-  void dispatch(const http::request&, http::response&) const;
+  //!
+  //! dispatch the request (and the response) to the pre-defined route callback
+  //!
+  //! \param request the http request
+  //! \param response the http response to return to the client
+  //!
+  void dispatch(const http::request& request, http::response& response) const;
 
 private:
-  //! method & path
+  //!
+  //! http method of the route
+  //!
   http::method m_method;
+
+  //!
+  //! path of the route
+  //!
   std::string m_path;
-  //! callback
+
+  //!
+  //! callback to be called on match/dispatch
+  //!
   route_callback_t m_callback;
+
+  //!
   //! used to match a route with a requested path
+  //!
   route_matcher m_matcher;
 };
 

@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['to_5fhttp_5fpacket',['to_http_packet',['../classnetflex_1_1http_1_1response.html#a5e6e4e483bee30dacbe6b6685201ddd0',1,'netflex::http::response']]],
-  ['to_5fs',['to_s',['../structnetflex_1_1http_1_1header.html#a6d9c1feb8881d1488b9b5793afc00579',1,'netflex::http::header']]],
-  ['to_5fstring',['to_string',['../classnetflex_1_1http_1_1request.html#a8bc2a51ee9d86cdea633adf8fd22261c',1,'netflex::http::request']]]
+  ['remove_5fheader',['remove_header',['../classnetflex_1_1http_1_1request.html#ab598096641d91c5dc961e153cf47e445',1,'netflex::http::request']]],
+  ['request',['request',['../classnetflex_1_1http_1_1request.html#a1c2202c8142807f69cd4bb627af2a3d2',1,'netflex::http::request::request(void)=default'],['../classnetflex_1_1http_1_1request.html#af184b288745bda0dc34aec705ec5807e',1,'netflex::http::request::request(const request &amp;)=default']]],
+  ['request_5favailable',['request_available',['../classnetflex_1_1parsing_1_1request__parser.html#aa0918393e460b72dec336ee75db7e2eb',1,'netflex::parsing::request_parser']]],
+  ['request_5fparser',['request_parser',['../classnetflex_1_1parsing_1_1request__parser.html#a7ab3962c03f01b2be6459adec8d502be',1,'netflex::parsing::request_parser::request_parser(void)'],['../classnetflex_1_1parsing_1_1request__parser.html#aa47a7676d5e2da63d2d0e5be9bc3d483',1,'netflex::parsing::request_parser::request_parser(const request_parser &amp;)=delete']]],
+  ['reset',['reset',['../classnetflex_1_1parsing_1_1header__field__parser.html#a8c77c07cd5ec5c4f4c5961359b648768',1,'netflex::parsing::header_field_parser']]],
+  ['response',['response',['../classnetflex_1_1http_1_1response.html#a73aab521e1e08f804a58fd79b562f0bc',1,'netflex::http::response::response(void)'],['../classnetflex_1_1http_1_1response.html#a3b45f99380312143e915f6e820ec8cec',1,'netflex::http::response::response(const response &amp;)=default']]],
+  ['route',['route',['../classnetflex_1_1routing_1_1route.html#a15868bae2313eaf230380fbb6266a153',1,'netflex::routing::route::route(http::method m, const std::string &amp;path, const route_callback_t &amp;callback)'],['../classnetflex_1_1routing_1_1route.html#acb3c4755a0dc9b5385ac54a0ef75a4f4',1,'netflex::routing::route::route(const route &amp;)=default']]],
+  ['route_5fmatcher',['route_matcher',['../classnetflex_1_1routing_1_1route__matcher.html#a9cf8d8ed16becad2d6952f66caed18c0',1,'netflex::routing::route_matcher::route_matcher(const std::string &amp;path)'],['../classnetflex_1_1routing_1_1route__matcher.html#a684097e48fdf58790bfa7d5325b0dfa2',1,'netflex::routing::route_matcher::route_matcher(const route_matcher &amp;)=default']]]
 ];

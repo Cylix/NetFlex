@@ -30,51 +30,125 @@ namespace netflex {
 
 namespace http {
 
+//!
+//! http response representation
+//! contains all information related to the http response to be sent
+//!
 class response {
 public:
-  //! ctor & dtor
+  //! default ctor
   response(void);
+  //! default dtor
   ~response(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   response(const response&) = default;
+  //! assignment operator
   response& operator=(const response&) = default;
 
 public:
-  //! status line
+  //!
+  //! \return http version
+  //!
   const std::string& get_http_version(void) const;
+
+  //!
+  //! \return status code
+  //!
   unsigned int get_status_code(void) const;
+
+  //!
+  //! \return reason phrase for status code
+  //!
   const std::string& get_reason_phase(void) const;
 
+  //!
+  //! set the http version used for the response
+  //!
+  //! \param version http version
+  //!
   void set_http_version(const std::string& version);
+
+  //!
+  //! set response status code
+  //!
+  //! \param code status code to return to the client
+  //!
   void set_status_code(unsigned int code);
+
+  //!
+  //! set reason phrase
+  //!
+  //! \param reason reason phrase to return to the client
+  //!
   void set_reason_phrase(const std::string& reason);
 
 public:
-  //! headers
+  //!
+  //! \return headers list of the http response
+  //!
   const header_list_t& get_headers(void) const;
+
+  //!
+  //! add a header to the headers list to be returned to the client
+  //! if the header already exists, override it
+  //!
+  //! \param header header to be added
+  //!
   void add_header(const header& header);
 
+  //!
+  //! set a headers list to be used for the http response
+  //!
+  //! \param headers headers list for http response
+  //!
   void set_headers(const header_list_t& headers);
 
 public:
-  //! body
+  //!
+  //! \return response body
+  //!
   const std::string& get_body(void) const;
 
+  //!
+  //! set response body to be returned to the client
+  //!
+  //! \param body new body to be returned
+  //!
   void set_body(const std::string& body);
 
 public:
+  //!
   //! convert response to http packet
+  //!
+  //! \return conversion
+  //!
   std::string to_http_packet(void) const;
 
 private:
-  //! start line
+  //!
+  //! response http version
+  //!
   std::string m_http_version;
+
+  //!
+  //! response status code
+  //!
   unsigned int m_status;
+
+  //!
+  //! response reason phrase
+  //!
   std::string m_reason;
-  //! headers
+
+  //!
+  //! response headers
+  //!
   header_list_t m_headers;
-  //! body
+
+  //!
+  //! response body
+  //!
   std::string m_body;
 };
 

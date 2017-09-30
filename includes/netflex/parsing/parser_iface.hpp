@@ -30,22 +30,41 @@ namespace netflex {
 
 namespace parsing {
 
+//!
+//! parser interface that must be implemented by all parsers
+//!
 class parser_iface {
 public:
-  //! ctor & virtual dtor
-  explicit parser_iface(http::request&);
+  //!
+  //! default ctor
+  //!
+  //! \param request request to be initialized
+  //!
+  explicit parser_iface(http::request& request);
+
+  //! default dtor
   virtual ~parser_iface(void) = default;
 
-  //! take data as parameter which is consumed to build the reply
-  //! every bytes used to build the reply must be removed from the buffer passed as parameter
-  //! in case of invalid format, an netflex_error exception will be raised
-  virtual parser_iface& operator<<(std::string&) = 0;
+  //!
+  //! consume input data to parse it and init the request
+  //! if not enough data is passed in, this method would need to be called again later
+  //! input data is modified whenever a token is consumed by parsing, even if parsing is incomplete or invalid
+  //! invalid data would lead to a raised exception
+  //!
+  //! \param data input data to be parsed
+  //! \return reference to the current object
+  //!
+  virtual parser_iface& operator<<(std::string& data) = 0;
 
-  //! returns whether the given http packet section has been fully parsed
+  //!
+  //! \return whether the parsing is done or not
+  //!
   virtual bool is_done(void) const = 0;
 
 protected:
+  //!
   //! request
+  //!
   http::request& m_request;
 };
 

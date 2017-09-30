@@ -80,7 +80,7 @@ Inheritance diagram for netflex::logger_iface:</div>
  <div class="center">
   <img src="classnetflex_1_1logger__iface.png" usemap="#netflex::logger_5Fiface_map" alt=""/>
   <map id="netflex::logger_5Fiface_map" name="netflex::logger_5Fiface_map">
-<area href="classnetflex_1_1logger.html" title="default logger class provided by the library " alt="netflex::logger" shape="rect" coords="0,56,126,80"/>
+<area href="classnetflex_1_1logger.html" alt="netflex::logger" shape="rect" coords="0,56,126,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -88,31 +88,245 @@ Inheritance diagram for netflex::logger_iface:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a905b0aa24d0f482fb6bf92ebfcb1babb"><td class="memItemLeft" align="right" valign="top"><a id="a905b0aa24d0f482fb6bf92ebfcb1babb"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1logger__iface.html#a905b0aa24d0f482fb6bf92ebfcb1babb">logger_iface</a> (void)=default</td></tr>
-<tr class="memdesc:a905b0aa24d0f482fb6bf92ebfcb1babb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctor &amp; dtor <br /></td></tr>
+<tr class="memdesc:a905b0aa24d0f482fb6bf92ebfcb1babb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctor <br /></td></tr>
 <tr class="separator:a905b0aa24d0f482fb6bf92ebfcb1babb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47532b28d85ac8acb08cf0354f15262d"><td class="memItemLeft" align="right" valign="top"><a id="a47532b28d85ac8acb08cf0354f15262d"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1logger__iface.html#a47532b28d85ac8acb08cf0354f15262d">~logger_iface</a> (void)=default</td></tr>
+<tr class="memdesc:a47532b28d85ac8acb08cf0354f15262d"><td class="mdescLeft">&#160;</td><td class="mdescRight">dtor <br /></td></tr>
+<tr class="separator:a47532b28d85ac8acb08cf0354f15262d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a761fb0e8a80fbb28a73a9e216230b64d"><td class="memItemLeft" align="right" valign="top"><a id="a761fb0e8a80fbb28a73a9e216230b64d"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1logger__iface.html#a761fb0e8a80fbb28a73a9e216230b64d">logger_iface</a> (const <a class="el" href="classnetflex_1_1logger__iface.html">logger_iface</a> &amp;)=default</td></tr>
-<tr class="memdesc:a761fb0e8a80fbb28a73a9e216230b64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor &amp; assignment operator <br /></td></tr>
+<tr class="memdesc:a761fb0e8a80fbb28a73a9e216230b64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor <br /></td></tr>
 <tr class="separator:a761fb0e8a80fbb28a73a9e216230b64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a966026574277bb4910d83d13b872aa68"><td class="memItemLeft" align="right" valign="top"><a id="a966026574277bb4910d83d13b872aa68"></a>
-<a class="el" href="classnetflex_1_1logger__iface.html">logger_iface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classnetflex_1_1logger__iface.html">logger_iface</a> &amp;)=default</td></tr>
+<a class="el" href="classnetflex_1_1logger__iface.html">logger_iface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1logger__iface.html#a966026574277bb4910d83d13b872aa68">operator=</a> (const <a class="el" href="classnetflex_1_1logger__iface.html">logger_iface</a> &amp;)=default</td></tr>
+<tr class="memdesc:a966026574277bb4910d83d13b872aa68"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator <br /></td></tr>
 <tr class="separator:a966026574277bb4910d83d13b872aa68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0768fd1687f7d449b0cde0058038d52a"><td class="memItemLeft" align="right" valign="top"><a id="a0768fd1687f7d449b0cde0058038d52a"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>debug</b> (const std::string &amp;msg, const std::string &amp;file, std::size_t line)=0</td></tr>
+<tr class="memitem:a0768fd1687f7d449b0cde0058038d52a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1logger__iface.html#a0768fd1687f7d449b0cde0058038d52a">debug</a> (const std::string &amp;msg, const std::string &amp;file, std::size_t line)=0</td></tr>
 <tr class="separator:a0768fd1687f7d449b0cde0058038d52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac8e95dd5c24ac109e33c0002be110f0"><td class="memItemLeft" align="right" valign="top"><a id="aac8e95dd5c24ac109e33c0002be110f0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>info</b> (const std::string &amp;msg, const std::string &amp;file, std::size_t line)=0</td></tr>
+<tr class="memitem:aac8e95dd5c24ac109e33c0002be110f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1logger__iface.html#aac8e95dd5c24ac109e33c0002be110f0">info</a> (const std::string &amp;msg, const std::string &amp;file, std::size_t line)=0</td></tr>
 <tr class="separator:aac8e95dd5c24ac109e33c0002be110f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d1ee72c9b5ba9f08cb306d69ecc4822"><td class="memItemLeft" align="right" valign="top"><a id="a0d1ee72c9b5ba9f08cb306d69ecc4822"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>warn</b> (const std::string &amp;msg, const std::string &amp;file, std::size_t line)=0</td></tr>
+<tr class="memitem:a0d1ee72c9b5ba9f08cb306d69ecc4822"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1logger__iface.html#a0d1ee72c9b5ba9f08cb306d69ecc4822">warn</a> (const std::string &amp;msg, const std::string &amp;file, std::size_t line)=0</td></tr>
 <tr class="separator:a0d1ee72c9b5ba9f08cb306d69ecc4822"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09e4dda02d64e420cf0d91cbef00fe1c"><td class="memItemLeft" align="right" valign="top"><a id="a09e4dda02d64e420cf0d91cbef00fe1c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>error</b> (const std::string &amp;msg, const std::string &amp;file, std::size_t line)=0</td></tr>
+<tr class="memitem:a09e4dda02d64e420cf0d91cbef00fe1c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1logger__iface.html#a09e4dda02d64e420cf0d91cbef00fe1c">error</a> (const std::string &amp;msg, const std::string &amp;file, std::size_t line)=0</td></tr>
 <tr class="separator:a09e4dda02d64e420cf0d91cbef00fe1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classnetflex_1_1logger__iface.html">logger_iface</a> should be inherited by any class intended to be used for logging </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0768fd1687f7d449b0cde0058038d52a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0768fd1687f7d449b0cde0058038d52a">&#9670;&nbsp;</a></span>debug()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void netflex::logger_iface::debug </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>debug logging</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>message to be logged </td></tr>
+    <tr><td class="paramname">file</td><td>file from which the message is coming </td></tr>
+    <tr><td class="paramname">line</td><td>line in the file of the message </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classnetflex_1_1logger.html#a6acb4c370bbacf855ec9e039defdb39c">netflex::logger</a>.</p>
+
+</div>
+</div>
+<a id="a09e4dda02d64e420cf0d91cbef00fe1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e4dda02d64e420cf0d91cbef00fe1c">&#9670;&nbsp;</a></span>error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void netflex::logger_iface::error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>error logging</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>message to be logged </td></tr>
+    <tr><td class="paramname">file</td><td>file from which the message is coming </td></tr>
+    <tr><td class="paramname">line</td><td>line in the file of the message </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classnetflex_1_1logger.html#a1692266cfb80ea4e1f77f4d28a377875">netflex::logger</a>.</p>
+
+</div>
+</div>
+<a id="aac8e95dd5c24ac109e33c0002be110f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8e95dd5c24ac109e33c0002be110f0">&#9670;&nbsp;</a></span>info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void netflex::logger_iface::info </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>info logging</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>message to be logged </td></tr>
+    <tr><td class="paramname">file</td><td>file from which the message is coming </td></tr>
+    <tr><td class="paramname">line</td><td>line in the file of the message </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classnetflex_1_1logger.html#a5663c09b0fddff8efcc8556bc600bff4">netflex::logger</a>.</p>
+
+</div>
+</div>
+<a id="a0d1ee72c9b5ba9f08cb306d69ecc4822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d1ee72c9b5ba9f08cb306d69ecc4822">&#9670;&nbsp;</a></span>warn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void netflex::logger_iface::warn </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>warn logging</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>message to be logged </td></tr>
+    <tr><td class="paramname">file</td><td>file from which the message is coming </td></tr>
+    <tr><td class="paramname">line</td><td>line in the file of the message </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classnetflex_1_1logger.html#a0874f423d630a7263fd89ce6a2e3c2f9">netflex::logger</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/netflex/misc/<a class="el" href="logger_8hpp_source.html">logger.hpp</a></li>
 </ul>
 </div><!-- contents -->

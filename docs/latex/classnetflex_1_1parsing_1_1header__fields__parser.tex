@@ -1,5 +1,9 @@
 \hypertarget{classnetflex_1_1parsing_1_1header__fields__parser}{}\section{netflex\+:\+:parsing\+:\+:header\+\_\+fields\+\_\+parser Class Reference}
 \label{classnetflex_1_1parsing_1_1header__fields__parser}\index{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser@{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser}}
+
+
+{\ttfamily \#include $<$header\+\_\+fields\+\_\+parser.\+hpp$>$}
+
 Inheritance diagram for netflex\+:\+:parsing\+:\+:header\+\_\+fields\+\_\+parser\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,22 +13,77 @@ Inheritance diagram for netflex\+:\+:parsing\+:\+:header\+\_\+fields\+\_\+parser
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classnetflex_1_1parsing_1_1header__fields__parser_a062871b585ec94f1ef3039237debfd4f}\label{classnetflex_1_1parsing_1_1header__fields__parser_a062871b585ec94f1ef3039237debfd4f}} 
 \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser_a062871b585ec94f1ef3039237debfd4f}{header\+\_\+fields\+\_\+parser} (\hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&request)
-\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\item 
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1header__fields__parser_ae6497c8612a0200de763a5b91c574398}\label{classnetflex_1_1parsing_1_1header__fields__parser_ae6497c8612a0200de763a5b91c574398}} 
+\hyperlink{classnetflex_1_1parsing_1_1header__fields__parser_ae6497c8612a0200de763a5b91c574398}{$\sim$header\+\_\+fields\+\_\+parser} (void)=default
+\begin{DoxyCompactList}\small\item\em default dtor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1parsing_1_1header__fields__parser_a09177036c57944df36217a024e64de3f}\label{classnetflex_1_1parsing_1_1header__fields__parser_a09177036c57944df36217a024e64de3f}} 
 \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser_a09177036c57944df36217a024e64de3f}{header\+\_\+fields\+\_\+parser} (const \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser}{header\+\_\+fields\+\_\+parser} \&)=delete
-\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1parsing_1_1header__fields__parser_aebe26ebcd6cccc0e010eaa82a2173d91}\label{classnetflex_1_1parsing_1_1header__fields__parser_aebe26ebcd6cccc0e010eaa82a2173d91}} 
-\hyperlink{classnetflex_1_1parsing_1_1header__fields__parser}{header\+\_\+fields\+\_\+parser} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser}{header\+\_\+fields\+\_\+parser} \&)=delete
+\hyperlink{classnetflex_1_1parsing_1_1header__fields__parser}{header\+\_\+fields\+\_\+parser} \& \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser_aebe26ebcd6cccc0e010eaa82a2173d91}{operator=} (const \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser}{header\+\_\+fields\+\_\+parser} \&)=delete
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+\hyperlink{classnetflex_1_1parsing_1_1parser__iface}{parser\+\_\+iface} \& \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser_a4ba3f5dad38f3f9ef9bf3632f02d4111}{operator$<$$<$} (std\+::string \&data)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1parsing_1_1header__fields__parser_a255c485598692bee975e6db49d8ec13c}\label{classnetflex_1_1parsing_1_1header__fields__parser_a255c485598692bee975e6db49d8ec13c}} 
-\hyperlink{classnetflex_1_1parsing_1_1parser__iface}{parser\+\_\+iface} \& \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser_a255c485598692bee975e6db49d8ec13c}{operator$<$$<$} (std\+::string \&)
-\begin{DoxyCompactList}\small\item\em \hyperlink{classnetflex_1_1parsing_1_1parser__iface}{parser\+\_\+iface} impl \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1parsing_1_1header__fields__parser_a8303c3f2910b9baa68b9b0313e0438cf}\label{classnetflex_1_1parsing_1_1header__fields__parser_a8303c3f2910b9baa68b9b0313e0438cf}} 
 bool \hyperlink{classnetflex_1_1parsing_1_1header__fields__parser_a8303c3f2910b9baa68b9b0313e0438cf}{is\+\_\+done} (void) const
-\begin{DoxyCompactList}\small\item\em returns whether the given http packet section has been fully parsed \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+parser for all header fields 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1header__fields__parser_a062871b585ec94f1ef3039237debfd4f}\label{classnetflex_1_1parsing_1_1header__fields__parser_a062871b585ec94f1ef3039237debfd4f}} 
+\index{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser@{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser}!header\+\_\+fields\+\_\+parser@{header\+\_\+fields\+\_\+parser}}
+\index{header\+\_\+fields\+\_\+parser@{header\+\_\+fields\+\_\+parser}!netflex\+::parsing\+::header\+\_\+fields\+\_\+parser@{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser}}
+\subsubsection{\texorpdfstring{header\+\_\+fields\+\_\+parser()}{header\_fields\_parser()}}
+{\footnotesize\ttfamily netflex\+::parsing\+::header\+\_\+fields\+\_\+parser\+::header\+\_\+fields\+\_\+parser (\begin{DoxyParamCaption}\item[{\hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+default ctor
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & request to be initialized \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1header__fields__parser_a8303c3f2910b9baa68b9b0313e0438cf}\label{classnetflex_1_1parsing_1_1header__fields__parser_a8303c3f2910b9baa68b9b0313e0438cf}} 
+\index{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser@{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser}!is\+\_\+done@{is\+\_\+done}}
+\index{is\+\_\+done@{is\+\_\+done}!netflex\+::parsing\+::header\+\_\+fields\+\_\+parser@{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser}}
+\subsubsection{\texorpdfstring{is\+\_\+done()}{is\_done()}}
+{\footnotesize\ttfamily bool netflex\+::parsing\+::header\+\_\+fields\+\_\+parser\+::is\+\_\+done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+whether the parsing is done or not 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classnetflex_1_1parsing_1_1parser__iface_afebd1cc50d5958f712dfac0c023fd162}{netflex\+::parsing\+::parser\+\_\+iface}.
+
+\mbox{\Hypertarget{classnetflex_1_1parsing_1_1header__fields__parser_a4ba3f5dad38f3f9ef9bf3632f02d4111}\label{classnetflex_1_1parsing_1_1header__fields__parser_a4ba3f5dad38f3f9ef9bf3632f02d4111}} 
+\index{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser@{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!netflex\+::parsing\+::header\+\_\+fields\+\_\+parser@{netflex\+::parsing\+::header\+\_\+fields\+\_\+parser}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \hyperlink{classnetflex_1_1parsing_1_1parser__iface}{parser\+\_\+iface}\& netflex\+::parsing\+::header\+\_\+fields\+\_\+parser\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+consume input data to parse it and init the request if not enough data is passed in, this method would need to be called again later input data is modified whenever a token is consumed by parsing, even if parsing is incomplete or invalid invalid data would lead to a raised exception
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & input data to be parsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the current object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classnetflex_1_1parsing_1_1parser__iface_a6b092567e70a5c0bf7568e94d06f7154}{netflex\+::parsing\+::parser\+\_\+iface}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

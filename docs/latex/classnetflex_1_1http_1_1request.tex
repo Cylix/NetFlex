@@ -1,80 +1,315 @@
 \hypertarget{classnetflex_1_1http_1_1request}{}\section{netflex\+:\+:http\+:\+:request Class Reference}
 \label{classnetflex_1_1http_1_1request}\index{netflex\+::http\+::request@{netflex\+::http\+::request}}
+
+
+{\ttfamily \#include $<$request.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classnetflex_1_1http_1_1request_a1c2202c8142807f69cd4bb627af2a3d2}\label{classnetflex_1_1http_1_1request_a1c2202c8142807f69cd4bb627af2a3d2}} 
 \hyperlink{classnetflex_1_1http_1_1request_a1c2202c8142807f69cd4bb627af2a3d2}{request} (void)=default
-\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em default ctor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ac69340af75304fa6dcecf111aa2963b0}\label{classnetflex_1_1http_1_1request_ac69340af75304fa6dcecf111aa2963b0}} 
+\hyperlink{classnetflex_1_1http_1_1request_ac69340af75304fa6dcecf111aa2963b0}{$\sim$request} (void)=default
+\begin{DoxyCompactList}\small\item\em default dtor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1http_1_1request_af184b288745bda0dc34aec705ec5807e}\label{classnetflex_1_1http_1_1request_af184b288745bda0dc34aec705ec5807e}} 
 \hyperlink{classnetflex_1_1http_1_1request_af184b288745bda0dc34aec705ec5807e}{request} (const \hyperlink{classnetflex_1_1http_1_1request}{request} \&)=default
-\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1http_1_1request_aef5f7d7812a7fb94f85715fcdcf3686f}\label{classnetflex_1_1http_1_1request_aef5f7d7812a7fb94f85715fcdcf3686f}} 
-\hyperlink{classnetflex_1_1http_1_1request}{request} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1http_1_1request}{request} \&)=default
-\item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a465930c432dc303f6767858e971eda56}\label{classnetflex_1_1http_1_1request_a465930c432dc303f6767858e971eda56}} 
+\hyperlink{classnetflex_1_1http_1_1request}{request} \& \hyperlink{classnetflex_1_1http_1_1request_aef5f7d7812a7fb94f85715fcdcf3686f}{operator=} (const \hyperlink{classnetflex_1_1http_1_1request}{request} \&)=default
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
 method \hyperlink{classnetflex_1_1http_1_1request_a465930c432dc303f6767858e971eda56}{get\+\_\+method} (void) const
-\begin{DoxyCompactList}\small\item\em start line information \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a708887a8c3a3582dbec9e1e5e2ec7b0b}\label{classnetflex_1_1http_1_1request_a708887a8c3a3582dbec9e1e5e2ec7b0b}} 
-const std\+::string \& {\bfseries get\+\_\+raw\+\_\+method} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_aed90cb36a29b9bd2b0346ba0f399615a}\label{classnetflex_1_1http_1_1request_aed90cb36a29b9bd2b0346ba0f399615a}} 
-const std\+::string \& {\bfseries get\+\_\+target} (void) const
+const std\+::string \& \hyperlink{classnetflex_1_1http_1_1request_a708887a8c3a3582dbec9e1e5e2ec7b0b}{get\+\_\+raw\+\_\+method} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ab0cabbb537eb7470d06f4c8039d0e7cb}\label{classnetflex_1_1http_1_1request_ab0cabbb537eb7470d06f4c8039d0e7cb}} 
-const std\+::string \& {\bfseries get\+\_\+http\+\_\+version} (void) const
+const std\+::string \& \hyperlink{classnetflex_1_1http_1_1request_aed90cb36a29b9bd2b0346ba0f399615a}{get\+\_\+target} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a7210ff25735da523403171152ff653d4}\label{classnetflex_1_1http_1_1request_a7210ff25735da523403171152ff653d4}} 
-void {\bfseries set\+\_\+method} (method method)
+const std\+::string \& \hyperlink{classnetflex_1_1http_1_1request_ab0cabbb537eb7470d06f4c8039d0e7cb}{get\+\_\+http\+\_\+version} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ad7e544191ac0fc2b97460265bccb4353}\label{classnetflex_1_1http_1_1request_ad7e544191ac0fc2b97460265bccb4353}} 
-void {\bfseries set\+\_\+raw\+\_\+method} (const std\+::string \&method)
+void \hyperlink{classnetflex_1_1http_1_1request_a7210ff25735da523403171152ff653d4}{set\+\_\+method} (method method)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ab8d678abf27538c7b3d7aade35496b06}\label{classnetflex_1_1http_1_1request_ab8d678abf27538c7b3d7aade35496b06}} 
-void {\bfseries set\+\_\+target} (const std\+::string \&target)
+void \hyperlink{classnetflex_1_1http_1_1request_ad7e544191ac0fc2b97460265bccb4353}{set\+\_\+raw\+\_\+method} (const std\+::string \&method)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ab2c0c3caea31016028defd3b76035bd3}\label{classnetflex_1_1http_1_1request_ab2c0c3caea31016028defd3b76035bd3}} 
-void {\bfseries set\+\_\+http\+\_\+version} (const std\+::string \&http\+\_\+version)
+void \hyperlink{classnetflex_1_1http_1_1request_ab8d678abf27538c7b3d7aade35496b06}{set\+\_\+target} (const std\+::string \&target)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a5d94ca7f1b6ce44a27c655570f2b8899}\label{classnetflex_1_1http_1_1request_a5d94ca7f1b6ce44a27c655570f2b8899}} 
+void \hyperlink{classnetflex_1_1http_1_1request_ab2c0c3caea31016028defd3b76035bd3}{set\+\_\+http\+\_\+version} (const std\+::string \&http\+\_\+version)
+\item 
 const std\+::string \& \hyperlink{classnetflex_1_1http_1_1request_a5d94ca7f1b6ce44a27c655570f2b8899}{get\+\_\+header} (const std\+::string \&name) const
-\begin{DoxyCompactList}\small\item\em headers information \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a20a9b71acd61945261bbeaf81a73caf8}\label{classnetflex_1_1http_1_1request_a20a9b71acd61945261bbeaf81a73caf8}} 
-const header\+\_\+list\+\_\+t \& {\bfseries get\+\_\+headers} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_aacda09c64841cb272c08262b6bae68a8}\label{classnetflex_1_1http_1_1request_aacda09c64841cb272c08262b6bae68a8}} 
-void {\bfseries set\+\_\+headers} (const header\+\_\+list\+\_\+t \&headers)
+const header\+\_\+list\+\_\+t \& \hyperlink{classnetflex_1_1http_1_1request_a20a9b71acd61945261bbeaf81a73caf8}{get\+\_\+headers} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a18b1513d2b6a274cae832ad13dbe7760}\label{classnetflex_1_1http_1_1request_a18b1513d2b6a274cae832ad13dbe7760}} 
-void {\bfseries add\+\_\+header} (const \hyperlink{structnetflex_1_1http_1_1header}{header} \&\hyperlink{structnetflex_1_1http_1_1header}{header})
+void \hyperlink{classnetflex_1_1http_1_1request_aacda09c64841cb272c08262b6bae68a8}{set\+\_\+headers} (const header\+\_\+list\+\_\+t \&headers)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a906fb3043367133866daa9f18ad97393}\label{classnetflex_1_1http_1_1request_a906fb3043367133866daa9f18ad97393}} 
-bool {\bfseries has\+\_\+header} (const std\+::string \&name) const
+void \hyperlink{classnetflex_1_1http_1_1request_a18b1513d2b6a274cae832ad13dbe7760}{add\+\_\+header} (const \hyperlink{structnetflex_1_1http_1_1header}{header} \&\hyperlink{structnetflex_1_1http_1_1header}{header})
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ab598096641d91c5dc961e153cf47e445}\label{classnetflex_1_1http_1_1request_ab598096641d91c5dc961e153cf47e445}} 
-void {\bfseries remove\+\_\+header} (const std\+::string \&name)
+bool \hyperlink{classnetflex_1_1http_1_1request_a906fb3043367133866daa9f18ad97393}{has\+\_\+header} (const std\+::string \&name) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a15483d8fc6a9af72832cb38b12457edf}\label{classnetflex_1_1http_1_1request_a15483d8fc6a9af72832cb38b12457edf}} 
+void \hyperlink{classnetflex_1_1http_1_1request_ab598096641d91c5dc961e153cf47e445}{remove\+\_\+header} (const std\+::string \&name)
+\item 
 const std\+::string \& \hyperlink{classnetflex_1_1http_1_1request_a15483d8fc6a9af72832cb38b12457edf}{get\+\_\+path} (void) const
-\begin{DoxyCompactList}\small\item\em path \& params \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a3c1cf98cae207060ee3f456a5bda0335}\label{classnetflex_1_1http_1_1request_a3c1cf98cae207060ee3f456a5bda0335}} 
-const routing\+::params\+\_\+t \& {\bfseries get\+\_\+params} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a54a7cd43699b222513b38621852c1c09}\label{classnetflex_1_1http_1_1request_a54a7cd43699b222513b38621852c1c09}} 
-void {\bfseries set\+\_\+path} (const std\+::string \&path)
+const routing\+::params\+\_\+t \& \hyperlink{classnetflex_1_1http_1_1request_a3c1cf98cae207060ee3f456a5bda0335}{get\+\_\+params} (void) const
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_afaf8bbb7e3b359b96991bf8b4fa6e807}\label{classnetflex_1_1http_1_1request_afaf8bbb7e3b359b96991bf8b4fa6e807}} 
-void {\bfseries set\+\_\+params} (const routing\+::params\+\_\+t \&params)
+void \hyperlink{classnetflex_1_1http_1_1request_a54a7cd43699b222513b38621852c1c09}{set\+\_\+path} (const std\+::string \&path)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a87b3e0c5dc64ea8b4e7dda4e81254fbe}\label{classnetflex_1_1http_1_1request_a87b3e0c5dc64ea8b4e7dda4e81254fbe}} 
+void \hyperlink{classnetflex_1_1http_1_1request_afaf8bbb7e3b359b96991bf8b4fa6e807}{set\+\_\+params} (const routing\+::params\+\_\+t \&params)
+\item 
 const std\+::string \& \hyperlink{classnetflex_1_1http_1_1request_a87b3e0c5dc64ea8b4e7dda4e81254fbe}{get\+\_\+body} (void) const
-\begin{DoxyCompactList}\small\item\em body \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_aa47455728e271b519826dc060f829c48}\label{classnetflex_1_1http_1_1request_aa47455728e271b519826dc060f829c48}} 
-void {\bfseries set\+\_\+body} (const std\+::string \&body)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a8bc2a51ee9d86cdea633adf8fd22261c}\label{classnetflex_1_1http_1_1request_a8bc2a51ee9d86cdea633adf8fd22261c}} 
+void \hyperlink{classnetflex_1_1http_1_1request_aa47455728e271b519826dc060f829c48}{set\+\_\+body} (const std\+::string \&body)
+\item 
 std\+::string \hyperlink{classnetflex_1_1http_1_1request_a8bc2a51ee9d86cdea633adf8fd22261c}{to\+\_\+string} (void) const
-\begin{DoxyCompactList}\small\item\em misc \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+http request representation contains all information related to the received http request 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a18b1513d2b6a274cae832ad13dbe7760}\label{classnetflex_1_1http_1_1request_a18b1513d2b6a274cae832ad13dbe7760}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!add\+\_\+header@{add\+\_\+header}}
+\index{add\+\_\+header@{add\+\_\+header}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{add\+\_\+header()}{add\_header()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::add\+\_\+header (\begin{DoxyParamCaption}\item[{const \hyperlink{structnetflex_1_1http_1_1header}{header} \&}]{header }\end{DoxyParamCaption})}
+
+add a new header to the request header if header already exists, override its value
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & header to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a87b3e0c5dc64ea8b4e7dda4e81254fbe}\label{classnetflex_1_1http_1_1request_a87b3e0c5dc64ea8b4e7dda4e81254fbe}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!get\+\_\+body@{get\+\_\+body}}
+\index{get\+\_\+body@{get\+\_\+body}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{get\+\_\+body()}{get\_body()}}
+{\footnotesize\ttfamily const std\+::string\& netflex\+::http\+::request\+::get\+\_\+body (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+request body 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a5d94ca7f1b6ce44a27c655570f2b8899}\label{classnetflex_1_1http_1_1request_a5d94ca7f1b6ce44a27c655570f2b8899}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!get\+\_\+header@{get\+\_\+header}}
+\index{get\+\_\+header@{get\+\_\+header}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{get\+\_\+header()}{get\_header()}}
+{\footnotesize\ttfamily const std\+::string\& netflex\+::http\+::request\+::get\+\_\+header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+return specific header throws an exception if header does not exist
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & header name to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+requested header value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a20a9b71acd61945261bbeaf81a73caf8}\label{classnetflex_1_1http_1_1request_a20a9b71acd61945261bbeaf81a73caf8}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!get\+\_\+headers@{get\+\_\+headers}}
+\index{get\+\_\+headers@{get\+\_\+headers}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{get\+\_\+headers()}{get\_headers()}}
+{\footnotesize\ttfamily const header\+\_\+list\+\_\+t\& netflex\+::http\+::request\+::get\+\_\+headers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+all headers for request 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ab0cabbb537eb7470d06f4c8039d0e7cb}\label{classnetflex_1_1http_1_1request_ab0cabbb537eb7470d06f4c8039d0e7cb}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!get\+\_\+http\+\_\+version@{get\+\_\+http\+\_\+version}}
+\index{get\+\_\+http\+\_\+version@{get\+\_\+http\+\_\+version}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{get\+\_\+http\+\_\+version()}{get\_http\_version()}}
+{\footnotesize\ttfamily const std\+::string\& netflex\+::http\+::request\+::get\+\_\+http\+\_\+version (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+request http version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a465930c432dc303f6767858e971eda56}\label{classnetflex_1_1http_1_1request_a465930c432dc303f6767858e971eda56}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!get\+\_\+method@{get\+\_\+method}}
+\index{get\+\_\+method@{get\+\_\+method}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{get\+\_\+method()}{get\_method()}}
+{\footnotesize\ttfamily method netflex\+::http\+::request\+::get\+\_\+method (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+request http verb 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a3c1cf98cae207060ee3f456a5bda0335}\label{classnetflex_1_1http_1_1request_a3c1cf98cae207060ee3f456a5bda0335}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!get\+\_\+params@{get\+\_\+params}}
+\index{get\+\_\+params@{get\+\_\+params}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{get\+\_\+params()}{get\_params()}}
+{\footnotesize\ttfamily const routing\+::params\+\_\+t\& netflex\+::http\+::request\+::get\+\_\+params (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+request params (route params and G\+ET params) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a15483d8fc6a9af72832cb38b12457edf}\label{classnetflex_1_1http_1_1request_a15483d8fc6a9af72832cb38b12457edf}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!get\+\_\+path@{get\+\_\+path}}
+\index{get\+\_\+path@{get\+\_\+path}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{get\+\_\+path()}{get\_path()}}
+{\footnotesize\ttfamily const std\+::string\& netflex\+::http\+::request\+::get\+\_\+path (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+requested path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a708887a8c3a3582dbec9e1e5e2ec7b0b}\label{classnetflex_1_1http_1_1request_a708887a8c3a3582dbec9e1e5e2ec7b0b}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!get\+\_\+raw\+\_\+method@{get\+\_\+raw\+\_\+method}}
+\index{get\+\_\+raw\+\_\+method@{get\+\_\+raw\+\_\+method}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{get\+\_\+raw\+\_\+method()}{get\_raw\_method()}}
+{\footnotesize\ttfamily const std\+::string\& netflex\+::http\+::request\+::get\+\_\+raw\+\_\+method (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+request http verb (string version) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_aed90cb36a29b9bd2b0346ba0f399615a}\label{classnetflex_1_1http_1_1request_aed90cb36a29b9bd2b0346ba0f399615a}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!get\+\_\+target@{get\+\_\+target}}
+\index{get\+\_\+target@{get\+\_\+target}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{get\+\_\+target()}{get\_target()}}
+{\footnotesize\ttfamily const std\+::string\& netflex\+::http\+::request\+::get\+\_\+target (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+status line target 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a906fb3043367133866daa9f18ad97393}\label{classnetflex_1_1http_1_1request_a906fb3043367133866daa9f18ad97393}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!has\+\_\+header@{has\+\_\+header}}
+\index{has\+\_\+header@{has\+\_\+header}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{has\+\_\+header()}{has\_header()}}
+{\footnotesize\ttfamily bool netflex\+::http\+::request\+::has\+\_\+header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+return whether the request contains a specific header
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & header name to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the requested header is present or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ab598096641d91c5dc961e153cf47e445}\label{classnetflex_1_1http_1_1request_ab598096641d91c5dc961e153cf47e445}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!remove\+\_\+header@{remove\+\_\+header}}
+\index{remove\+\_\+header@{remove\+\_\+header}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{remove\+\_\+header()}{remove\_header()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::remove\+\_\+header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+remove a header from the request does nothing if header does not exist
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the header to remove \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_aa47455728e271b519826dc060f829c48}\label{classnetflex_1_1http_1_1request_aa47455728e271b519826dc060f829c48}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!set\+\_\+body@{set\+\_\+body}}
+\index{set\+\_\+body@{set\+\_\+body}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{set\+\_\+body()}{set\_body()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::set\+\_\+body (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{body }\end{DoxyParamCaption})}
+
+set request body
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & new request body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_aacda09c64841cb272c08262b6bae68a8}\label{classnetflex_1_1http_1_1request_aacda09c64841cb272c08262b6bae68a8}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!set\+\_\+headers@{set\+\_\+headers}}
+\index{set\+\_\+headers@{set\+\_\+headers}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{set\+\_\+headers()}{set\_headers()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::set\+\_\+headers (\begin{DoxyParamCaption}\item[{const header\+\_\+list\+\_\+t \&}]{headers }\end{DoxyParamCaption})}
+
+set request headers
+
+
+\begin{DoxyParams}{Parameters}
+{\em headers} & new headers for request \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ab2c0c3caea31016028defd3b76035bd3}\label{classnetflex_1_1http_1_1request_ab2c0c3caea31016028defd3b76035bd3}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!set\+\_\+http\+\_\+version@{set\+\_\+http\+\_\+version}}
+\index{set\+\_\+http\+\_\+version@{set\+\_\+http\+\_\+version}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{set\+\_\+http\+\_\+version()}{set\_http\_version()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::set\+\_\+http\+\_\+version (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{http\+\_\+version }\end{DoxyParamCaption})}
+
+set new http version
+
+
+\begin{DoxyParams}{Parameters}
+{\em http\+\_\+version} & new http version \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a7210ff25735da523403171152ff653d4}\label{classnetflex_1_1http_1_1request_a7210ff25735da523403171152ff653d4}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!set\+\_\+method@{set\+\_\+method}}
+\index{set\+\_\+method@{set\+\_\+method}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{set\+\_\+method()}{set\_method()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::set\+\_\+method (\begin{DoxyParamCaption}\item[{method}]{method }\end{DoxyParamCaption})}
+
+set new http verb
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & new http verb \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_afaf8bbb7e3b359b96991bf8b4fa6e807}\label{classnetflex_1_1http_1_1request_afaf8bbb7e3b359b96991bf8b4fa6e807}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!set\+\_\+params@{set\+\_\+params}}
+\index{set\+\_\+params@{set\+\_\+params}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{set\+\_\+params()}{set\_params()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::set\+\_\+params (\begin{DoxyParamCaption}\item[{const routing\+::params\+\_\+t \&}]{params }\end{DoxyParamCaption})}
+
+set request params
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & new request params \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a54a7cd43699b222513b38621852c1c09}\label{classnetflex_1_1http_1_1request_a54a7cd43699b222513b38621852c1c09}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!set\+\_\+path@{set\+\_\+path}}
+\index{set\+\_\+path@{set\+\_\+path}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{set\+\_\+path()}{set\_path()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::set\+\_\+path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+set requested path
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & new path for request \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ad7e544191ac0fc2b97460265bccb4353}\label{classnetflex_1_1http_1_1request_ad7e544191ac0fc2b97460265bccb4353}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!set\+\_\+raw\+\_\+method@{set\+\_\+raw\+\_\+method}}
+\index{set\+\_\+raw\+\_\+method@{set\+\_\+raw\+\_\+method}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{set\+\_\+raw\+\_\+method()}{set\_raw\_method()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::set\+\_\+raw\+\_\+method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{method }\end{DoxyParamCaption})}
+
+set new http verb (string version)
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & new http verb \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_ab8d678abf27538c7b3d7aade35496b06}\label{classnetflex_1_1http_1_1request_ab8d678abf27538c7b3d7aade35496b06}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!set\+\_\+target@{set\+\_\+target}}
+\index{set\+\_\+target@{set\+\_\+target}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{set\+\_\+target()}{set\_target()}}
+{\footnotesize\ttfamily void netflex\+::http\+::request\+::set\+\_\+target (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{target }\end{DoxyParamCaption})}
+
+set new status line target
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & new status line target \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1http_1_1request_a8bc2a51ee9d86cdea633adf8fd22261c}\label{classnetflex_1_1http_1_1request_a8bc2a51ee9d86cdea633adf8fd22261c}} 
+\index{netflex\+::http\+::request@{netflex\+::http\+::request}!to\+\_\+string@{to\+\_\+string}}
+\index{to\+\_\+string@{to\+\_\+string}!netflex\+::http\+::request@{netflex\+::http\+::request}}
+\subsubsection{\texorpdfstring{to\+\_\+string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string netflex\+::http\+::request\+::to\+\_\+string (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+printable version of the request (for logging purpose) 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

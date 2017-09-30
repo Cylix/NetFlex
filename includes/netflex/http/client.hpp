@@ -34,54 +34,105 @@ namespace netflex {
 
 namespace http {
 
+//!
+//! http client
+//! represent one client connected to the HTTP server and notify on new requests
+//!
 class client {
 public:
-  //! ctor & dtor
-  client(const std::shared_ptr<tacopie::tcp_client>& tcp_client);
+  //!
+  //! ctor
+  //!
+  //! \param tcp_client underlying tcp connection
+  //!
+  explicit client(const std::shared_ptr<tacopie::tcp_client>& tcp_client);
+
+  //! default dtor
   ~client(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   client(const client&) = delete;
+  //! assignment operator
   client& operator=(const client&) = delete;
 
 public:
-  //! host & port
+  //!
+  //! \return host of the client
+  //!
   const std::string& get_host(void) const;
+
+  //!
+  //! \return port of the client
+  //!
   std::uint32_t get_port(void) const;
 
 public:
-  //! callbacks
-  //!  > notify on new http request received
-  //!  > notify on invalid http request received (err while parsing)
-  //!  > notify on client disconnection
+  //!
+  //! notify on new http request received
+  //! notify on invalid http request received (err while parsing)
+  //!
   typedef std::function<void(bool, request&)> request_handler_t;
+
+  //!
+  //! notify on client disconnection
+  //!
   typedef tacopie::tcp_client::disconnection_handler_t disconnection_handler_t;
 
-  void set_request_handler(const request_handler_t&);
-  void set_disconnection_handler(const disconnection_handler_t&);
+  //!
+  //! define the callback to be called on new valid or invalid http requests
+  //!
+  //! \param cb callback to be called
+  //!
+  void set_request_handler(const request_handler_t& cb);
+
+  //!
+  //! define the callback to be called on disconnection
+  //!
+  //! \param cb callback to be called
+  //!
+  void set_disconnection_handler(const disconnection_handler_t& cb);
 
 public:
-  //! send http response
+  //!
+  //! send http response to the client
+  //! this should only be called as a result of receiving a valid http request
+  //!
   void send_response(const response& response);
 
 private:
-  //! call callbacks
+  //!
+  //! call the request_handler callback
+  //!
   void call_request_received_callback(bool success, request& request);
 
 public:
-  //! tcp_client callback
-  void on_async_read_result(tacopie::tcp_client::read_result&);
+  //!
+  //! tcp_client callback called on async_read operation completion
+  //!
+  //! \param res read operation result
+  //!
+  void on_async_read_result(tacopie::tcp_client::read_result& res);
 
 private:
+  //!
   //! async read from socket
+  //!
   void async_read(void);
 
 private:
-  //! tcp_client
+  //!
+  //! tcp connection
+  //!
   std::shared_ptr<tacopie::tcp_client> m_tcp_client;
-  //! callback
+
+  //!
+  //! callback to be called on new http requests
+  //!
   request_handler_t m_request_received_callback;
-  //! request parser
+
+  //!
+  //! request parser used to parse the incoming http requests
+  //!
   parsing::request_parser m_parser;
 };
 

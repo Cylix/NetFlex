@@ -29,21 +29,28 @@
 
 namespace netflex {
 
+//!
+//! specialized runtime_error used for netflex error
+//!
 class netflex_error : public std::runtime_error {
 public:
   using std::runtime_error::runtime_error;
   using std::runtime_error::what;
 
+  //! ctor (string)
   explicit netflex_error(const std::string& msg)
-  : std::runtime_error(msg.c_str()) { // construct from message string
+  : std::runtime_error(msg.c_str()) {
   }
 
+  //! ctor(char*)
   explicit netflex_error(const char* msg)
-  : std::runtime_error(msg) { // construct from message string
+  : std::runtime_error(msg) {
   }
 };
 
+//!
 //! macro for convenience
+//!
 #define __NETFLEX_THROW(level, what)      \
   {                                       \
     __NETFLEX_LOG(level, (what));         \

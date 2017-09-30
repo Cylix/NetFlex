@@ -29,12 +29,38 @@ namespace netflex {
 
 namespace misc {
 
-//! logging
+//!
+//! headers formatting for logging
+//!
+//! \param headers headers to format
+//! \return formatted string ready for output
+//!
 std::string printable_header_list(const http::header_list_t& headers);
+
+//!
+//! params formatting for logging
+//!
+//! \param params params to format
+//! \return formatted string ready for output
+//!
 std::string printable_params_list(const routing::params_t& params);
 
-//! http response formating
+//!
+//! headers formatting for http response
+//!
+//! \param headers headers to format
+//! \return formatted string ready to be used for an http response
+//!
 std::string header_list_to_http_packet(const http::header_list_t& headers);
+
+//!
+//! status line formatting for http response
+//!
+//! \param http_version http version used by the http server
+//! \param status_code status code returned by the http server
+//! \reason_phrase reason phrase associated to the status code returned by the http server
+//! \return formatted string ready to be used for an http response
+//!
 std::string status_line_to_http_packet(const std::string& http_version, unsigned int status_code, const std::string& reason_phrase);
 
 } // namespace misc

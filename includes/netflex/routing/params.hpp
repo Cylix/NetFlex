@@ -29,7 +29,10 @@ namespace netflex {
 
 namespace routing {
 
+//!
 //! url params
+//! stored as a hashtable
+//!
 typedef std::unordered_map<std::string, std::string> params_t;
 
 } // namespace routing

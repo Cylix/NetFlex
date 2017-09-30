@@ -1,42 +1,131 @@
 \hypertarget{classnetflex_1_1routing_1_1route__matcher}{}\section{netflex\+:\+:routing\+:\+:route\+\_\+matcher Class Reference}
 \label{classnetflex_1_1routing_1_1route__matcher}\index{netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}}
+
+
+{\ttfamily \#include $<$route\+\_\+matcher.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a9cf8d8ed16becad2d6952f66caed18c0}\label{classnetflex_1_1routing_1_1route__matcher_a9cf8d8ed16becad2d6952f66caed18c0}} 
 \hyperlink{classnetflex_1_1routing_1_1route__matcher_a9cf8d8ed16becad2d6952f66caed18c0}{route\+\_\+matcher} (const std\+::string \&path)
-\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\item 
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_abcdf35590451a74142de94f4899b6f0f}\label{classnetflex_1_1routing_1_1route__matcher_abcdf35590451a74142de94f4899b6f0f}} 
+\hyperlink{classnetflex_1_1routing_1_1route__matcher_abcdf35590451a74142de94f4899b6f0f}{$\sim$route\+\_\+matcher} (void)=default
+\begin{DoxyCompactList}\small\item\em default dtor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a684097e48fdf58790bfa7d5325b0dfa2}\label{classnetflex_1_1routing_1_1route__matcher_a684097e48fdf58790bfa7d5325b0dfa2}} 
 \hyperlink{classnetflex_1_1routing_1_1route__matcher_a684097e48fdf58790bfa7d5325b0dfa2}{route\+\_\+matcher} (const \hyperlink{classnetflex_1_1routing_1_1route__matcher}{route\+\_\+matcher} \&)=default
-\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_aa0d6e82c9d745efc6d2dd16afa4415c4}\label{classnetflex_1_1routing_1_1route__matcher_aa0d6e82c9d745efc6d2dd16afa4415c4}} 
-\hyperlink{classnetflex_1_1routing_1_1route__matcher}{route\+\_\+matcher} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1routing_1_1route__matcher}{route\+\_\+matcher} \&)=default
-\item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_ac0833b3f5d97b427ca9cc35ff95b477b}\label{classnetflex_1_1routing_1_1route__matcher_ac0833b3f5d97b427ca9cc35ff95b477b}} 
+\hyperlink{classnetflex_1_1routing_1_1route__matcher}{route\+\_\+matcher} \& \hyperlink{classnetflex_1_1routing_1_1route__matcher_aa0d6e82c9d745efc6d2dd16afa4415c4}{operator=} (const \hyperlink{classnetflex_1_1routing_1_1route__matcher}{route\+\_\+matcher} \&)=default
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
 bool \hyperlink{classnetflex_1_1routing_1_1route__matcher_ac0833b3f5d97b427ca9cc35ff95b477b}{match} (const std\+::string \&path, params\+\_\+t \&params) const
-\begin{DoxyCompactList}\small\item\em matching \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a01bd617a02db70923d6088fa6ab466c5}\label{classnetflex_1_1routing_1_1route__matcher_a01bd617a02db70923d6088fa6ab466c5}} 
 void \hyperlink{classnetflex_1_1routing_1_1route__matcher_a01bd617a02db70923d6088fa6ab466c5}{build\+\_\+match\+\_\+regex} (const std\+::string \&path)
-\begin{DoxyCompactList}\small\item\em build matching regex \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_af2cdb76cebb622b34765cedfbdd46cf2}\label{classnetflex_1_1routing_1_1route__matcher_af2cdb76cebb622b34765cedfbdd46cf2}} 
+\item 
 void \hyperlink{classnetflex_1_1routing_1_1route__matcher_af2cdb76cebb622b34765cedfbdd46cf2}{match\+\_\+get\+\_\+params} (const std\+::string \&path, params\+\_\+t \&params) const
-\begin{DoxyCompactList}\small\item\em matching \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a3c13952acd046bdf9af2e2a5852ec350}\label{classnetflex_1_1routing_1_1route__matcher_a3c13952acd046bdf9af2e2a5852ec350}} 
 std\+::string \hyperlink{classnetflex_1_1routing_1_1route__matcher_a3c13952acd046bdf9af2e2a5852ec350}{m\+\_\+match\+\_\+regex\+\_\+str}
-\begin{DoxyCompactList}\small\item\em matching regex \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a4968f359373528ec77417b1fe799caf8}\label{classnetflex_1_1routing_1_1route__matcher_a4968f359373528ec77417b1fe799caf8}} 
-std\+::regex {\bfseries m\+\_\+match\+\_\+regex}
 \item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a33346356f8d0733e62aeb2986446606c}\label{classnetflex_1_1routing_1_1route__matcher_a33346356f8d0733e62aeb2986446606c}} 
+std\+::regex \hyperlink{classnetflex_1_1routing_1_1route__matcher_a4968f359373528ec77417b1fe799caf8}{m\+\_\+match\+\_\+regex}
+\item 
 std\+::vector$<$ std\+::string $>$ \hyperlink{classnetflex_1_1routing_1_1route__matcher_a33346356f8d0733e62aeb2986446606c}{m\+\_\+url\+\_\+params}
-\begin{DoxyCompactList}\small\item\em url params to match, in order of appearance \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+hande the route matching logic build regex for a given route of the server and match requested path by http clients 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a9cf8d8ed16becad2d6952f66caed18c0}\label{classnetflex_1_1routing_1_1route__matcher_a9cf8d8ed16becad2d6952f66caed18c0}} 
+\index{netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}!route\+\_\+matcher@{route\+\_\+matcher}}
+\index{route\+\_\+matcher@{route\+\_\+matcher}!netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}}
+\subsubsection{\texorpdfstring{route\+\_\+matcher()}{route\_matcher()}}
+{\footnotesize\ttfamily netflex\+::routing\+::route\+\_\+matcher\+::route\+\_\+matcher (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+ctor
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path associated to the route. It will be used to build an regex representation of the route to be used for matching \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a01bd617a02db70923d6088fa6ab466c5}\label{classnetflex_1_1routing_1_1route__matcher_a01bd617a02db70923d6088fa6ab466c5}} 
+\index{netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}!build\+\_\+match\+\_\+regex@{build\+\_\+match\+\_\+regex}}
+\index{build\+\_\+match\+\_\+regex@{build\+\_\+match\+\_\+regex}!netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}}
+\subsubsection{\texorpdfstring{build\+\_\+match\+\_\+regex()}{build\_match\_regex()}}
+{\footnotesize\ttfamily void netflex\+::routing\+::route\+\_\+matcher\+::build\+\_\+match\+\_\+regex (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+build matching regex that is, given a path, construct a regex that can be used by \hyperlink{classnetflex_1_1routing_1_1route__matcher_ac0833b3f5d97b427ca9cc35ff95b477b}{match()} and store it in m\+\_\+match\+\_\+regex
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path to be used for regex construction \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_ac0833b3f5d97b427ca9cc35ff95b477b}\label{classnetflex_1_1routing_1_1route__matcher_ac0833b3f5d97b427ca9cc35ff95b477b}} 
+\index{netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}!match@{match}}
+\index{match@{match}!netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}}
+\subsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily bool netflex\+::routing\+::route\+\_\+matcher\+::match (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{params\+\_\+t \&}]{params }\end{DoxyParamCaption}) const}
+
+match the given path with the underlying route
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path to match \\
+\hline
+{\em params} & place where to store params of the requested path (for example /articles/1?author=simon) will store \{article\+:1, author\+: simon\} for underlying route /articles/\+:id. store nothing if mismatch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the path matched or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_af2cdb76cebb622b34765cedfbdd46cf2}\label{classnetflex_1_1routing_1_1route__matcher_af2cdb76cebb622b34765cedfbdd46cf2}} 
+\index{netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}!match\+\_\+get\+\_\+params@{match\+\_\+get\+\_\+params}}
+\index{match\+\_\+get\+\_\+params@{match\+\_\+get\+\_\+params}!netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}}
+\subsubsection{\texorpdfstring{match\+\_\+get\+\_\+params()}{match\_get\_params()}}
+{\footnotesize\ttfamily void netflex\+::routing\+::route\+\_\+matcher\+::match\+\_\+get\+\_\+params (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{params\+\_\+t \&}]{params }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+match G\+ET request params given a requested path
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path to match \\
+\hline
+{\em params} & place where to store params of the requested path (for example /articles/1?author=simon) will store \{author\+: simon\}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a4968f359373528ec77417b1fe799caf8}\label{classnetflex_1_1routing_1_1route__matcher_a4968f359373528ec77417b1fe799caf8}} 
+\index{netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}!m\+\_\+match\+\_\+regex@{m\+\_\+match\+\_\+regex}}
+\index{m\+\_\+match\+\_\+regex@{m\+\_\+match\+\_\+regex}!netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}}
+\subsubsection{\texorpdfstring{m\+\_\+match\+\_\+regex}{m\_match\_regex}}
+{\footnotesize\ttfamily std\+::regex netflex\+::routing\+::route\+\_\+matcher\+::m\+\_\+match\+\_\+regex\hspace{0.3cm}{\ttfamily [protected]}}
+
+matching regex (regex object) \mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a3c13952acd046bdf9af2e2a5852ec350}\label{classnetflex_1_1routing_1_1route__matcher_a3c13952acd046bdf9af2e2a5852ec350}} 
+\index{netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}!m\+\_\+match\+\_\+regex\+\_\+str@{m\+\_\+match\+\_\+regex\+\_\+str}}
+\index{m\+\_\+match\+\_\+regex\+\_\+str@{m\+\_\+match\+\_\+regex\+\_\+str}!netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}}
+\subsubsection{\texorpdfstring{m\+\_\+match\+\_\+regex\+\_\+str}{m\_match\_regex\_str}}
+{\footnotesize\ttfamily std\+::string netflex\+::routing\+::route\+\_\+matcher\+::m\+\_\+match\+\_\+regex\+\_\+str\hspace{0.3cm}{\ttfamily [protected]}}
+
+matching regex (string object) \mbox{\Hypertarget{classnetflex_1_1routing_1_1route__matcher_a33346356f8d0733e62aeb2986446606c}\label{classnetflex_1_1routing_1_1route__matcher_a33346356f8d0733e62aeb2986446606c}} 
+\index{netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}!m\+\_\+url\+\_\+params@{m\+\_\+url\+\_\+params}}
+\index{m\+\_\+url\+\_\+params@{m\+\_\+url\+\_\+params}!netflex\+::routing\+::route\+\_\+matcher@{netflex\+::routing\+::route\+\_\+matcher}}
+\subsubsection{\texorpdfstring{m\+\_\+url\+\_\+params}{m\_url\_params}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ netflex\+::routing\+::route\+\_\+matcher\+::m\+\_\+url\+\_\+params\hspace{0.3cm}{\ttfamily [protected]}}
+
+url params to match, in order of appearance for example, for route /articles/\+:id/author/\+:name, this would be \{id, name\} 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

@@ -28,19 +28,41 @@ namespace netflex {
 
 namespace parsing {
 
+//!
+//! parser for a compressed body
+//!
 class message_body_compress_parser : public parser_iface {
 public:
-  //! ctor & dtor
-  message_body_compress_parser(http::request& request);
+  //!
+  //! default ctor
+  //!
+  //! \param request request to be initialized
+  //!
+  explicit message_body_compress_parser(http::request& request);
+
+  //! default dtor
   ~message_body_compress_parser(void) = default;
 
-  //! copy ctor & assignment operator
+  //! copy ctor
   message_body_compress_parser(const message_body_compress_parser&) = delete;
+  //! assignment operator
   message_body_compress_parser& operator=(const message_body_compress_parser&) = delete;
 
 public:
-  //! parser_iface impl
-  parser_iface& operator<<(std::string&);
+  //!
+  //! consume input data to parse it and init the request
+  //! if not enough data is passed in, this method would need to be called again later
+  //! input data is modified whenever a token is consumed by parsing, even if parsing is incomplete or invalid
+  //! invalid data would lead to a raised exception
+  //!
+  //! \param data input data to be parsed
+  //! \return reference to the current object
+  //!
+  parser_iface& operator<<(std::string& data);
+
+  //!
+  //! \return whether the parsing is done or not
+  //!
   bool is_done(void) const;
 };
 

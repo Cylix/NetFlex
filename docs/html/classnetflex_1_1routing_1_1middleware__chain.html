@@ -72,25 +72,94 @@ $(function() {
 <div class="title">netflex::routing::middleware_chain Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="middleware__chain_8hpp_source.html">middleware_chain.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1ca46e620562de94f0f18bda55d5dc6b"><td class="memItemLeft" align="right" valign="top"><a id="a1ca46e620562de94f0f18bda55d5dc6b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html#a1ca46e620562de94f0f18bda55d5dc6b">middleware_chain</a> (const std::list&lt; middleware_t &gt; &amp;middlewares, <a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;request, <a class="el" href="classnetflex_1_1http_1_1response.html">http::response</a> &amp;response)</td></tr>
-<tr class="memdesc:a1ca46e620562de94f0f18bda55d5dc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctor &amp; dtor <br /></td></tr>
+<tr class="memitem:a1ca46e620562de94f0f18bda55d5dc6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html#a1ca46e620562de94f0f18bda55d5dc6b">middleware_chain</a> (const std::list&lt; middleware_t &gt; &amp;middlewares, <a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;request, <a class="el" href="classnetflex_1_1http_1_1response.html">http::response</a> &amp;response)</td></tr>
 <tr class="separator:a1ca46e620562de94f0f18bda55d5dc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146dc01f9446f08f5e82d5c45fce9ca5"><td class="memItemLeft" align="right" valign="top"><a id="a146dc01f9446f08f5e82d5c45fce9ca5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html#a146dc01f9446f08f5e82d5c45fce9ca5">~middleware_chain</a> (void)=default</td></tr>
+<tr class="memdesc:a146dc01f9446f08f5e82d5c45fce9ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">default dtor <br /></td></tr>
+<tr class="separator:a146dc01f9446f08f5e82d5c45fce9ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9735fec43573278a01312692c5aff55"><td class="memItemLeft" align="right" valign="top"><a id="ae9735fec43573278a01312692c5aff55"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html#ae9735fec43573278a01312692c5aff55">middleware_chain</a> (const <a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html">middleware_chain</a> &amp;)=default</td></tr>
-<tr class="memdesc:ae9735fec43573278a01312692c5aff55"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor &amp; assignment operator <br /></td></tr>
+<tr class="memdesc:ae9735fec43573278a01312692c5aff55"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor <br /></td></tr>
 <tr class="separator:ae9735fec43573278a01312692c5aff55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a292af104bd22249848832886cdd40587"><td class="memItemLeft" align="right" valign="top"><a id="a292af104bd22249848832886cdd40587"></a>
-<a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html">middleware_chain</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html">middleware_chain</a> &amp;)=default</td></tr>
+<a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html">middleware_chain</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html#a292af104bd22249848832886cdd40587">operator=</a> (const <a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html">middleware_chain</a> &amp;)=default</td></tr>
+<tr class="memdesc:a292af104bd22249848832886cdd40587"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator <br /></td></tr>
 <tr class="separator:a292af104bd22249848832886cdd40587"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a762a6cce9e788dd6bb3261336d4bb841"><td class="memItemLeft" align="right" valign="top"><a id="a762a6cce9e788dd6bb3261336d4bb841"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html#a762a6cce9e788dd6bb3261336d4bb841">proceed</a> (void)</td></tr>
-<tr class="memdesc:a762a6cce9e788dd6bb3261336d4bb841"><td class="mdescLeft">&#160;</td><td class="mdescRight">proceed to next middleware <br /></td></tr>
+<tr class="memitem:a762a6cce9e788dd6bb3261336d4bb841"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1routing_1_1middleware__chain.html#a762a6cce9e788dd6bb3261336d4bb841">proceed</a> (void)</td></tr>
 <tr class="separator:a762a6cce9e788dd6bb3261336d4bb841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>contains a chain of middlewares to execute used to manage execution of middlewares in the right order (and possibly stop the execution if necessary) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1ca46e620562de94f0f18bda55d5dc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca46e620562de94f0f18bda55d5dc6b">&#9670;&nbsp;</a></span>middleware_chain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">netflex::routing::middleware_chain::middleware_chain </td>
+          <td>(</td>
+          <td class="paramtype">const std::list&lt; middleware_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>middlewares</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnetflex_1_1http_1_1request.html">http::request</a> &amp;&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnetflex_1_1http_1_1response.html">http::response</a> &amp;&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>ctor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">middlewares</td><td>middlewares to be managed by the middleware chain. middleware should be ordered from lowest level (first executed) to highest level (last to be executed) </td></tr>
+    <tr><td class="paramname">request</td><td>request to be passed as parameter to each middleware </td></tr>
+    <tr><td class="paramname">response</td><td>response to be passed as parameter to each middleware </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a762a6cce9e788dd6bb3261336d4bb841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a762a6cce9e788dd6bb3261336d4bb841">&#9670;&nbsp;</a></span>proceed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::routing::middleware_chain::proceed </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>proceed to next middleware to be executed or return if nothing needs to be executed anymore </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/netflex/routing/<a class="el" href="middleware__chain_8hpp_source.html">middleware_chain.hpp</a></li>
 </ul>

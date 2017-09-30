@@ -73,51 +73,63 @@ $(function() {
 <div class="title">netflex::http::client Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="client_8hpp_source.html">client.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:aeac22a78222d25d3224bf50b8e44fb2d"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(bool, <a class="el" href="classnetflex_1_1http_1_1request.html">request</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#aeac22a78222d25d3224bf50b8e44fb2d">request_handler_t</a></td></tr>
 <tr class="separator:aeac22a78222d25d3224bf50b8e44fb2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acacb8798dcade63c52a674b3f7820fba"><td class="memItemLeft" align="right" valign="top"><a id="acacb8798dcade63c52a674b3f7820fba"></a>
-typedef tacopie::tcp_client::disconnection_handler_t&#160;</td><td class="memItemRight" valign="bottom"><b>disconnection_handler_t</b></td></tr>
+<tr class="memitem:acacb8798dcade63c52a674b3f7820fba"><td class="memItemLeft" align="right" valign="top">typedef tacopie::tcp_client::disconnection_handler_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#acacb8798dcade63c52a674b3f7820fba">disconnection_handler_t</a></td></tr>
 <tr class="separator:acacb8798dcade63c52a674b3f7820fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0b14a82f29bad24559d159f9459895a6"><td class="memItemLeft" align="right" valign="top"><a id="a0b14a82f29bad24559d159f9459895a6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#a0b14a82f29bad24559d159f9459895a6">client</a> (const std::shared_ptr&lt; tacopie::tcp_client &gt; &amp;tcp_client)</td></tr>
-<tr class="memdesc:a0b14a82f29bad24559d159f9459895a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctor &amp; dtor <br /></td></tr>
+<tr class="memitem:a0b14a82f29bad24559d159f9459895a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#a0b14a82f29bad24559d159f9459895a6">client</a> (const std::shared_ptr&lt; tacopie::tcp_client &gt; &amp;tcp_client)</td></tr>
 <tr class="separator:a0b14a82f29bad24559d159f9459895a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae940540532928329a06499f7ed8a4b7b"><td class="memItemLeft" align="right" valign="top"><a id="ae940540532928329a06499f7ed8a4b7b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#ae940540532928329a06499f7ed8a4b7b">~client</a> (void)=default</td></tr>
+<tr class="memdesc:ae940540532928329a06499f7ed8a4b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">default dtor <br /></td></tr>
+<tr class="separator:ae940540532928329a06499f7ed8a4b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af13de483802dc1096a13870d9ecf5fa9"><td class="memItemLeft" align="right" valign="top"><a id="af13de483802dc1096a13870d9ecf5fa9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#af13de483802dc1096a13870d9ecf5fa9">client</a> (const <a class="el" href="classnetflex_1_1http_1_1client.html">client</a> &amp;)=delete</td></tr>
-<tr class="memdesc:af13de483802dc1096a13870d9ecf5fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor &amp; assignment operator <br /></td></tr>
+<tr class="memdesc:af13de483802dc1096a13870d9ecf5fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor <br /></td></tr>
 <tr class="separator:af13de483802dc1096a13870d9ecf5fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc99fbf45017b7593e1c2851487ebb88"><td class="memItemLeft" align="right" valign="top"><a id="acc99fbf45017b7593e1c2851487ebb88"></a>
-<a class="el" href="classnetflex_1_1http_1_1client.html">client</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classnetflex_1_1http_1_1client.html">client</a> &amp;)=delete</td></tr>
+<a class="el" href="classnetflex_1_1http_1_1client.html">client</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#acc99fbf45017b7593e1c2851487ebb88">operator=</a> (const <a class="el" href="classnetflex_1_1http_1_1client.html">client</a> &amp;)=delete</td></tr>
+<tr class="memdesc:acc99fbf45017b7593e1c2851487ebb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator <br /></td></tr>
 <tr class="separator:acc99fbf45017b7593e1c2851487ebb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30d5d978725c09449266ea86e4dd130b"><td class="memItemLeft" align="right" valign="top"><a id="a30d5d978725c09449266ea86e4dd130b"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#a30d5d978725c09449266ea86e4dd130b">get_host</a> (void) const</td></tr>
-<tr class="memdesc:a30d5d978725c09449266ea86e4dd130b"><td class="mdescLeft">&#160;</td><td class="mdescRight">host &amp; port <br /></td></tr>
+<tr class="memitem:a30d5d978725c09449266ea86e4dd130b"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#a30d5d978725c09449266ea86e4dd130b">get_host</a> (void) const</td></tr>
 <tr class="separator:a30d5d978725c09449266ea86e4dd130b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d64406a2b36fa59610798ee9abcf735"><td class="memItemLeft" align="right" valign="top"><a id="a9d64406a2b36fa59610798ee9abcf735"></a>
-std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_port</b> (void) const</td></tr>
+<tr class="memitem:a9d64406a2b36fa59610798ee9abcf735"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#a9d64406a2b36fa59610798ee9abcf735">get_port</a> (void) const</td></tr>
 <tr class="separator:a9d64406a2b36fa59610798ee9abcf735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d20e66a63e3911104b309b8bfb72d0"><td class="memItemLeft" align="right" valign="top"><a id="a69d20e66a63e3911104b309b8bfb72d0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_request_handler</b> (const <a class="el" href="classnetflex_1_1http_1_1client.html#aeac22a78222d25d3224bf50b8e44fb2d">request_handler_t</a> &amp;)</td></tr>
-<tr class="separator:a69d20e66a63e3911104b309b8bfb72d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19c20f06646dc840257883f50e5ad8d5"><td class="memItemLeft" align="right" valign="top"><a id="a19c20f06646dc840257883f50e5ad8d5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_disconnection_handler</b> (const disconnection_handler_t &amp;)</td></tr>
-<tr class="separator:a19c20f06646dc840257883f50e5ad8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b00e06dfa90d8c96f9773ce043d0776"><td class="memItemLeft" align="right" valign="top"><a id="a8b00e06dfa90d8c96f9773ce043d0776"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#a8b00e06dfa90d8c96f9773ce043d0776">send_response</a> (const <a class="el" href="classnetflex_1_1http_1_1response.html">response</a> &amp;<a class="el" href="classnetflex_1_1http_1_1response.html">response</a>)</td></tr>
-<tr class="memdesc:a8b00e06dfa90d8c96f9773ce043d0776"><td class="mdescLeft">&#160;</td><td class="mdescRight">send http response <br /></td></tr>
+<tr class="memitem:a02ca4f8b6c166321e122fbb806b23ae2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#a02ca4f8b6c166321e122fbb806b23ae2">set_request_handler</a> (const <a class="el" href="classnetflex_1_1http_1_1client.html#aeac22a78222d25d3224bf50b8e44fb2d">request_handler_t</a> &amp;cb)</td></tr>
+<tr class="separator:a02ca4f8b6c166321e122fbb806b23ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da02e72625f4e8fbc8e8c64dcaca02a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#a5da02e72625f4e8fbc8e8c64dcaca02a">set_disconnection_handler</a> (const <a class="el" href="classnetflex_1_1http_1_1client.html#acacb8798dcade63c52a674b3f7820fba">disconnection_handler_t</a> &amp;cb)</td></tr>
+<tr class="separator:a5da02e72625f4e8fbc8e8c64dcaca02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b00e06dfa90d8c96f9773ce043d0776"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#a8b00e06dfa90d8c96f9773ce043d0776">send_response</a> (const <a class="el" href="classnetflex_1_1http_1_1response.html">response</a> &amp;<a class="el" href="classnetflex_1_1http_1_1response.html">response</a>)</td></tr>
 <tr class="separator:a8b00e06dfa90d8c96f9773ce043d0776"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0efa9afc9099104d8612da474d01b00"><td class="memItemLeft" align="right" valign="top"><a id="ac0efa9afc9099104d8612da474d01b00"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#ac0efa9afc9099104d8612da474d01b00">on_async_read_result</a> (tacopie::tcp_client::read_result &amp;)</td></tr>
-<tr class="memdesc:ac0efa9afc9099104d8612da474d01b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">tcp_client callback <br /></td></tr>
-<tr class="separator:ac0efa9afc9099104d8612da474d01b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9fbf1637c4faf451cc9f27148a9498a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetflex_1_1http_1_1client.html#ae9fbf1637c4faf451cc9f27148a9498a">on_async_read_result</a> (tacopie::tcp_client::read_result &amp;res)</td></tr>
+<tr class="separator:ae9fbf1637c4faf451cc9f27148a9498a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>http client represent one client connected to the HTTP server and notify on new requests </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="acacb8798dcade63c52a674b3f7820fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acacb8798dcade63c52a674b3f7820fba">&#9670;&nbsp;</a></span>disconnection_handler_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef tacopie::tcp_client::disconnection_handler_t <a class="el" href="classnetflex_1_1http_1_1client.html#acacb8798dcade63c52a674b3f7820fba">netflex::http::client::disconnection_handler_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>notify on client disconnection </p>
+
+</div>
+</div>
 <a id="aeac22a78222d25d3224bf50b8e44fb2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeac22a78222d25d3224bf50b8e44fb2d">&#9670;&nbsp;</a></span>request_handler_t</h2>
 
@@ -129,9 +141,174 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         </tr>
       </table>
 </div><div class="memdoc">
-<p>callbacks </p><blockquote class="doxtable">
-<p>notify on new http request received notify on invalid http request received (err while parsing) notify on client disconnection </p>
-</blockquote>
+<p>notify on new http request received notify on invalid http request received (err while parsing) </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0b14a82f29bad24559d159f9459895a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b14a82f29bad24559d159f9459895a6">&#9670;&nbsp;</a></span>client()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">netflex::http::client::client </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; tacopie::tcp_client &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tcp_client</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ctor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tcp_client</td><td>underlying tcp connection </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a30d5d978725c09449266ea86e4dd130b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d5d978725c09449266ea86e4dd130b">&#9670;&nbsp;</a></span>get_host()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; netflex::http::client::get_host </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>host of the client </dd></dl>
+
+</div>
+</div>
+<a id="a9d64406a2b36fa59610798ee9abcf735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d64406a2b36fa59610798ee9abcf735">&#9670;&nbsp;</a></span>get_port()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint32_t netflex::http::client::get_port </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>port of the client </dd></dl>
+
+</div>
+</div>
+<a id="ae9fbf1637c4faf451cc9f27148a9498a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9fbf1637c4faf451cc9f27148a9498a">&#9670;&nbsp;</a></span>on_async_read_result()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::client::on_async_read_result </td>
+          <td>(</td>
+          <td class="paramtype">tacopie::tcp_client::read_result &amp;&#160;</td>
+          <td class="paramname"><em>res</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>tcp_client callback called on async_read operation completion</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">res</td><td>read operation result </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8b00e06dfa90d8c96f9773ce043d0776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b00e06dfa90d8c96f9773ce043d0776">&#9670;&nbsp;</a></span>send_response()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::client::send_response </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classnetflex_1_1http_1_1response.html">response</a> &amp;&#160;</td>
+          <td class="paramname"><em>response</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>send http response to the client this should only be called as a result of receiving a valid http request </p>
+
+</div>
+</div>
+<a id="a5da02e72625f4e8fbc8e8c64dcaca02a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da02e72625f4e8fbc8e8c64dcaca02a">&#9670;&nbsp;</a></span>set_disconnection_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::client::set_disconnection_handler </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classnetflex_1_1http_1_1client.html#acacb8798dcade63c52a674b3f7820fba">disconnection_handler_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>cb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>define the callback to be called on disconnection</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cb</td><td>callback to be called </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a02ca4f8b6c166321e122fbb806b23ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ca4f8b6c166321e122fbb806b23ae2">&#9670;&nbsp;</a></span>set_request_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void netflex::http::client::set_request_handler </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classnetflex_1_1http_1_1client.html#aeac22a78222d25d3224bf50b8e44fb2d">request_handler_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>cb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>define the callback to be called on new valid or invalid http requests</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cb</td><td>callback to be called </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -2,11 +2,6 @@
 \label{classnetflex_1_1logger}\index{netflex\+::logger@{netflex\+::logger}}
 
 
-default logger class provided by the library  
-
-
-
-
 {\ttfamily \#include $<$logger.\+hpp$>$}
 
 Inheritance diagram for netflex\+:\+:logger\+:\begin{figure}[H]
@@ -18,41 +13,135 @@ Inheritance diagram for netflex\+:\+:logger\+:\begin{figure}[H]
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classnetflex_1_1logger_a8270276b1351480a8a9bfab4139cdc9c}\label{classnetflex_1_1logger_a8270276b1351480a8a9bfab4139cdc9c}} 
 enum \hyperlink{classnetflex_1_1logger_a8270276b1351480a8a9bfab4139cdc9c}{log\+\_\+level} \{ {\bfseries error} = 0, 
 {\bfseries warn} = 1, 
 {\bfseries info} = 2, 
 {\bfseries debug} = 3
- \}\begin{DoxyCompactList}\small\item\em log level \end{DoxyCompactList}
+ \}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classnetflex_1_1logger_a8ed6f964305456a251c83761d5da70a7}\label{classnetflex_1_1logger_a8ed6f964305456a251c83761d5da70a7}} 
 \hyperlink{classnetflex_1_1logger_a8ed6f964305456a251c83761d5da70a7}{logger} (\hyperlink{classnetflex_1_1logger_a8270276b1351480a8a9bfab4139cdc9c}{log\+\_\+level} level=log\+\_\+level\+::info)
-\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetflex_1_1logger_a93c7908219e8d992f7eb52b133b9b23a}\label{classnetflex_1_1logger_a93c7908219e8d992f7eb52b133b9b23a}} 
+\hyperlink{classnetflex_1_1logger_a93c7908219e8d992f7eb52b133b9b23a}{$\sim$logger} (void)=default
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1logger_ac4f3c65364cfc45034cec215d518afdf}\label{classnetflex_1_1logger_ac4f3c65364cfc45034cec215d518afdf}} 
 \hyperlink{classnetflex_1_1logger_ac4f3c65364cfc45034cec215d518afdf}{logger} (const \hyperlink{classnetflex_1_1logger}{logger} \&)=default
-\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1logger_ac709fc0f8713f94795031e555fab7afb}\label{classnetflex_1_1logger_ac709fc0f8713f94795031e555fab7afb}} 
-\hyperlink{classnetflex_1_1logger}{logger} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1logger}{logger} \&)=default
+\hyperlink{classnetflex_1_1logger}{logger} \& \hyperlink{classnetflex_1_1logger_ac709fc0f8713f94795031e555fab7afb}{operator=} (const \hyperlink{classnetflex_1_1logger}{logger} \&)=default
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+void \hyperlink{classnetflex_1_1logger_a6acb4c370bbacf855ec9e039defdb39c}{debug} (const std\+::string \&msg, const std\+::string \&file, std\+::size\+\_\+t line)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1logger_a6acb4c370bbacf855ec9e039defdb39c}\label{classnetflex_1_1logger_a6acb4c370bbacf855ec9e039defdb39c}} 
-void {\bfseries debug} (const std\+::string \&msg, const std\+::string \&file, std\+::size\+\_\+t line)
+void \hyperlink{classnetflex_1_1logger_a5663c09b0fddff8efcc8556bc600bff4}{info} (const std\+::string \&msg, const std\+::string \&file, std\+::size\+\_\+t line)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1logger_a5663c09b0fddff8efcc8556bc600bff4}\label{classnetflex_1_1logger_a5663c09b0fddff8efcc8556bc600bff4}} 
-void {\bfseries info} (const std\+::string \&msg, const std\+::string \&file, std\+::size\+\_\+t line)
+void \hyperlink{classnetflex_1_1logger_a0874f423d630a7263fd89ce6a2e3c2f9}{warn} (const std\+::string \&msg, const std\+::string \&file, std\+::size\+\_\+t line)
 \item 
-\mbox{\Hypertarget{classnetflex_1_1logger_a0874f423d630a7263fd89ce6a2e3c2f9}\label{classnetflex_1_1logger_a0874f423d630a7263fd89ce6a2e3c2f9}} 
-void {\bfseries warn} (const std\+::string \&msg, const std\+::string \&file, std\+::size\+\_\+t line)
-\item 
-\mbox{\Hypertarget{classnetflex_1_1logger_a1692266cfb80ea4e1f77f4d28a377875}\label{classnetflex_1_1logger_a1692266cfb80ea4e1f77f4d28a377875}} 
-void {\bfseries error} (const std\+::string \&msg, const std\+::string \&file, std\+::size\+\_\+t line)
+void \hyperlink{classnetflex_1_1logger_a1692266cfb80ea4e1f77f4d28a377875}{error} (const std\+::string \&msg, const std\+::string \&file, std\+::size\+\_\+t line)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 default logger class provided by the library 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classnetflex_1_1logger_a8270276b1351480a8a9bfab4139cdc9c}\label{classnetflex_1_1logger_a8270276b1351480a8a9bfab4139cdc9c}} 
+\index{netflex\+::logger@{netflex\+::logger}!log\+\_\+level@{log\+\_\+level}}
+\index{log\+\_\+level@{log\+\_\+level}!netflex\+::logger@{netflex\+::logger}}
+\subsubsection{\texorpdfstring{log\+\_\+level}{log\_level}}
+{\footnotesize\ttfamily enum \hyperlink{classnetflex_1_1logger_a8270276b1351480a8a9bfab4139cdc9c}{netflex\+::logger\+::log\+\_\+level}\hspace{0.3cm}{\ttfamily [strong]}}
+
+log level 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetflex_1_1logger_a6acb4c370bbacf855ec9e039defdb39c}\label{classnetflex_1_1logger_a6acb4c370bbacf855ec9e039defdb39c}} 
+\index{netflex\+::logger@{netflex\+::logger}!debug@{debug}}
+\index{debug@{debug}!netflex\+::logger@{netflex\+::logger}}
+\subsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily void netflex\+::logger\+::debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg,  }\item[{const std\+::string \&}]{file,  }\item[{std\+::size\+\_\+t}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+debug logging
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & message to be logged \\
+\hline
+{\em file} & file from which the message is coming \\
+\hline
+{\em line} & line in the file of the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetflex_1_1logger__iface_a0768fd1687f7d449b0cde0058038d52a}{netflex\+::logger\+\_\+iface}.
+
+\mbox{\Hypertarget{classnetflex_1_1logger_a1692266cfb80ea4e1f77f4d28a377875}\label{classnetflex_1_1logger_a1692266cfb80ea4e1f77f4d28a377875}} 
+\index{netflex\+::logger@{netflex\+::logger}!error@{error}}
+\index{error@{error}!netflex\+::logger@{netflex\+::logger}}
+\subsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily void netflex\+::logger\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg,  }\item[{const std\+::string \&}]{file,  }\item[{std\+::size\+\_\+t}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+error logging
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & message to be logged \\
+\hline
+{\em file} & file from which the message is coming \\
+\hline
+{\em line} & line in the file of the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetflex_1_1logger__iface_a09e4dda02d64e420cf0d91cbef00fe1c}{netflex\+::logger\+\_\+iface}.
+
+\mbox{\Hypertarget{classnetflex_1_1logger_a5663c09b0fddff8efcc8556bc600bff4}\label{classnetflex_1_1logger_a5663c09b0fddff8efcc8556bc600bff4}} 
+\index{netflex\+::logger@{netflex\+::logger}!info@{info}}
+\index{info@{info}!netflex\+::logger@{netflex\+::logger}}
+\subsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily void netflex\+::logger\+::info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg,  }\item[{const std\+::string \&}]{file,  }\item[{std\+::size\+\_\+t}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+info logging
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & message to be logged \\
+\hline
+{\em file} & file from which the message is coming \\
+\hline
+{\em line} & line in the file of the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetflex_1_1logger__iface_aac8e95dd5c24ac109e33c0002be110f0}{netflex\+::logger\+\_\+iface}.
+
+\mbox{\Hypertarget{classnetflex_1_1logger_a0874f423d630a7263fd89ce6a2e3c2f9}\label{classnetflex_1_1logger_a0874f423d630a7263fd89ce6a2e3c2f9}} 
+\index{netflex\+::logger@{netflex\+::logger}!warn@{warn}}
+\index{warn@{warn}!netflex\+::logger@{netflex\+::logger}}
+\subsubsection{\texorpdfstring{warn()}{warn()}}
+{\footnotesize\ttfamily void netflex\+::logger\+::warn (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg,  }\item[{const std\+::string \&}]{file,  }\item[{std\+::size\+\_\+t}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+warn logging
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & message to be logged \\
+\hline
+{\em file} & file from which the message is coming \\
+\hline
+{\em line} & line in the file of the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetflex_1_1logger__iface_a0d1ee72c9b5ba9f08cb306d69ecc4822}{netflex\+::logger\+\_\+iface}.
+
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

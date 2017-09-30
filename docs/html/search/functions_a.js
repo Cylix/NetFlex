@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['parser_5fiface',['parser_iface',['../classnetflex_1_1parsing_1_1parser__iface.html#aacba4e88059a0802b22c19b324bae9ec',1,'netflex::parsing::parser_iface']]],
-  ['proceed',['proceed',['../classnetflex_1_1routing_1_1middleware__chain.html#a762a6cce9e788dd6bb3261336d4bb841',1,'netflex::routing::middleware_chain']]]
+  ['netflex_5ferror',['netflex_error',['../classnetflex_1_1netflex__error.html#ac7410912ae60826d4d3c517bc77bd53d',1,'netflex::netflex_error::netflex_error(const std::string &amp;msg)'],['../classnetflex_1_1netflex__error.html#a1b16bd2445517eed5b9e0e276e73a023',1,'netflex::netflex_error::netflex_error(const char *msg)']]]
 ];

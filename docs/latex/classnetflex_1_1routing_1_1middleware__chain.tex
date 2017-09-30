@@ -1,21 +1,58 @@
 \hypertarget{classnetflex_1_1routing_1_1middleware__chain}{}\section{netflex\+:\+:routing\+:\+:middleware\+\_\+chain Class Reference}
 \label{classnetflex_1_1routing_1_1middleware__chain}\index{netflex\+::routing\+::middleware\+\_\+chain@{netflex\+::routing\+::middleware\+\_\+chain}}
+
+
+{\ttfamily \#include $<$middleware\+\_\+chain.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1middleware__chain_a1ca46e620562de94f0f18bda55d5dc6b}\label{classnetflex_1_1routing_1_1middleware__chain_a1ca46e620562de94f0f18bda55d5dc6b}} 
 \hyperlink{classnetflex_1_1routing_1_1middleware__chain_a1ca46e620562de94f0f18bda55d5dc6b}{middleware\+\_\+chain} (const std\+::list$<$ middleware\+\_\+t $>$ \&middlewares, \hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&request, \hyperlink{classnetflex_1_1http_1_1response}{http\+::response} \&response)
-\begin{DoxyCompactList}\small\item\em ctor \& dtor \end{DoxyCompactList}\item 
+\item 
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1middleware__chain_a146dc01f9446f08f5e82d5c45fce9ca5}\label{classnetflex_1_1routing_1_1middleware__chain_a146dc01f9446f08f5e82d5c45fce9ca5}} 
+\hyperlink{classnetflex_1_1routing_1_1middleware__chain_a146dc01f9446f08f5e82d5c45fce9ca5}{$\sim$middleware\+\_\+chain} (void)=default
+\begin{DoxyCompactList}\small\item\em default dtor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1routing_1_1middleware__chain_ae9735fec43573278a01312692c5aff55}\label{classnetflex_1_1routing_1_1middleware__chain_ae9735fec43573278a01312692c5aff55}} 
 \hyperlink{classnetflex_1_1routing_1_1middleware__chain_ae9735fec43573278a01312692c5aff55}{middleware\+\_\+chain} (const \hyperlink{classnetflex_1_1routing_1_1middleware__chain}{middleware\+\_\+chain} \&)=default
-\begin{DoxyCompactList}\small\item\em copy ctor \& assignment operator \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classnetflex_1_1routing_1_1middleware__chain_a292af104bd22249848832886cdd40587}\label{classnetflex_1_1routing_1_1middleware__chain_a292af104bd22249848832886cdd40587}} 
-\hyperlink{classnetflex_1_1routing_1_1middleware__chain}{middleware\+\_\+chain} \& {\bfseries operator=} (const \hyperlink{classnetflex_1_1routing_1_1middleware__chain}{middleware\+\_\+chain} \&)=default
-\item 
-\mbox{\Hypertarget{classnetflex_1_1routing_1_1middleware__chain_a762a6cce9e788dd6bb3261336d4bb841}\label{classnetflex_1_1routing_1_1middleware__chain_a762a6cce9e788dd6bb3261336d4bb841}} 
+\hyperlink{classnetflex_1_1routing_1_1middleware__chain}{middleware\+\_\+chain} \& \hyperlink{classnetflex_1_1routing_1_1middleware__chain_a292af104bd22249848832886cdd40587}{operator=} (const \hyperlink{classnetflex_1_1routing_1_1middleware__chain}{middleware\+\_\+chain} \&)=default
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
 void \hyperlink{classnetflex_1_1routing_1_1middleware__chain_a762a6cce9e788dd6bb3261336d4bb841}{proceed} (void)
-\begin{DoxyCompactList}\small\item\em proceed to next middleware \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+contains a chain of middlewares to execute used to manage execution of middlewares in the right order (and possibly stop the execution if necessary) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1middleware__chain_a1ca46e620562de94f0f18bda55d5dc6b}\label{classnetflex_1_1routing_1_1middleware__chain_a1ca46e620562de94f0f18bda55d5dc6b}} 
+\index{netflex\+::routing\+::middleware\+\_\+chain@{netflex\+::routing\+::middleware\+\_\+chain}!middleware\+\_\+chain@{middleware\+\_\+chain}}
+\index{middleware\+\_\+chain@{middleware\+\_\+chain}!netflex\+::routing\+::middleware\+\_\+chain@{netflex\+::routing\+::middleware\+\_\+chain}}
+\subsubsection{\texorpdfstring{middleware\+\_\+chain()}{middleware\_chain()}}
+{\footnotesize\ttfamily netflex\+::routing\+::middleware\+\_\+chain\+::middleware\+\_\+chain (\begin{DoxyParamCaption}\item[{const std\+::list$<$ middleware\+\_\+t $>$ \&}]{middlewares,  }\item[{\hyperlink{classnetflex_1_1http_1_1request}{http\+::request} \&}]{request,  }\item[{\hyperlink{classnetflex_1_1http_1_1response}{http\+::response} \&}]{response }\end{DoxyParamCaption})}
+
+ctor
+
+
+\begin{DoxyParams}{Parameters}
+{\em middlewares} & middlewares to be managed by the middleware chain. middleware should be ordered from lowest level (first executed) to highest level (last to be executed) \\
+\hline
+{\em request} & request to be passed as parameter to each middleware \\
+\hline
+{\em response} & response to be passed as parameter to each middleware \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetflex_1_1routing_1_1middleware__chain_a762a6cce9e788dd6bb3261336d4bb841}\label{classnetflex_1_1routing_1_1middleware__chain_a762a6cce9e788dd6bb3261336d4bb841}} 
+\index{netflex\+::routing\+::middleware\+\_\+chain@{netflex\+::routing\+::middleware\+\_\+chain}!proceed@{proceed}}
+\index{proceed@{proceed}!netflex\+::routing\+::middleware\+\_\+chain@{netflex\+::routing\+::middleware\+\_\+chain}}
+\subsubsection{\texorpdfstring{proceed()}{proceed()}}
+{\footnotesize\ttfamily void netflex\+::routing\+::middleware\+\_\+chain\+::proceed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+proceed to next middleware to be executed or return if nothing needs to be executed anymore 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
