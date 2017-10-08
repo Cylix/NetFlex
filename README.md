@@ -49,7 +49,7 @@ server.start("0.0.0.0", 3001);
 A [Wiki](https://github.com/Cylix/netflex/wiki) is available and provides full documentation for the library as well as [installation explanations](https://github.com/Cylix/netflex/wiki/Installation).
 
 # Doxygen
-A [Doxygen documentation](https://cylix.github.io/netflex/html/) is available and provides full API documentation for the library.
+A [Doxygen documentation](https://cylix.github.io/NetFlex/html/) is available and provides full API documentation for the library.
 
 ## Motivations and goals
 Serving HTTP requests from a C++ software might seem unconventional, but some projects do require it (and I personally already encounter such need).
